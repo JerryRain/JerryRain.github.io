@@ -180,9 +180,9 @@
 <p>要倾斜和加粗的文字左右分别用三个*号包起来</p>
 <p><strong>删除线</strong></p>
 <p>要加删除线的文字左右分别用两个~~号包起来</p>
-<p><code>**这是加粗的文字**
-*这是倾斜的文字*
-***这是斜体加粗的文字***
+<p><code>**这是加粗的文字**&lt;/br&gt;
+*这是倾斜的文字*&lt;/br&gt;
+***这是斜体加粗的文字***&lt;/br&gt;
 ~~这是加删除线的文字~~</code></p>
 <p>效果如下：</p>
 <p><strong>这是加粗的文字</strong></p>
@@ -226,16 +226,16 @@
 <hr>
 <hr>
 <hr>
-<h2 id="五-插入图片"><a href="#五-插入图片" class="headerlink" title="五.插入图片"></a>五.插入图片</h2><p><code>![图片文字](图片地址 &#39;&#39;图片title&#39;&#39;)
-图片文字——显示在图片下面的文字，相当于对图片内容的解释
-图片地址——指的是图片的网络地址
+<h2 id="五-插入图片"><a href="#五-插入图片" class="headerlink" title="五.插入图片"></a>五.插入图片</h2><p><code>![图片文字](图片地址 &#39;&#39;图片title&#39;&#39;)&lt;/br&gt;
+图片文字——显示在图片下面的文字，相当于对图片内容的解释&lt;/br&gt;
+图片地址——指的是图片的网络地址&lt;/br&gt;
 图片title——图片title是图片的标题，当鼠标移到图片上时显示的内容（title可加可不加）</code></p>
 <p>示例：</p>
 <p><code>![markdown](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzbluRrj2NgIPfyAmq2XAnIbw-34RlFJ3RgMHH-Tko9O66T52B &#39;&#39;markdown&#39;&#39;)</code></p>
 <p>效果如下：</p>
 <p><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzbluRrj2NgIPfyAmq2XAnIbw-34RlFJ3RgMHH-Tko9O66T52B" alt="markdown" title="&#39;markdown&#39;"></p>
 <h2 id="六-超链接"><a href="#六-超链接" class="headerlink" title="六.超链接"></a>六.超链接</h2><p>语法：</p>
-<p><code>[超链接名](超链接地址 &quot;超链接title&quot;)
+<p><code>[超链接名](超链接地址 &quot;超链接title&quot;)&lt;/br&gt;
 title可加可不加</code></p>
 <p>例子：</p>
 <p><code>[简书](http://jianshu.com)
@@ -250,37 +250,20 @@ title可加可不加</code></p>
 <p>注意：- + * 跟内容之间都要有一个空格</p>
 <p>2.有序列表</p>
 <p>语法：</p>
-<p><code>1.列表内容
-2.列表内容
+<p><code>1.列表内容&lt;/br&gt;
+2.列表内容&lt;/br&gt;
 3.列表内容</code></p>
 <p>注意：序号跟内容之间要有空格</p>
 <h2 id="八-表格"><a href="#八-表格" class="headerlink" title="八.表格"></a>八.表格</h2><p>语法：</p>
-<table>
-<thead>
-<tr>
-<th>`表头</th>
-<th style="text-align:center">表头</th>
-<th style="text-align:right">表头</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>内容</td>
-<td style="text-align:center">内容</td>
-<td style="text-align:right">内容</td>
-</tr>
-<tr>
-<td>内容</td>
-<td style="text-align:center">内容</td>
-<td style="text-align:right">内容`</td>
-</tr>
-</tbody>
-</table>
-<p><code>第二行分割表头和内容。</code></p>
-<p><code>- 有一个就行，为了对齐，多加了几个</code></p>
-<p><code>文字默认居左</code></p>
-<p><code>-两边加：表示文字居中</code></p>
-<p><code>-右边加：表示文字居右</code></p>
+<p><code>表头|表头|表头&lt;/br&gt;
+---|:--:|---:&lt;/br&gt;
+内容|内容|内容&lt;/br&gt;
+内容|内容|内容</code></p>
+<p>第二行分割表头和内容。</p>
+<p>-有一个就行，为了对齐，多加了几个</p>
+<p>文字默认居左</p>
+<p>-两边加：表示文字居中</p>
+<p>-右边加：表示文字居右</p>
 <p>例子：</p>
 <table>
 <thead>
@@ -338,11 +321,15 @@ title可加可不加</code></p>
 <h2 id="九-代码"><a href="#九-代码" class="headerlink" title="九.代码"></a>九.代码</h2><p>语法：</p>
 <p>单行代码：</p>
 <blockquote>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; `代码内容`</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+<p><code>代码内容</code></p>
 </blockquote>
 <p>代码块：</p>
 <blockquote>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt; (```)</span><br><span class="line">&gt;   代码...</span><br><span class="line">&gt;   代码...</span><br><span class="line">&gt;   代码...</span><br><span class="line">&gt; (```)</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+<p>(<code>)
+代码...
+代码...
+代码...
+(</code>)</p>
 </blockquote>
 
             </div>
