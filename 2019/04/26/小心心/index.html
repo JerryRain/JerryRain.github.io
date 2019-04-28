@@ -161,7 +161,7 @@
 </nav>
 
         <div id="main">
-            <div class="post_page_title_img" style="height: 25rem;background-image: url(https://www.racecoder.com/usr/uploads/2017/08/2049406966.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;">
+            <div class="post_page_title_img" style="height: 25rem;background-image: url(http://www.qyun.vip/content/uploadfile/201809/311b1537198114.png);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;">
                 <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2>博客个性化主题</h2></a>
             </div>
             <!-- Post -->
@@ -170,9 +170,9 @@
 <h2 id="具体实现方法"><a href="#具体实现方法" class="headerlink" title="具体实现方法"></a>具体实现方法</h2><p>在下载的主题文件下，找到js文件夹，新建一个love.js文件，具体代码如下：</p>
 <p><code>!function(e,t,a){function n(){c(&quot;.heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: &#39;&#39;;width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: fixed;}.heart:after{top: -5px;}.heart:before{left: -5px;}&quot;),o(),r()}function r(){for(var e=0;e&lt;d.length;e++)d[e].alpha&lt;=0?(t.body.removeChild(d[e].el),d.splice(e,1)):(d[e].y--,d[e].scale+=.004,d[e].alpha-=.013,d[e].el.style.cssText=&quot;left:&quot;+d[e].x+&quot;px;top:&quot;+d[e].y+&quot;px;opacity:&quot;+d[e].alpha+&quot;;transform:scale(&quot;+d[e].scale+&quot;,&quot;+d[e].scale+&quot;) rotate(45deg);background:&quot;+d[e].color+&quot;;z-index:99999&quot;);requestAnimationFrame(r)}function o(){var t=&quot;function&quot;==typeof e.onclick&amp;&amp;e.onclick;e.onclick=function(e){t&amp;&amp;t(),i(e)}}function i(e){var a=t.createElement(&quot;div&quot;);a.className=&quot;heart&quot;,d.push({el:a,x:e.clientX-5,y:e.clientY-5,scale:1,alpha:1,color:s()}),t.body.appendChild(a)}function c(e){var a=t.createElement(&quot;style&quot;);a.type=&quot;text/css&quot;;try{a.appendChild(t.createTextNode(e))}catch(t){a.styleSheet.cssText=e}t.getElementsByTagName(&quot;head&quot;)[0].appendChild(a)}function s(){return&quot;rgb(&quot;+~~(255*Math.random())+&quot;,&quot;+~~(255*Math.random())+&quot;,&quot;+~~(255*Math.random())+&quot;)&quot;}var d=[];e.requestAnimationFrame=function(){return e.requestAnimationFrame||e.webkitRequestAnimationFrame||e.mozRequestAnimationFrame||e.oRequestAnimationFrame||e.msRequestAnimationFrame||function(e){setTimeout(e,1e3/60)}}(),n()}(window,document);</code></p>
 <p>分析一下你下载的主题是怎样调用js脚本的，我的是在D:\blog\themes\hexo-theme-Mic_Theme\layout文件夹下的layout.ejs文件中调用js脚本的，具体代码如下：</p>
-<p><img src="http://baocangwh.cn/t6/702/1556299900x2918527220.png" alt="layout.js"></p>
+<p><img src="https://i.ibb.co/Gp3ZnZN/1.png" alt="layout.js"></p>
 <p>因此，在主题的source/js文件夹下新建一个love.js文件，将代码复制进去，然后在impoerJS.js文件中加载love.js文件，具体实现方法如下图：</p>
-<p><img src="http://baocangwh.cn/t6/702/1556299935x2728329139.png" alt="importJS.js"></p>
+<p><img src="https://i.ibb.co/MMdbCmh/2.png" alt="importJS.js"></p>
 <p>修改完之后，再执行</p>
 <p><code>hexo clean</code></p>
 <p><code>hexo d -g</code></p>
