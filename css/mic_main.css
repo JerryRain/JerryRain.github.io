@@ -537,7 +537,8 @@
 
 		a:hover {
 			border-bottom-color: transparent;
-			color: #18bfef !important;
+			/*color: #18bfef !important;*/
+			color: #FF0000 !important;
 		}
 
 	strong, b {
