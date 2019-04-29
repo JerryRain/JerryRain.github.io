@@ -62,9 +62,7 @@
     <script src="/js/skel.min.js"></script>
     <script src="/js/util.js"></script>
     <script src="/js/love.js"></script>
-    <script src="/js/mermaid.js"></script>
     <script src="/js/main.js"></script>
-    <script src="https://unpkg.com/mermaid@8.0.0-rc.8/dist/mermaid.min.js"></script>
 	
 </head>
     
@@ -170,8 +168,8 @@
             <div class="typo" style="padding: 3rem;">
                 <h2 style="text-align:center">C++学习笔记</h2>
 
-<h3 id="一-C语言与C-的区别"><a href="#一-C语言与C-的区别" class="headerlink" title="一.C语言与C++的区别"></a>一.C语言与C++的区别</h3><p>C语言：面向过程</p>
-<p>C++：增加面向对象机制</p>
+<h3 id="一-C语言与C-的区别"><a href="#一-C语言与C-的区别" class="headerlink" title="一.C语言与C++的区别"></a>一.C语言与C++的区别</h3><p>C语言：面向过程（函数与函数交互）</p>
+<p>C++：增加面向对象机制（对象与对象交互）– 一种管理源代码的方式</p>
 <p>对C语言的扩充：</p>
 <p>1.变量的定义可以出现在程序的任意行</p>
 <p>2.提供了标准输入输出流对象</p>
@@ -219,7 +217,7 @@
 <li>连接</li>
 <li>执行</li>
 </ul>
-<h2 id="四-基础知识"><a href="#四-基础知识" class="headerlink" title="四.基础知识"></a>四.基础知识</h2><h3 id="第一张：变量、数据类型及运算符"><a href="#第一张：变量、数据类型及运算符" class="headerlink" title="第一张：变量、数据类型及运算符"></a>第一张：变量、数据类型及运算符</h3><p>计算机使用<strong>内存</strong>来记忆或储存计算时所使用的数据。</p>
+<h2 id="四-基础知识"><a href="#四-基础知识" class="headerlink" title="四.基础知识"></a>四.基础知识</h2><h3 id="第一章：变量、数据类型及运算符"><a href="#第一章：变量、数据类型及运算符" class="headerlink" title="第一章：变量、数据类型及运算符"></a>第一章：变量、数据类型及运算符</h3><p>计算机使用<strong>内存</strong>来记忆或储存计算时所使用的数据。</p>
 <p>计算机执行程序时，组成程序的指令和程序所操作的数据都必须存放在某个地方——<strong><em>计算机的内存</em></strong>，也称为<strong>主存</strong>（main memory）或<strong>随机访问储存器</strong>（RAM）。</p>
 <p>储存单位：bit（位）/ binary digit（二进制数字）</p>
 <p><strong>1.变量</strong></p>
@@ -295,6 +293,7 @@
 <p>字符型可用于储存单个字符。</p>
 <p>C++其他数据类型：</p>
 <p>size_t类型、枚举类型、自定义类型、指针类型、空类型等</p>
+<p>数据类型用来规定内存所占用的空间。</p>
 <p><strong>3.声明变量</strong></p>
 <p>声明变量： </p>
 <p>DataType variableName; (数据类型 变量名；)</p>
@@ -326,8 +325,91 @@
 <ul>
 <li>强制以小数的方式显示：<code>cout &lt;&lt; fixed ;</code></li>
 <li>控制显示的精度 : <code>cout &lt;&lt; setprecision(显示小数点位数) ;</code>（需导入iomanip头文件）</li>
-<li>setw()函数可以用来设置宽度大小，只与后面的元素相关</li>
+<li><p>setw()函数可以用来设置宽度大小，只与后面的元素相关</p>
+<p><strong>4.打印</strong></p>
+</li>
 </ul>
+<p>改变打印窗口标题名称：<code>SerConsoleTitle(&quot;XXX&quot;);</code></p>
+<p>cin函数：<code>cin &gt;&gt; XXX</code>(只能读取一个字符型) / <code>cin.get()</code></p>
+<p>cout函数：<code>cout &lt;&lt; XXX</code> / <code>cout &lt;&lt; left</code>(左起填充) / <code>cout &lt;&lt; setfill(&#39;_&#39;)</code>（以下划线形式填充）</p>
+<p><strong>5.转义字符</strong></p>
+<table>
+<thead>
+<tr>
+<th>转义序列</th>
+<th style="text-align:center">名称</th>
+<th style="text-align:right">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\a</td>
+<td style="text-align:center">蜂鸣警报</td>
+<td style="text-align:right">在一些系统中警报不起作用</td>
+</tr>
+<tr>
+<td>\b</td>
+<td style="text-align:center">退格</td>
+<td style="text-align:right">将光标退回一格</td>
+</tr>
+<tr>
+<td>\f</td>
+<td style="text-align:center">换页</td>
+<td style="text-align:right">将光标移到下一页的开始处</td>
+</tr>
+<tr>
+<td>\n</td>
+<td style="text-align:center">换行</td>
+<td style="text-align:right">将光标移到下一行的开始处</td>
+</tr>
+<tr>
+<td>\r</td>
+<td style="text-align:center">回车</td>
+<td style="text-align:right">j将光标移到当前行的开始处</td>
+</tr>
+<tr>
+<td>\t</td>
+<td style="text-align:center">水平制表</td>
+<td style="text-align:right">将光标移到下一个水平制表位置</td>
+</tr>
+<tr>
+<td>\v</td>
+<td style="text-align:center">垂直制表</td>
+<td style="text-align:right">将光标移到下一个垂直制表位置</td>
+</tr>
+<tr>
+<td>\‘</td>
+<td style="text-align:center">单引号</td>
+<td style="text-align:right">用于打印单引号字符</td>
+</tr>
+<tr>
+<td>\’’</td>
+<td style="text-align:center">双引号</td>
+<td style="text-align:right">用于打印双引号字符</td>
+</tr>
+<tr>
+<td>\?</td>
+<td style="text-align:center">问号</td>
+<td style="text-align:right">用于打印问号字符</td>
+</tr>
+<tr>
+<td>\\</td>
+<td style="text-align:center">反斜线</td>
+<td style="text-align:right">用于打印反斜线字符</td>
+</tr>
+</tbody>
+</table>
+<p><strong>6.算数运算符</strong></p>
+<ul>
+<li>一元运算符：++（后置） 、 –（前置）</li>
+<li>二元运算符：+ 、- 、* 、/（取模） 、%（取余）</li>
+<li>表达式：符号与操作数的组合</li>
+</ul>
+<p>取模的应用场景：用到循环的是或，比如取某个数字的个位（取模的符号与除数的符号一致）</p>
+<p><strong>7.类型转换</strong></p>
+<p>原则：把表示范围小的类型的值转换到表示范围大的类型的值</p>
+<p>short –&gt; int –&gt; long –&gt; float –&gt; double</p>
+<p>强制类型转换语法：<strong><em>（类型名）变量或数值</em></strong></p>
 
             </div>
 
