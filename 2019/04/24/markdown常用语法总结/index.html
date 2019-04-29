@@ -70,6 +70,14 @@
 <!-- Layouts -->
 
 
+{% if theme.mermaid.enable %}
+  <script src="https://unpkg.com/mermaid@{{ theme.mermaid.version }}/dist/mermaid.min.js"></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize({theme: 'forest'});
+    }
+  </script>
+{% endif %}
 
 <!--  代码渲染  -->
 <link rel="stylesheet" href="/css/prism_coy.css">
@@ -234,7 +242,7 @@
 <p>例子：</p>
 <p><code>[简书](http://jianshu.com)</code><br><code>[百度](http://baidu.com)</code></p>
 <p>效果：</p>
-<p><a href="http://jianshu.com" target="_blank" rel="noopener">简书</a><br><a href="http://baidu.com" target="_blank" rel="noopener">百度</a></p>
+<p><a href="http://jianshu.com">简书</a><br><a href="http://baidu.com">百度</a></p>
 <h2 id="七-列表"><a href="#七-列表" class="headerlink" title="七.列表"></a>七.列表</h2><p>1.无序列表</p>
 <p>语法：</p>
 <p><code>- 列表内容</code></p>

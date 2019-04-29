@@ -70,6 +70,14 @@
 <!-- Layouts -->
 
 
+{% if theme.mermaid.enable %}
+  <script src="https://unpkg.com/mermaid@{{ theme.mermaid.version }}/dist/mermaid.min.js"></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize({theme: 'forest'});
+    }
+  </script>
+{% endif %}
 
 <!--  代码渲染  -->
 <link rel="stylesheet" href="/css/prism_coy.css">
@@ -192,13 +200,11 @@ int main()
 <p>#include语句不是必须的，但是如果一旦程序中有该语句，就必须将它放在程序的开始处。</p>
 </li>
 <li><p>将iostream文件的内容添加到程序中；<br>iostream : input &amp; ouput stream(输入输出流)<br>iostream中包含了有关输入输出语句的函数。</p>
-<pre class=" language-mermaid"><code class="language-mermaid">graph LR
+<pre class="mermaid">  graph LR
 A[头文件类型] -->B(C旧式风格--以.h结尾)
 A -->C(C++旧式风格--以.h结尾)
 A -->D(C++新式风格--没有扩展名)
-A -->E(转换后的C--加上前缀c,没有扩展名)
-
-</code></pre>
+A -->E(转换后的C--加上前缀c,没有扩展名)</pre>
 </li>
 </ul>
 <ul>
@@ -249,7 +255,7 @@ A -->E(转换后的C--加上前缀c,没有扩展名)
 <p>6、尽量不要使用单个英文单词</p>
 <p>7、提倡使用由正式含义的英文单词</p>
 <p><strong>2.数据类型</strong></p>
-<pre class=" language-mermaid"><code class="language-mermaid">graph LR
+<pre class="mermaid">graph LR
 A[数据类型] -->B(数值)
 A --> C(非数值)
 B --> D(整型)
@@ -263,8 +269,8 @@ D --> O(bool)
 E --> J(float)
 E --> K(double)
 E --> L(long double)
-C --> M(string)
-</code></pre>
+C --> M(string)</pre>
+
 <table>
 <thead>
 <tr>
@@ -340,12 +346,12 @@ C --> M(string)
 </ul>
 <p>2、声明浮点型变量（声明并初始化）：</p>
 <p>float XXX / float XXX = ……</p>
-<pre class=" language-mermaid"><code class="language-mermaid">graph LR
+<pre class="mermaid">graph LR
 A[float] --> B(位数:32位)
 A --> C(空间:4个字节)
 A --> D(取值范围:-3.4E+38 至 +3.4E+38)
-A --> E(6至7位有效数字)
-</code></pre>
+A --> E(6至7位有效数字)</pre>
+
 <p>注意：</p>
 <ul>
 <li>float类型变量赋值时建议在数值的末尾加上一个f</li>
@@ -353,12 +359,12 @@ A --> E(6至7位有效数字)
 </ul>
 <p>3、声明双精度浮点型变量（声明并初始化）：</p>
 <p>double XXX / double XXX = ……</p>
-<pre class=" language-mermaid"><code class="language-mermaid">graph LR
+<pre class="mermaid">graph LR
 A[double] --> B(位数:64位)
 A --> C(空间:8个字节)
 A --> D(取值范围:-1.7E308 至 1.7E308)
-A --> E(15位有效数字)
-</code></pre>
+A --> E(15位有效数字)</pre>
+
 <p>控制cout的显示精度：</p>
 <ul>
 <li>强制以小数的方式显示：<code>cout &lt;&lt; fixed ;</code></li>
