@@ -290,61 +290,6 @@ markdown:
 <h3 id="四-简单的h5语法">四.简单的h5语法</h3>
 <p>标题居中语法：<code>&lt;h2 style = &quot;text-align:center&quot;&gt;XXX标题&lt;/h2&gt;</code></p>
 <p>修改标题颜色：<code>&lt;h4 style = &quot;color: red / #FF0000&quot;&gt;XXX标题&lt;/h4&gt;</code></p>
-<h3 id="五-转义字符">五.转义字符</h3>
-<p>反斜线（<code>\</code>）一般用来打印转义字符，常见的转义字符如下：</p>
-<pre><code>\\ 反斜杠
-\` 反引号
-\* 星号
-\_ 下划线
-\{\} 大括号
-\[\] 中括号
-\(\) 小括号
-\# 井号
-\+ 加号
-\- 减号
-\. 英文句号
-\! 感叹号
-</code></pre>
-<p>但是在打印表格时，使用<code>\\</code>在表格中打印<code>|</code>并无效，使得表格排版错乱，这是要想打印<code>|</code>必须用到它对应的转义字符，为<code>&amp;#124;</code></p>
-<p>常见特殊字符的编码：</p>
-<blockquote>
-<pre><code>- &amp;#45; &amp;minus; — 减号
-! &amp;#33; — 惊叹号Exclamation mark 
-” &amp;#34; &amp;quot; 双引号Quotation mark # &amp;#35; — 数字标志Number sign $ &amp;#36; — 美元标志Dollar sign 
-% &amp;#37; — 百分号Percent sign 
-&amp; &amp;#38; &amp;amp; Ampersand 
-‘ &amp;#39; — 单引号Apostrophe 
-( &amp;#40; — 小括号左边部分Left parenthesis 
-) &amp;#41; — 小括号右边部分Right parenthesis 
-* &amp;#42; — 星号Asterisk 
-+ &amp;#43; — 加号Plus sign 
-&lt; &amp;#60; &amp;lt; 小于号Less than 
-= &amp;#61; — 等于符号Equals sign 
-&gt; &amp;#62; &amp;gt; 大于号Greater than 
-? &amp;#63; — 问号Question mark 
-@ &amp;#64; — Commercial at 
-[ &amp;#91; --- 中括号左边部分Left square bracket 
-\ &amp;#92; --- 反斜杠Reverse solidus (backslash) 
-] &amp;#93; — 中括号右边部分Right square bracket 
-{ &amp;#123; — 大括号左边部分Left curly brace 
-| &amp;#124; — 竖线Vertical bar 
-} &amp;#125; — 大括号右边部分Right curly brace
-</code></pre>
-</blockquote>
-<h3 id="六-任务列表">六.任务列表</h3>
-<p><code>- [ ] XXX</code>表示打印列表中未完成的任务</p>
-<p><code>- [x] XXX</code>表示打印列表已经完成的任务</p>
-<p>示例代码：</p>
-<pre><code>**你是科蜜吗？**
-- [x] 是
-- [ ] 否
-</code></pre>
-<p>效果如下：</p>
-<p><strong>你是科蜜吗？</strong></p>
-<ul>
-<li>[x] 是</li>
-<li>[ ] 否</li>
-</ul>
 
             </div>
 
@@ -407,8 +352,8 @@ $('.btn_click_load').click(function() {
 -->
 <script type="text/javascript">
     var disqus_config = function () {
-        this.page.url = 'http://yoursite.com/2019/05/02/博客/';  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = 'http://yoursite.com/2019/05/02/博客/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        this.page.url = 'http://yoursite.com/2019/05/02/博客奇技淫巧/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://yoursite.com/2019/05/02/博客奇技淫巧/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
 </script>
 
