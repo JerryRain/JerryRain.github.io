@@ -170,25 +170,126 @@
 </nav>
 
         <div id="main">
-            <div class="post_page_title_img" style="height: 25rem;background-image: url(http://www.qyun.vip/content/uploadfile/201809/311b1537198114.png);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;">
-                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2>博客个性化主题</h2></a>
+            <div class="post_page_title_img" style="height: 25rem;background-image: url(https://file.digitaling.com/eImg/uimages/20161114/1479097345940422.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;">
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2>博客的奇技淫巧</h2></a>
             </div>
             <!-- Post -->
             <div class="typo" style="padding: 3rem;">
-                <h1>实现点击出现桃心效果</h1>
-<h2 id="实现效果">实现效果</h2>
-<p><img src="https://upload-images.jianshu.io/upload_images/5308475-78e64c0a80bb559e.gif?imageMogr2/auto-orient/strip%7CimageView2/2/w/66/format/webp" alt="点击效果"></p>
-<h2 id="具体实现方法">具体实现方法</h2>
-<p>在下载的主题文件下，找到js文件夹，新建一个love.js文件，具体代码如下：</p>
-<p><code>!function(e,t,a){function n(){c(&quot;.heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: fixed;}.heart:after{top: -5px;}.heart:before{left: -5px;}&quot;),o(),r()}function r(){for(var e=0;e&lt;d.length;e++)d[e].alpha&lt;=0?(t.body.removeChild(d[e].el),d.splice(e,1)):(d[e].y--,d[e].scale+=.004,d[e].alpha-=.013,d[e].el.style.cssText=&quot;left:&quot;+d[e].x+&quot;px;top:&quot;+d[e].y+&quot;px;opacity:&quot;+d[e].alpha+&quot;;transform:scale(&quot;+d[e].scale+&quot;,&quot;+d[e].scale+&quot;) rotate(45deg);background:&quot;+d[e].color+&quot;;z-index:99999&quot;);requestAnimationFrame(r)}function o(){var t=&quot;function&quot;==typeof e.onclick&amp;&amp;e.onclick;e.onclick=function(e){t&amp;&amp;t(),i(e)}}function i(e){var a=t.createElement(&quot;div&quot;);a.className=&quot;heart&quot;,d.push({el:a,x:e.clientX-5,y:e.clientY-5,scale:1,alpha:1,color:s()}),t.body.appendChild(a)}function c(e){var a=t.createElement(&quot;style&quot;);a.type=&quot;text/css&quot;;try{a.appendChild(t.createTextNode(e))}catch(t){a.styleSheet.cssText=e}t.getElementsByTagName(&quot;head&quot;)[0].appendChild(a)}function s(){return&quot;rgb(&quot;+~~(255*Math.random())+&quot;,&quot;+~~(255*Math.random())+&quot;,&quot;+~~(255*Math.random())+&quot;)&quot;}var d=[];e.requestAnimationFrame=function(){return e.requestAnimationFrame||e.webkitRequestAnimationFrame||e.mozRequestAnimationFrame||e.oRequestAnimationFrame||e.msRequestAnimationFrame||function(e){setTimeout(e,1e3/60)}}(),n()}(window,document);</code></p>
-<p>分析一下你下载的主题是怎样调用js脚本的，我的是在D:\blog\themes\hexo-theme-Mic_Theme\layout文件夹下的layout.ejs文件中调用js脚本的，具体代码如下：</p>
-<p><img src="https://i.ibb.co/Gp3ZnZN/1.png" alt="layout.js"></p>
-<p>因此，在主题的source/js文件夹下新建一个love.js文件，将代码复制进去，然后在impoerJS.js文件中加载love.js文件，具体实现方法如下图：</p>
-<p><img src="https://i.ibb.co/MMdbCmh/2.png" alt="importJS.js"></p>
-<p>修改完之后，再执行</p>
-<p><code>hexo clean</code></p>
-<p><code>hexo d -g</code></p>
-<p>更新博客之后就可以实现点击桃心的效果了~~~</p>
+                <h2 style="text-align : center">
+    博客美化
+</h2>
+<h3 id="一-画流程图">一.画流程图</h3>
+<p>markdown支持画流程图、时序图、甘特图等，可直接在Typora中使用并实时显示效果,其<strong>基本元素包括标题 Title、参与者 participant、箭头 -&gt; 和标签 Notes</strong>。</p>
+<p>流程图语法：</p>
+<pre><code>​&lt;pre class=&quot;mermaid&quot;&gt;   graph LR;
+   A[XXX] --&gt; B[XXX];
+   A --&gt; C[XXX];
+   B --&gt; D(XXX);
+​&lt;/pre&gt;
+</code></pre>
+<p>方向定义：</p>
+<ol>
+<li>TB（ top bottom）表示从上到下</li>
+<li>BT（bottom top）表示从下到上</li>
+<li>RL（right left）表示从右到左</li>
+<li>LR（left right）表示从左到右</li>
+<li>TD与TB一样表示从上到下</li>
+</ol>
+<p>节点和形状：</p>
+<ol>
+<li>默认节点 A</li>
+<li>文本节点 B[bname]</li>
+<li>圆角节点 C(cname)</li>
+<li>圆形节点 D((dname))</li>
+<li>非对称节点 E&gt;ename]</li>
+<li>菱形节点 F{fname}</li>
+</ol>
+<p>连线：</p>
+<p>1.箭头连接 A1–&gt;B1<br>
+2.开放连接 A2—B2<br>
+3.标签连接 A3–text—B3 或者 A3—|text|B3<br>
+4.箭头标签连接 A4–text –&gt;B4 或者 A4–&gt;|text|B4<br>
+5.虚线开放连接 A5.-B5 或者 A5-.-B5 或者 A5…-B5<br>
+6.虚线箭头连接 A6.-&gt;B6 或者 A6-.-&gt;B6<br>
+7.标签虚线连接 A7-.text.-B7<br>
+8.标签虚线箭头连接 A8-.text.-&gt;B8<br>
+9.粗线开放连接 A9<code>===</code>B9<br>
+10.粗线箭头连接 A10<code>==&gt;</code>B10<br>
+11.标签粗线开放连接 A11<code>==text==&gt;</code>B11</p>
+<p>注意：使用时，hexo博客不支持mermaid流程图的显示，需要额外安装和配置</p>
+<p>操作步骤：</p>
+<p>1.进入博客的根目录</p>
+<pre><code>cd your_blog
+</code></pre>
+<p>2.安装插件</p>
+<pre><code>yarn add hexo-filter-mermaid-diagrams
+</code></pre>
+<p>执行完成后在博客根目录下的node_modules种看下有没有<strong>hexo-filter-mermaid-diagrams</strong>这个插件文件夹，如果没有，说明没安装成功。</p>
+<p>3.打开博客根目录下面的_config.yml文件，在文末添加配置</p>
+<pre><code># mermaid chart
+mermaid: ## mermaid url https://github.com/knsv/mermaid
+  enable: true  # default true
+  version: &quot;7.1.2&quot; # default v7.1.2
+  options:  # find more api options from https://github.com/knsv/mermaid/blob/master/src/mermaidAPI.js
+    #startOnload: true  // default true
+</code></pre>
+<p>4.打开主题文件夹，添加如下代码</p>
+<pre><code>{% if theme.mermaid.enable %}
+  <script src="https://unpkg.com/mermaid@{{ theme.mermaid.version }}/dist/mermaid.min.js"></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize({{ JSON.stringify(theme.mermaid.options) }});
+    }
+  </script>
+{% endif %}
+</code></pre>
+<p>每一个人用的主题不同，我用的是miccall这个主题，我是在D:\blog\themes\hexo-theme-Mic_Theme\layout\post.ejs文件添加的</p>
+<p><img src="https://ibb.co/6NFJ9P9%5D" alt="post.ejs"></p>
+<p>完成以上操作就可以在本地和github博客看到自己写的流程图啦😄 😃 😆</p>
+<h3 id="二-文字高亮">二.文字高亮</h3>
+<p>如果想要在文档中标注重要的信息，markdown语法支持用<code>==</code>可以使文字==高亮==</p>
+<p>前提：打开typora的个人偏好设置，将高亮选项选上，然后重启typora就可以看到高亮的效果了，否则就无效了</p>
+<h3 id="三-添加emoji表情">三.添加emoji表情</h3>
+<p><img src="https://twemoji.maxcdn.com/2/72x72/1f430.png" alt="🐰"> <img src="https://twemoji.maxcdn.com/2/72x72/1f428.png" alt="🐨"> <img src="https://twemoji.maxcdn.com/2/72x72/1f438.png" alt="🐸"> <img src="https://twemoji.maxcdn.com/2/72x72/1f41e.png" alt="🐞"> <img src="https://twemoji.maxcdn.com/2/72x72/1f43e.png" alt="🐾"> 😄 <img src="https://twemoji.maxcdn.com/2/72x72/1f499.png" alt="💙"><img src="https://twemoji.maxcdn.com/2/72x72/2708.png" alt="✈️"><img src="https://twemoji.maxcdn.com/2/72x72/1f476.png" alt="👶"><img src="https://twemoji.maxcdn.com/2/72x72/1f424.png" alt="🐤"><img src="https://twemoji.maxcdn.com/2/72x72/1f388.png" alt="🎈"><img src="https://twemoji.maxcdn.com/2/72x72/1f43b.png" alt="🐻"><img src="https://twemoji.maxcdn.com/2/72x72/1f335.png" alt="🌵"><img src="https://twemoji.maxcdn.com/2/72x72/1f46f.png" alt="👯"><img src="https://twemoji.maxcdn.com/2/72x72/1f630.png" alt="😰"><img src="https://twemoji.maxcdn.com/2/72x72/1f342.png" alt="🍂"><img src="https://twemoji.maxcdn.com/2/72x72/1f48b.png" alt="💋"><img src="https://twemoji.maxcdn.com/2/72x72/1f383.png" alt="🎃"><img src="https://twemoji.maxcdn.com/2/72x72/1f419.png" alt="🐙"></p>
+<p>在typora中添加emoji表情，并上传到自己的博客中显示，还是挺好玩的，但是，一开始在编辑器中打印<code>:bush:</code>并没有任何反应，这是 markdown 渲染引擎的问题 ，将 markdown 变成 html 的转换器叫做<code>markdown渲染器</code> 。 Hexo默认是采用<code>hexo-renderer-marked</code>,这个渲染器不支持插件扩展，当然就不行了，还有一个支持插件扩展的是 <code>hexo-renderer-markdown-it</code>，这个支持插件配置，可以使用<code>markwon-it-emoji</code> 插件来支持emoji。需要将原来的 <code>marked</code> 渲染器换成 <code>markdown-it</code>渲染器。</p>
+<p>安装步骤：</p>
+<p>1.进入博客目录，卸载hexo默认的<code>marked</code>渲染器，安装<code>markdown-it</code>渲染器和<code>markdown-it-emoji</code> 插件</p>
+<pre><code>npm un hexo-renderer-marked --save
+npm i hexo-renderer-markdown-it --save
+npm install markdown-it-emoji --save
+</code></pre>
+<p>2.进入博客根目录下面的_config.yml文件，添加下面的配置</p>
+<pre><code># Markdown-it config
+## Docs: https://github.com/celsomiranda/hexo-renderer-markdown-it/wiki
+markdown:
+  render:
+    html: true
+    xhtmlOut: false
+    breaks: true
+    linkify: true
+    typographer: true
+    quotes: '“”‘’'
+  plugins:
+    - markdown-it-abbr
+    - markdown-it-footnote
+    - markdown-it-ins
+    - markdown-it-sub
+    - markdown-it-sup
+    - markdown-it-emoji  ## add emoji
+  anchors:
+    level: 2
+    collisionSuffix: 'v'
+    # If `true`, creates an anchor tag with a permalink besides the heading.
+    permalink: false  
+    permalinkClass: header-anchor
+    # The symbol used to make the permalink
+    permalinkSymbol: ¶
+</code></pre>
+<p>完成上面的步骤，就可以看到那些emoji表情啦~~~</p>
+<p>而且，你还可以在<a href="https://www.emojicopy.com/">emoji</a>或者<a href="https://www.webfx.com/tools/emoji-cheat-sheet/">Emoji</a>找到想要的emoji表情，点击复制或者直接在编辑器输入表情对应的emoji编码也可以。</p>
+<h3 id="四-简单的h5语法">四.简单的h5语法</h3>
+<p>标题居中语法：<code>&lt;h2 style = &quot;text-align:center&quot;&gt;XXX标题&lt;/h2&gt;</code></p>
+<p>修改标题颜色：<code>&lt;h4 style = &quot;color: red / #FF0000&quot;&gt;XXX标题&lt;/h4&gt;</code></p>
 
             </div>
 
@@ -251,8 +352,8 @@ $('.btn_click_load').click(function() {
 -->
 <script type="text/javascript">
     var disqus_config = function () {
-        this.page.url = 'http://yoursite.com/2019/04/26/小心心/';  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = 'http://yoursite.com/2019/04/26/小心心/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        this.page.url = 'http://yoursite.com/2019/05/02/博客/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://yoursite.com/2019/05/02/博客/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
 </script>
 
