@@ -372,6 +372,216 @@ markdown:
 <iframe width="768" height="500" src="https://v.qq.com/x/page/a0864hu5nda.html" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <pre><code>&lt;iframe width=&quot;768&quot; height=&quot;500&quot; src=&quot;https://v.qq.com/x/page/a0864hu5nda.html&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;/iframe&gt;
 </code></pre>
+<h3 id="十-插入live-2d动画">十.插入live.2d动画</h3>
+<p><strong>安装插件</strong></p>
+<p>1、在博客根目录下面执行</p>
+<pre><code>npm install --save hexo-helper-live2d
+</code></pre>
+<p>2、下载安装你喜欢的模型</p>
+<p><a href="https://huaji8.top/post/live2d-plugin-2.0/">模型展示图</a></p>
+<blockquote>
+<ul>
+<li>live2d-widget-model-chitose</li>
+<li>live2d-widget-model-epsilon2_1</li>
+<li>live2d-widget-model-gf</li>
+<li>live2d-widget-model-haru</li>
+<li>live2d-widget-model-haruto</li>
+<li>live2d-widget-model-hibiki</li>
+<li>live2d-widget-model-hijiki</li>
+<li>live2d-widget-model-izumi</li>
+<li>live2d-widget-model-koharu</li>
+<li>live2d-widget-model-miku</li>
+<li>live2d-widget-model-ni-j</li>
+<li>live2d-widget-model-nico</li>
+<li>live2d-widget-model-nietzsche</li>
+<li>live2d-widget-model-nipsilon</li>
+<li>live2d-widget-model-nito</li>
+<li>live2d-widget-model-shizuku</li>
+<li>live2d-widget-model-tororo</li>
+<li>live2d-widget-model-tsumiki</li>
+<li>live2d-widget-model-unitychan</li>
+<li>live2d-widget-model-wanko</li>
+<li>live2d-widget-model-z16</li>
+</ul>
+</blockquote>
+<p>3、配置文件</p>
+<p>①在博客根目录下创建live2d_models文件夹</p>
+<p>②将下载好的模型（存在博客目录下面的node_modules文件夹下，名字一般为live2d-widget-model-XXX）复制到新创建的live2d_models文件夹中</p>
+<p>③在博客根目录下，修改_config.yml文件，在文末添加下面代码</p>
+<pre><code>live2d:
+  enable: true
+  scriptFrom: local
+  pluginRootPath: live2dw/
+  pluginJsPath: lib/
+  pluginModelPath: assets/
+  tagMode: false
+  debug: false
+  model:
+    use: live2d-widget-model-XXX（自己下载的模型名称）
+  display:
+    position: right
+    width: 150
+    height: 300
+  mobile:
+    show: true
+</code></pre>
+<p>关于live2d相关配置参数说明：</p>
+<table>
+<thead>
+<tr>
+<th>配置项</th>
+<th>类型</th>
+<th>属性</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>enable</td>
+<td>Boolean</td>
+<td><code>true</code>或者<code>false</code></td>
+<td>控制live2d插件是否生效。</td>
+</tr>
+<tr>
+<td>scriptFrom</td>
+<td>String</td>
+<td><code>local</code>或者<code>jsdelivr</code>或者<code>unpkg</code></td>
+<td>l2dwidget.js使用的CDN地址，local表示使用本地地址。</td>
+</tr>
+<tr>
+<td>pluginRootPath</td>
+<td>String</td>
+<td>例如：<code>live2dw/</code></td>
+<td>插件在站点上根目录的相对路径。</td>
+</tr>
+<tr>
+<td>pluginJsPath</td>
+<td>String</td>
+<td>例如：<code>lib/</code></td>
+<td>脚本文件相对与插件根目录路径。</td>
+</tr>
+<tr>
+<td>pluginModelPath</td>
+<td>String</td>
+<td>例如：<code>assets/</code></td>
+<td>模型文件相对与插件根目录路径。</td>
+</tr>
+<tr>
+<td>tagMode</td>
+<td>Boolean</td>
+<td><code>true</code>或者<code>false</code></td>
+<td>标签模式, 控制是否仅替换tag标签而非插入到所有页面中。</td>
+</tr>
+<tr>
+<td>debug</td>
+<td>Boolean</td>
+<td><code>true</code>或者<code>false</code></td>
+<td>调试模式, 控制是否在控制台输出日志。</td>
+</tr>
+<tr>
+<td>model.use</td>
+<td>String</td>
+<td>例如：<code>live2d-widget-model-hijiki</code></td>
+<td>npm 模块包名（上文例中即使用的这个方式）。</td>
+</tr>
+<tr>
+<td>model.use</td>
+<td>String</td>
+<td>例如：<code>hijiki</code></td>
+<td>博客根目录/live2d_models/ 下的目录名。</td>
+</tr>
+<tr>
+<td>model.use</td>
+<td>String</td>
+<td>例如：<code>./wives/hijiki</code></td>
+<td>相对于博客根目录的路径。</td>
+</tr>
+<tr>
+<td>model.use</td>
+<td>String</td>
+<td>例如：<code>https://域名/model.json</code></td>
+<td>你自定义live2d模型json文件的url。</td>
+</tr>
+<tr>
+<td>model.scale</td>
+<td>Number</td>
+<td>可选值，默认值为 <code>1</code></td>
+<td>模型与canvas的缩放。</td>
+</tr>
+<tr>
+<td>model.hHeadPos</td>
+<td>Number</td>
+<td>可选值，默认值为 <code>0.5</code></td>
+<td>模型头部横坐标。</td>
+</tr>
+<tr>
+<td>model.vHeadPos</td>
+<td>Number</td>
+<td>可选值，默认值为 <code>0.618</code></td>
+<td>模型头部横坐标。</td>
+</tr>
+<tr>
+<td>display.superSample</td>
+<td>Number</td>
+<td>可选值，默认值为 <code>2</code></td>
+<td>超采样等级。</td>
+</tr>
+<tr>
+<td>display.width</td>
+<td>Number</td>
+<td>可选值，默认值为 <code>150</code></td>
+<td>canvas的长度。</td>
+</tr>
+<tr>
+<td>display.height</td>
+<td>String</td>
+<td>可选值，默认值为 <code>300</code></td>
+<td>canvas的高度。</td>
+</tr>
+<tr>
+<td>display.position</td>
+<td>Number</td>
+<td>可选值，默认值为 <code>right</code></td>
+<td>显示位置：左或右。</td>
+</tr>
+<tr>
+<td>display.hOffset</td>
+<td>Number</td>
+<td>可选值，默认值为 <code>0</code></td>
+<td>canvas水平偏移。</td>
+</tr>
+<tr>
+<td>display.vOffset</td>
+<td>Number</td>
+<td>可选值，默认值为 <code>-20</code></td>
+<td>canvas水平偏移。</td>
+</tr>
+<tr>
+<td>mobile.show</td>
+<td>Boolean</td>
+<td>可选值，默认值为 <code>true</code></td>
+<td>控制是否在移动设备上显示。</td>
+</tr>
+<tr>
+<td>mobile.scale</td>
+<td>Number</td>
+<td>可选值，默认值为 <code>0.5</code></td>
+<td>移动设备上的缩放。</td>
+</tr>
+<tr>
+<td>react.opacityDefault</td>
+<td>Number</td>
+<td>可选值，默认值为 <code>0.7</code></td>
+<td>默认透明度。</td>
+</tr>
+<tr>
+<td>react.opacityOnHover</td>
+<td>Number</td>
+<td>可选值，默认值为 <code>0.2</code></td>
+<td>鼠标移上透明度（此项貌似没有效果）。</td>
+</tr>
+</tbody>
+</table>
 
             </div>
 
@@ -472,7 +682,7 @@ $('.btn_click_load').click(function() {
 			
         </div>
     </div>
-</body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/assets/tororo.model.json"},"display":{"superSample":2,"width":200,"height":200,"position":"right","hOffset":-25,"vOffset":-20},"mobile":{"show":false,"scale":0.05},"react":{"opacityDefault":1,"opacityOnHover":0.2}});</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/assets/tororo.model.json"},"display":{"superSample":2,"width":200,"height":200,"position":"right","hOffset":-25,"vOffset":-20},"mobile":{"show":false,"scale":0.05},"react":{"opacityDefault":1,"opacityOnHover":0.2}});</script></body>
 
 
 
