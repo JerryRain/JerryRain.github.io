@@ -175,7 +175,7 @@
             </div>
             <!-- Post -->
             <div class="typo" style="padding: 3rem;">
-                <p></p><h2 style="text-align:center">C++学习笔记</h2><p></p>
+                <p></p><h2 style="text-align:center">C++基础笔记</h2><p></p>
 <h3 id="一-c语言与c-的区别">一.C语言与C++的区别</h3>
 <p>C语言：面向过程（函数与函数交互）​ 🙈</p>
 <p>C++：增加面向对象机制（对象与对象交互）-- 一种管理源代码的方式​ 🙉</p>
@@ -1473,7 +1473,169 @@ int main()
 <li>int * p1-- p2++  ： 每次移动4个字节</li>
 <li>double * p1-- p2++ ： 每次移动8个字节</li>
 </ul>
-<p>C++学习到此结束😁😁😁</p>
+<p></p><h2 style="text-align:center">C++进阶</h2><p></p>
+<h3 id="一-函数">一.函数</h3>
+<pre class="mermaid">graph LR;
+A[内置函数] --> B(STL和Boost C++);
+A --> C(自定义函数);</pre>
+<pre class="mermaid">graph LR;
+A[C++标准函数] --> B(输入/输出)
+A --> C(数值)
+A --> D(诊断)
+A --> E(通用工具)
+A --> F(国际化)
+A --> G(语言支持)</pre>
+<pre class="mermaid">graph LR;
+A[STL] --> B[字符串]
+A --> C[算法]
+A --> D[容器]
+C --> E[迭代器]
+D --> E[迭代器]</pre>
+<p>函数“三要素”：</p>
+<ul>
+<li>返回值类型</li>
+<li>函数名</li>
+<li>参数列表</li>
+</ul>
+<pre class=" language-language-c"><code class="language-language-c">return_type functionName(parameterList)
+{
+    //函数体
+}
+</code></pre>
+<p>书写自定义函数：</p>
+<ol>
+<li>
+<p>函数原型与函数定义的头部类似，最后以分号结束</p>
+</li>
+<li>
+<p>函数原型中的参数名称可以省略，只写参数类型</p>
+</li>
+<li>
+<p>C++中返回值类型不能是数组，但可以是其他任何类型（可以将数组作为结构或对象组成部分返回）</p>
+</li>
+</ol>
+<p>示例：</p>
+<pre class=" language-language-c++"><code class="language-language-c++"># include <iostream>
+using namespace std;
+
+int sum(int, int); //函数原型
+int main()
+{
+    //函数调用
+    int result = sum(5,3);
+    cout << "结果为：" << result << endl;
+    return 0;
+}
+//函数定义
+int sum(int sum1, int sum2)
+{
+    //函数实现代码
+    int result = num1 + num2;
+    return result;
+}
+</iostream></code></pre>
+<p><strong><em>按值传递</em></strong>：</p>
+<p>给函数传递变元（参数）时，变元（参数）值不会直接传递给函数，而是先制作变元（参数）值得副本，储存在栈上，再使用这个副本可用于函数，而不是使用初始值。</p>
+<pre class=" language-language-c++"><code class="language-language-c++">#include <iostream>
+using namespace std;
+
+void changge(int num)
+{
+    num++;
+}
+
+int main()
+{
+    int num = 10;
+    change(num);         //传的是地址值
+    cout << num << endl; //打印值仍然是10
+}
+</iostream></code></pre>
+<p>注意：</p>
+<p>1、数组作为函数实参时，只传递<strong>数组的地址（首地址）</strong>，并不传递整个数组的空间</p>
+<p>2、当用数组名作为实参调用函数时，数组首地址指针就被传递到函数中</p>
+<p><strong>函数地址</strong></p>
+<p>函数的地址是储存其机器语言代码的内存开始地址</p>
+<p>好处：可以在不同的时间使用不同的函数</p>
+<p>函数指针的声明：</p>
+<pre class=" language-language-c++"><code class="language-language-c++">//函数原型：
+double sum(double,double);
+//函数指针声明：
+double (*ptrSum)(double, double)
+</code></pre>
+<p>注意：</p>
+<p>1、该语句声明了一个指针ptrSum,指向一个函数</p>
+<p>2、double *ptrSum(double, double)不是函数指针，而是声明了一个函数ptrSum，返回double *类型</p>
+<p>3、C++11中可以使用auto ptrFunc = …;自动推断类型（自动类型推断需要确保变量的类型与初值类型一致）</p>
+<p>4、可以使用typedef简化声明：</p>
+<pre><code>typedef double (*ptrCalc)(double double)
+
+ptrCalc ptrFunc;
+</code></pre>
+<p><strong>内联（inline）函数</strong>：</p>
+<p>内联函数是C++为提高程序运行速度所做的一项改进，与常规函数区别不在于编写方式，而在于<strong>被调用时的运行机制不同</strong>。</p>
+<p>编译器使用函数代码替换函数调用。</p>
+<p>使用建议：</p>
+<p>1、如果执行函数代码的时间比处理函数调用机制的时间长，则节省的时间将只占整个过程的很小一部分；</p>
+<p>2、如果代码执行时间很短，内联调用就可以节省大部分时间。</p>
+<p>使用内联特性（采取其一）：</p>
+<ol>
+<li>在函数声明前加关键字inline</li>
+<li>在函数定义前加关键字inline</li>
+</ol>
+<p><strong>引用</strong>：</p>
+<p>引用(reference)：</p>
+<p>为对象起了另外一个名字（引用即别名）。</p>
+<p>注意：</p>
+<p>1、引用并非对象，只是为一个已经存在的对象起的别名</p>
+<p>2、引用更接近于const指针，一旦与某个变量关系关联起来，就将一直效忠于它</p>
+<p>3、将引用变量用作参数时，函数将使用原始数据，而非副本</p>
+<p>4、当数据所占用内存比较大时，建议使用引用参数</p>
+<p>5、引用参数中使用const可以避免参数被无意修改</p>
+<p>6、引用参数建议尽可能使用const</p>
+<p>返回引用：</p>
+<p>函数返回引用类型：</p>
+<p>1、不要返回局部变量的引用</p>
+<p>2、函数可以不返回值，默认返回传入的引用对象本身</p>
+<p>3、返回引用时，要求函数参数中包含被返回的引用对象</p>
+<p>使用引用参数：</p>
+<p>1、能够修改调用函数中的数据对象</p>
+<p>2、数据对象较大时传递引用可以提高程序的运行效率</p>
+<p>3、函数中不需要修改传递的参数：</p>
+<ul>
+<li>如果数据对象很小，建议使用传递</li>
+<li>传递数组只能使用指针，并使用const关键字</li>
+<li>较大的对象则使用const指针或引用，以提高程序的效率</li>
+</ul>
+<p>4、函数中需要修改传递的参数：</p>
+<ul>
+<li>数据对对象是基本类型或结构时，可以使用指针或引用（基本类型建议使用指针）</li>
+<li>数据对象是数组时只能使用指针</li>
+<li>数据对象是类对象时，要求使用引用</li>
+</ul>
+<p>使用默认参数：</p>
+<p>1、默认值可以在函数原型或定义中给出，不能在这两个位置同时出现</p>
+<p>2、对于带参数列表的函数，必须从右向左添加默认值</p>
+<p><strong>函数重载(overloading)</strong></p>
+<ul>
+<li>指可以有多个同名的函数</li>
+<li>函数名相同，参数列表不同（特征标不同）</li>
+<li>调用匹配函数时，不区分const和非const变量</li>
+</ul>
+<p><strong>函数模板（Function Template）</strong></p>
+<p>函数模板，实际上就是建立一个<strong>通用函数</strong></p>
+<ul>
+<li>函数定义时不指定具体的数据类型（使用虚拟类型代替）</li>
+<li>函数被调用时编译器根据实参反推数据类型——类型的参数化</li>
+</ul>
+<pre class=" language-language-c++"><code class="language-language-c++">//模板头与函数声明或定义永远是不可分割的整体
+template <typename 类型参数1, typename 类型参数2, ...>
+返回值类型 函数名(形参列表)
+{
+    //在函数体中可以使用类型参数
+}
+</typename></code></pre>
+<p>C++学习到此结束💥 💥 💥</p>
 
             </div>
 
