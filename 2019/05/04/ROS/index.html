@@ -170,25 +170,155 @@
 </nav>
 
         <div id="main">
-            <div class="post_page_title_img" style="height: 25rem;background-image: url(http://www.qyun.vip/content/uploadfile/201809/311b1537198114.png);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;">
-                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2>博客个性化主题</h2></a>
+            <div class="post_page_title_img" style="height: 25rem;background-image: url(https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1556912087416&amp;di=1b8985b01ff0f4cf3025d4f1e0b4faab&amp;imgtype=0&amp;src=http%3A%2F%2Fimg.mp.itc.cn%2Fupload%2F20160727%2Ffb97e098cbad4fb7ba59a046784fd49c_th.png);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;">
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2>ROS</h2></a>
             </div>
             <!-- Post -->
             <div class="typo" style="padding: 3rem;">
-                <h1>实现点击出现桃心效果</h1>
-<h2 id="实现效果">实现效果</h2>
-<p><img src="https://upload-images.jianshu.io/upload_images/5308475-78e64c0a80bb559e.gif?imageMogr2/auto-orient/strip%7CimageView2/2/w/66/format/webp" alt="点击效果"></p>
-<h2 id="具体实现方法">具体实现方法</h2>
-<p>在下载的主题文件下，找到js文件夹，新建一个love.js文件，具体代码如下：</p>
-<p><code>!function(e,t,a){function n(){c(&quot;.heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: fixed;}.heart:after{top: -5px;}.heart:before{left: -5px;}&quot;),o(),r()}function r(){for(var e=0;e&lt;d.length;e++)d[e].alpha&lt;=0?(t.body.removeChild(d[e].el),d.splice(e,1)):(d[e].y--,d[e].scale+=.004,d[e].alpha-=.013,d[e].el.style.cssText=&quot;left:&quot;+d[e].x+&quot;px;top:&quot;+d[e].y+&quot;px;opacity:&quot;+d[e].alpha+&quot;;transform:scale(&quot;+d[e].scale+&quot;,&quot;+d[e].scale+&quot;) rotate(45deg);background:&quot;+d[e].color+&quot;;z-index:99999&quot;);requestAnimationFrame(r)}function o(){var t=&quot;function&quot;==typeof e.onclick&amp;&amp;e.onclick;e.onclick=function(e){t&amp;&amp;t(),i(e)}}function i(e){var a=t.createElement(&quot;div&quot;);a.className=&quot;heart&quot;,d.push({el:a,x:e.clientX-5,y:e.clientY-5,scale:1,alpha:1,color:s()}),t.body.appendChild(a)}function c(e){var a=t.createElement(&quot;style&quot;);a.type=&quot;text/css&quot;;try{a.appendChild(t.createTextNode(e))}catch(t){a.styleSheet.cssText=e}t.getElementsByTagName(&quot;head&quot;)[0].appendChild(a)}function s(){return&quot;rgb(&quot;+~~(255*Math.random())+&quot;,&quot;+~~(255*Math.random())+&quot;,&quot;+~~(255*Math.random())+&quot;)&quot;}var d=[];e.requestAnimationFrame=function(){return e.requestAnimationFrame||e.webkitRequestAnimationFrame||e.mozRequestAnimationFrame||e.oRequestAnimationFrame||e.msRequestAnimationFrame||function(e){setTimeout(e,1e3/60)}}(),n()}(window,document);</code></p>
-<p>分析一下你下载的主题是怎样调用js脚本的，我的是在D:\blog\themes\hexo-theme-Mic_Theme\layout文件夹下的layout.ejs文件中调用js脚本的，具体代码如下：</p>
-<p><img src="https://i.ibb.co/Gp3ZnZN/1.png" alt="layout.js"></p>
-<p>因此，在主题的source/js文件夹下新建一个love.js文件，将代码复制进去，然后在impoerJS.js文件中加载love.js文件，具体实现方法如下图：</p>
-<p><img src="https://i.ibb.co/MMdbCmh/2.png" alt="importJS.js"></p>
-<p>修改完之后，再执行</p>
-<p><code>hexo clean</code></p>
-<p><code>hexo d -g</code></p>
-<p>更新博客之后就可以实现点击桃心的效果了~~~</p>
+                <h2 style="text-align : center">
+    Robert Operating System
+</h2>
+<h3 id="一-什么是ros">一.什么是ROS</h3>
+<p>ROS(Robert Operating System)，即机器人操作系统，是运行在Linux系统的一个中间件或者说是类操作系统，提供了各种功能，包括硬件抽象、底层设备控制、常用函数的实现、进程间信息传递、包管理等等。</p>
+<pre class="mermaid">graph LR;
+A[ROS] --> B[硬件抽象]
+A --> C[底层设备控制]
+A --> D[常用函数的实现]
+A --> E[进程间消息传递]
+A --> F[包管理]</pre>
+<p>官方的解释：</p>
+<pre class="mermaid">graph LR;
+A[ROS] --> B[框架]
+B --> F[分布式]
+B --> G[进程管理--节点]
+B --> H[进程间通信]
+A --> C[工具]
+C --> I[仿真]
+I --> M[Gazebo]
+I --> N[Rviz]
+C --> J[数据可视化]
+C --> K[图形界面]
+C --> L[数据记录]
+A --> D[功能]
+D --> O[控制]
+D --> P[规划]
+D --> Q[视觉]
+D --> R[建图]
+A --> E[社区]
+E --> S[软件包管理]
+E --> T[文档]
+E --> U[教程]</pre>
+<p>分布式架构的好处：扩展性好，软件复用率高。</p>
+<h3 id="二-ros的安装">二.ROS的安装</h3>
+<p>1.版本选择</p>
+<p>ROS主流有indigo、kinetic和melodic三个版本，对ROS兼容性最好的当属于Ubuntu系统（不建议装在虚拟机上），ROS上面三个版本对应的Ubuntu版本分别为14.04、16.04和18.04，18.04是最新版本，但容易遇到新奇的bug，而且移植方面也会存在各种问题，所以还是建议安装Ubuntu16.04版本的ROS Kinetic版本最好。</p>
+<p>2.安装步骤</p>
+<p>（前提：安装好双系统。。。）</p>
+<p>①<strong><em>软件中心配置</em></strong></p>
+<p>首先打开软件和更新，打开后按照下图进行配置（确保你的&quot;restricted&quot;， “universe，” 和 &quot;multiverse.&quot;前是打上勾的，即全部打上勾）：</p>
+<p><img src="https://bbsmax.ikafan.com/static/L3Byb3h5L2h0dHAvaW1hZ2VzMjAxNS5jbmJsb2dzLmNvbS9ibG9nLzE0NDA4LzIwMTUxMi8xNDQwOC0yMDE1MTIyMDE2NDAyNzE0OC0xODEwMzc5NDEwLmpwZw==.jpg" alt="软件和更新设置"></p>
+<p>tips：推荐使用清华源</p>
+<p>②<strong><em>添加源</em></strong></p>
+<p>使用<code>Ctrl+Alt+T</code>打开终端，输入下面指令：</p>
+<pre><code>sudo sh -c 'echo &quot;deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main&quot; &gt; /etc/apt/sources.list.d/ros-latest.list'
+</code></pre>
+<p>设置密钥：</p>
+<pre><code>sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key 0xB01FA116
+</code></pre>
+<p>③<strong><em>安装ROS</em></strong></p>
+<p>先使用下面这两条指令更新软件库（在终端执行）：</p>
+<pre><code>sudo apt-get update
+</code></pre>
+<pre><code>sudo apt-get upgrade
+</code></pre>
+<p>tips：记住先update再upgrade</p>
+<p>安装ROS</p>
+<pre><code>sudo apt-get install ros-kinetic-desktop-full
+</code></pre>
+<p>安装完成后，可以用下面的命令来查看可使用的包：</p>
+<pre><code>apt-cache search ros-kinetic
+</code></pre>
+<p>④<strong><em>初始化ROS</em></strong></p>
+<p>初始化rosdep:</p>
+<pre><code>sudo rosdep init
+</code></pre>
+<pre><code>rosdep update
+</code></pre>
+<p>初始化环境变量：</p>
+<pre><code>echo &quot;source /opt/ros/kinetic/setup.bash&quot; &gt;&gt; ~/.bashrc
+</code></pre>
+<pre><code>source ~/.bashrc
+</code></pre>
+<p>tips：在开发过程中，有的找不到 Package, 找不到node, 很多情况下都是没有添加source导致没有初始化环境变量，搜索不到包或者节点路径。而且以后开发中，修改了.bashrc文件后直接source .bashrc文件并不生效，需要关掉终端新开一个才会生效。</p>
+<p>⑤<strong><em>安装ROS相关插件和package</em></strong></p>
+<p>最后，安装一个非常有用的插件：</p>
+<pre><code>sudo apt-get install python-rosinstall
+</code></pre>
+<p>如果安装ROS的其他package，可使用下面指令：</p>
+<pre><code>sudo apt-get install ros-kinetic-...(对应package名称)
+例如：
+sudo apt-get install ros-kinetic-turtlebot*(使用正则表达式即表示安装kinetic版本的与turtlebot有关的一切软件包)
+</code></pre>
+<p>⑥<strong><em>测试ROS</em></strong></p>
+<p>启动ROS环境：</p>
+<pre><code>roscore
+</code></pre>
+<p>如果看到下图，就证明ROS安装成功了：</p>
+<p><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1556909818660&amp;di=6d613ce051b5ef84891480b68497f671&amp;imgtype=0&amp;src=http%3A%2F%2Fimg.dongcoder.com%2Fup%2Finfo%2F201810%2F20181021001550427876.png" alt="roscore"></p>
+<p>ROS开发IDE：RoboWare Studio</p>
+<h3 id="三-ros基础知识">三.ROS基础知识</h3>
+<h4 id="1-ros的工程结构-文件系统级">1.ROS的工程结构（文件系统级）</h4>
+<pre class="mermaid">graph TD;
+a[catkin workspace] --> b[src]
+a --> c[build]
+a --> d[devel]
+b --> e[package1]
+b --> f[package2]
+b --> g[package...]
+f --> h[CMakelists.txt]
+f --> i[package.xml]
+f --> k[scripts]
+k --> q[*.py]
+k --> r[*.sh]
+f --> l[msg]
+l --> s[*.msg]
+f --> m[srv]
+m --> t[*.srv]
+f --> n[include]
+n --> u[*.h]
+f --> o[src]
+o --> v[*.cpp]
+f --> p[launch]
+p --> w[*.launch]</pre>
+<p><strong>catkin工作空间</strong>：</p>
+<ul>
+<li>ROS定制的编译构建系统</li>
+<li>对CMake的扩展</li>
+</ul>
+<p>建立工作空间：(在终端执行这三行命令)</p>
+<pre><code>mkdir ~p ~/catkin_ws/src
+cd ~/catkin_ws
+catkin_make （编译）
+source ~/catkin_ws/devel/setup.bash (编译完成后要source刷新环境)
+</code></pre>
+<p>注意：</p>
+<p>Ⅰ.一定要在catkin_ws这个目录下编译，在这个目录下的其他文件夹下编译会出错；</p>
+<p>Ⅱ.编译完成后一定要刷新环境，有个一劳永逸的办法就是:</p>
+<p>⑴在.bashrc文件中添加下面这行语句：</p>
+<pre><code>source ~/catkin_ws/devel/setup.bash
+</code></pre>
+<p>⑵或者直接在终端输入下面这句命令行：</p>
+<pre><code>echo “source ~/catkin_ws/devel/setup.bash” &gt;&gt; ~/.bashrc
+</code></pre>
+<p><strong>build文件夹</strong>：</p>
+<p>cmake以及catkin缓存和中间文件</p>
+<p><strong>devel文件夹</strong>：</p>
+<p>存放目标文件，比如头文件、动态链接库、静态链接库、可执行文件等。</p>
+<pre class="mermaid">graph LR;
+a[devel文件夹] --> b(头文件)
+a --> c(动态链接库)
+a --> d(静态链接库)
+a --> e(可执行文件)</pre>
 
             </div>
 
@@ -251,8 +381,8 @@ $('.btn_click_load').click(function() {
 -->
 <script type="text/javascript">
     var disqus_config = function () {
-        this.page.url = 'http://yoursite.com/2019/04/26/小心心/';  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = 'http://yoursite.com/2019/04/26/小心心/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        this.page.url = 'http://yoursite.com/2019/05/04/ROS/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://yoursite.com/2019/05/04/ROS/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
 </script>
 
