@@ -310,7 +310,8 @@ source ~/catkin_ws/devel/setup.bash (编译完成后要source刷新环境)
 <p>⑵或者直接在终端输入下面这句命令行：</p>
 <pre><code>echo “source ~/catkin_ws/devel/setup.bash” &gt;&gt; ~/.bashrc
 </code></pre>
-<p><strong>build文件夹</strong>：</p>
+<p>这样每次打开终端就可以自动刷新环境变量，不需要再手动刷新环境变量。</p>
+<p>build文件夹**：</p>
 <p>cmake以及catkin缓存和中间文件</p>
 <p><strong>devel文件夹</strong>：</p>
 <p>存放目标文件，比如头文件、动态链接库、静态链接库、可执行文件等。</p>
@@ -319,6 +320,1083 @@ a[devel文件夹] --> b(头文件)
 a --> c(动态链接库)
 a --> d(静态链接库)
 a --> e(可执行文件)</pre>
+<p><strong>src文件夹</strong>：</p>
+<p>package源代码</p>
+<p>package是catkin编译的基本单元，在catkin目录下递归地查找每一个package</p>
+<pre class="mermaid">graph TD;
+a[catkin workspace] --> b[src]
+b --> c[package1]
+b --> d[package2]
+b --> e[folder]
+e --> f[package3]
+e --> g[package4]</pre>
+<p></p><h4>2.package</h4><p></p>
+<p>package，即功能包，是ROS软件系统的基本组织形式，是catkin编译的基本单元，一个package可以包含多个可执行文件（节点）。</p>
+<p>package的最精简结构：</p>
+<pre class="mermaid">graph TD;
+a[package] --> b[CMakelists.txt]
+a --> c[package.xml]</pre>
+<p><strong>CMakelists.txt</strong>:</p>
+<p>规定catkin编译的规则</p>
+<p>例如：源文件、依赖项、目标文件</p>
+<p>CMakelists.txt文件相关介绍：</p>
+<blockquote>
+<p>cmake_minimum_required()     #指定catkin最低版本</p>
+<p>project()                                        #指定软件包名称</p>
+<p>find_package()                             #指定编译时需要的依赖项</p>
+<p>add_message_files()/add_sevice_files()/add_action_files()</p>
+<p>​                                                       #添加消息文件/服务文件/动作文件</p>
+<p>genenrate_messages()               #生成消息、服务、动作</p>
+<p>catkin_package()                          #指定catkin信息给编译系统生成Cmake文件</p>
+<p>add_library()/add_executable()  #指定生成库文件、可执行文件</p>
+<p>target_link_libraries()                   #指定可执行文件去链接哪些库</p>
+<p>catkin_add_gtest()                        #添加测试单元</p>
+<p>install()                                           #生成可安装目标</p>
+</blockquote>
+<p><strong>package.xml</strong>:</p>
+<p>定义package的属性</p>
+<p>例如：包名、版本号、作者、依赖等</p>
+<p>package.xml的具体写法：（平时主要改&lt;build_depend&gt;和&lt;run_depend&gt;两项）</p>
+<blockquote>
+<p><package>                                   <!--根标签--></package></p>
+<p>​	<name>                                  <!--包名--></name></p>
+<p>​	<version>                           <!--版本号--></version></p>
+<p>​	<description>                  <!--包描述--></description></p>
+<p>​	<maintainer>                    <!--维护者--></maintainer></p>
+<p>​	<license>                           <!--软件许可--></license></p>
+<p>​	&lt;buildtool_depend&gt;            <!--编译工具--></p>
+<p>​	&lt;build_depend&gt;                   <!--编译时的依赖--></p>
+<p>​	&lt;run_depend&gt;                      <!--运行时的依赖--></p>
+<p>                                 <!--根标签--></p>
+</blockquote>
+<p><strong>代码文件</strong>：</p>
+<ol>
+<li>脚本(shell、python)</li>
+<li>C++(头文件、源文件)</li>
+</ol>
+<pre class="mermaid">graph TD;
+a[package] --> b[CMakelists.txt]
+a --> c[package.xml]
+a --> d[scripts]
+d --> g[*.py]
+d --> h[*.sh]
+a --> e[include]
+e --> i[*.h]
+a --> f[src]
+f --> j[*.cpp]
+f --> k[*.py:import]</pre>
+<p><strong>自定义通信格式</strong>：</p>
+<ul>
+<li>消息(msg)</li>
+<li>服务(srv)</li>
+<li>动作(action)</li>
+</ul>
+<pre class="mermaid">graph TD;
+a[package] --> b[CMakelists.txt]
+a --> c[package.xml]
+a --> d[msg]
+d --> g[*.msg]
+a --> e[srv]
+e --> h[*.srv]
+a --> f[action]
+f --> i[*.action]</pre>
+<p><strong>launch以及配置文件</strong>：</p>
+<p>launch文件(launch)</p>
+<p>配置文件(yaml)</p>
+<pre class="mermaid">graph TD;
+a[package] --> b[CMakelists.txt]
+a --> c[package.xml]
+a --> d[config]
+d --> e[*.yaml]
+a --> f[launch]
+f --> g[*.launch]</pre>
+<p><strong>总结</strong>：</p>
+<p>完整的package文件目录应该如下：</p>
+<pre class="mermaid">graph LR;
+a[package] --> b[CMakelists.txt]
+a --> c[package.xml]
+a --> d[scripts]
+a --> l[msg]
+l --> o[*.msg]
+a --> m[srv]
+m --> p[*.srv]
+a --> n[launch]
+n --> q[*.launch]
+a --> r[config]
+r --> s[*.yaml]
+d --> g[*.py]
+d --> h[*.sh]
+a --> e[include]
+e --> i[*.h]
+a --> f[src]
+f --> j[*.cpp]
+f --> k[*.py:import]</pre>
+<p></p><h4>3.常用指令</h4><p></p>
+<p><strong>①rospack</strong></p>
+<p>查找某个package的地址：</p>
+<pre><code>rospack find package_name
+</code></pre>
+<p>列出本地所有package:</p>
+<pre><code>rospack list
+</code></pre>
+<p><strong>②roscd</strong></p>
+<p>跳转到某个package路径下：</p>
+<pre><code>roscd package_name
+</code></pre>
+<p><strong>③rosls</strong></p>
+<p>列举某个package下的文件信息：</p>
+<pre><code>rosls package_name
+</code></pre>
+<p><strong>④rosed</strong></p>
+<p>编辑package中的文件：</p>
+<pre><code>rosed package_name file_name
+</code></pre>
+<p><strong>⑤catkin_create_pkg</strong></p>
+<p>创建一个package：</p>
+<pre><code>catkin_create_pkg &lt;pkg_name&gt; [deps]
+</code></pre>
+<p><strong>⑥rosdep</strong></p>
+<p>安装某个package所需要的依赖</p>
+<pre><code>rosdep install [pkg_name]
+</code></pre>
+<p><strong>Metepackage</strong>:</p>
+<p>一个“虚包”，把具有相关类似功能的软件包组织起来，相当于把依赖项的软件包都安装上，比如安装ROS时的指令<code>sudo apt-get install ros-kinetic-desktop-full</code>就是一个metepackage。</p>
+<table>
+<thead>
+<tr>
+<th>Metapackage名称</th>
+<th>描述</th>
+<th>链接</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>navigation</td>
+<td>导航相关的功能包集</td>
+<td><a href="https://github.com/ros-planning/navigation">navigation</a></td>
+</tr>
+<tr>
+<td>moveit</td>
+<td>运动规划相关的（主要是机械臂）功能包集</td>
+<td><a href="https://github.com/ros-planning/moveit">moveit</a></td>
+</tr>
+<tr>
+<td>image_pipeline</td>
+<td>图像获取、处理的功能包集</td>
+<td><a href="https://github.com/ros-perception/image_pipeline">image_pipeline</a></td>
+</tr>
+<tr>
+<td>vision_opencv</td>
+<td>ROS与Opencv交互的功能包集</td>
+<td><a href="https://github.com/ros-perception/vision_opencv">ros_opencv</a></td>
+</tr>
+<tr>
+<td>turtlebot</td>
+<td>Turtlebot机器人相关的功能包集</td>
+<td><a href="https://github.com/turtlebot/turtlebot">turtlebot</a></td>
+</tr>
+<tr>
+<td>pr2_robot</td>
+<td>pr2机器人驱动功能包集</td>
+<td><a href="https://github.com/PR2/pr2_robot">pr2_robot</a></td>
+</tr>
+</tbody>
+</table>
+<p></p><h4>四.ROS通信</h4><p></p>
+<p><strong><em>通信架构</em></strong>：</p>
+<p><strong>Ⅰ.master节点</strong>：</p>
+<p>每个node启动时都要向master注册</p>
+<p>管理node之间的通信</p>
+<p>启动ros master节点：</p>
+<pre><code>roscore
+</code></pre>
+<pre class="mermaid">graph LR;
+a[roscore节点] --> b(master:节点管理器)
+a --> c(rosout:日志输出)
+a --> d(parameter server:参数服务器)</pre>
+<p>rosout：记录系统有什么error或者warning</p>
+<p><strong>Ⅱ.node节点</strong>：</p>
+<p>【动态】：node为ROS的进程</p>
+<p>【静态】：pkg里的可执行文件（C++、python、shell编译生成的可执行脚本）运行的实例</p>
+<p>启动一个node节点：</p>
+<pre><code>rosrun [pkg_name] [node_name]
+</code></pre>
+<p>常见的node指令：</p>
+<p>⑴列出当前运行的node信息</p>
+<pre><code>rosnode list
+</code></pre>
+<p>⑵显示某个node的详细信息</p>
+<pre><code>rosnode info [node_name]
+</code></pre>
+<p>⑶结束某个node</p>
+<pre><code>rosnode kill [node_name]
+</code></pre>
+<p><strong>Ⅲ.roslaunch</strong>:</p>
+<p>roslauch可以启动master（自动启动）和多个node</p>
+<p>启动roslaunch指令：</p>
+<pre><code>roslaunch [pkg_name] [file_name.launch]
+</code></pre>
+<p>launch文件书写规则：</p>
+<blockquote>
+<p><launch>                                <!--根标签--></launch></p>
+<p>​	<node>                             <!--需要启动的node及参数--></node></p>
+<p>​	<include>                      <!--包含其他launch文件--></include></p>
+<p>​	<machine>                      <!--指定运行的机器--></machine></p>
+<p>​	<env-loader>               <!--设置环境变量--></env-loader></p>
+<p>​	<param>                           <!--定义参数到参数服务器--></p>
+<p>​	<rosparam>                    <!--启动yaml文件参数到参数服务器--></rosparam></p>
+<p>​	<arg>                                <!--定义参数传入到launch文件中--></arg></p>
+<p>​	<remap>                           <!--设定参数映射--></remap></p>
+<p>​	<group>                           <!--设定命名空间--></group></p>
+<p>                              <!--根标签--></p>
+</blockquote>
+<p><strong>Ⅳ.通信方式</strong>：</p>
+<pre class="mermaid">graph LR;
+a[ROS通信方式] --> b[Topic]
+a --> c[Service]
+a --> d[Parameter Service]
+a --> e[Actionlib]</pre>
+<p><strong>⑴Topic通信</strong>：</p>
+<p>ROS中的==异步==通信方式：publish()方法</p>
+<p>Node间通过==publish-subscribe机制==通信</p>
+<p>一个主题，可以有多个publish节点，同时也可以有多个subscribe节点</p>
+<p>不同Node之间需要订阅相同的主题(topic)名称</p>
+<p>通信机制流程图：</p>
+<pre class="mermaid">graph LR;
+a(Node A) --> b[/Topic]
+b --> c(Node B)</pre>
+<p>Topic 类型：==string==</p>
+<p>Topic内容的数据类型：==Message==，定义在（package目录）msg文件夹下的*.msg文件中</p>
+<pre class="mermaid">graph LR;
+a[基本msg类型] --> b(bool)
+a --> c(int8)
+a --> d(int16)
+a --> e(int32)
+a --> f(int64)
+a --> g(uint)
+a --> h(float32)
+a --> i(float64)
+a --> j(string)
+a --> k(time)
+a --> l(duration)
+a --> m(header)
+a --> n(可变长数组:vector)
+a --> o(固定长度数组)</pre>
+<p><strong>rostopic相关常用指令</strong>：</p>
+<p>列出当前所有topic：</p>
+<pre><code>rostopic list
+</code></pre>
+<p>显示某个topic的属性信息：</p>
+<pre><code>rostopic info /topic_name
+</code></pre>
+<p>显示某个topic的内容：</p>
+<pre><code>rostopic echo /topic_name
+</code></pre>
+<p>向某个topic发布内容：</p>
+<pre><code>rostopic pub /topic_name ...
+</code></pre>
+<p><strong>rosmsg相关常用指令</strong>：</p>
+<p>列出系统上所有的msg：</p>
+<pre><code>rosmsg list
+</code></pre>
+<p>显示某个msg内容：</p>
+<pre><code>rosmsg show /msg_name
+</code></pre>
+<p><strong>⑵service通信</strong></p>
+<p>ROS中的==同步==通信方式</p>
+<p>Node间可以通过==request-reply==方式通信(只有调用的情况下才会执行)</p>
+<p>Service通信流程图：</p>
+<pre class="mermaid">graph LR;
+a(Node A:Client) --> b[/Service]
+b --> a
+b --> c(Node B:Server)
+c --> b</pre>
+<p>Topic通信 与 Service通信之间的比较：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">Topic</th>
+<th style="text-align:center">Service</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">通信方式</td>
+<td style="text-align:center">异步通信</td>
+<td style="text-align:center">同步通信</td>
+</tr>
+<tr>
+<td style="text-align:center">实现原理</td>
+<td style="text-align:center">TCP/IP</td>
+<td style="text-align:center">TCP/IP</td>
+</tr>
+<tr>
+<td style="text-align:center">通信模型</td>
+<td style="text-align:center">Publish-Subscribe</td>
+<td style="text-align:center">Request-Reply</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center">Publisher-Subscriber(多对多)</td>
+<td style="text-align:center">Client-Server(多对一)</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center">接收者收到数据会回调(Callback)</td>
+<td style="text-align:center">远程过程调用(RPC)服务器端的服务</td>
+</tr>
+<tr>
+<td style="text-align:center">应用场景</td>
+<td style="text-align:center">连续、高频的数据发布</td>
+<td style="text-align:center">偶尔调用的功能/具体的任务</td>
+</tr>
+<tr>
+<td style="text-align:center">举例</td>
+<td style="text-align:center">激光雷达、里程计发布数据</td>
+<td style="text-align:center">开关传感器、拍照、逆解运算</td>
+</tr>
+</tbody>
+</table>
+<p><strong>srv</strong>:</p>
+<p>Service通信的数据格式</p>
+<p>定义在*.srv文件中(.srv文件可以嵌套.msg文件，.msg文件可以嵌套.msg文件，但.srv文件不可以嵌套.srv文件)</p>
+<p>在.srv文件中，必须要用—隔开：</p>
+<p><img src="data:image/png;base64,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" alt="srv文件"></p>
+<p>自定义的srv文件，需要在package.xml和在CMakelists.txt文件中添加依赖</p>
+<p><img src="data:image/jpeg;base64,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" alt="添加依赖"></p>
+<p><strong>rosservice常用指令</strong>：</p>
+<p>列出当前所有活跃的service：</p>
+<pre><code>rosservice list
+</code></pre>
+<p>显示某个service的属性信息：</p>
+<pre><code>rosservice info service_name
+</code></pre>
+<p>调用某个service：</p>
+<pre><code>rosservice call service_name args
+</code></pre>
+<p><strong>rossrv常用指令</strong>：</p>
+<p>列出系统上所有src：</p>
+<pre><code>rossrv list
+</code></pre>
+<p>显示某个srv内容：</p>
+<pre><code>rossrv show srv_name
+</code></pre>
+<p><strong>⑶Parameter Server</strong></p>
+<pre class="mermaid">graph LR;
+a[roscore] --> b[parameter server]
+a --> c[rosout]
+a --> d[master]</pre>
+<p>parameter server:</p>
+<p>存储各种参数的字典</p>
+<p>可用命令行，launch文件和node(API)读写</p>
+<p>比如：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Key</th>
+<th style="text-align:center">/rosdistro</th>
+<th style="text-align:center">/rosversion</th>
+<th style="text-align:center">/use_sim_time</th>
+<th style="text-align:center">…</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Value</td>
+<td style="text-align:center">‘kinetic’</td>
+<td style="text-align:center">‘1.12.7’</td>
+<td style="text-align:center">true</td>
+<td style="text-align:center">…</td>
+</tr>
+</tbody>
+</table>
+<p><strong>rosparam常用指令</strong>：</p>
+<p>列出当前所有参数：</p>
+<pre><code>rosparam list
+</code></pre>
+<p>显示某个参数的值：</p>
+<pre><code>rosparam get param_key
+</code></pre>
+<p>设置某个参数的值：</p>
+<pre><code>rosparam set param_key param_value
+</code></pre>
+<p>保存参数到文件：</p>
+<pre><code>rosparam dump file_name  //yaml文件
+</code></pre>
+<p>YAML格式举例：<code>key : value</code></p>
+<p>从文件读取参数：</p>
+<pre><code>rosparam load file_name
+</code></pre>
+<p>删除参数：</p>
+<pre><code>rosparam delete param_key
+</code></pre>
+<p><strong>⑷Action通信</strong></p>
+<p>类似Service，带有状态反馈的通信方式，通常用在长时间、可抢占的任务中</p>
+<p>action采用了服务器端/客户端(client and server)的工作模式：</p>
+<p><img src="http://www.guyuehome.com/wp-content/uploads/2017/05/clip_image002_thumb.png" alt="Actiontongx"></p>
+<p>client和server之间通过actionlib定义的“action ptotocol”进行通讯。这种通讯协议是基于ROS的消息机制实现的，为客户提供了client和server的接口，接口如下图所示：</p>
+<p><img src="http://file.elecfans.com/web1/M00/68/60/o4YBAFvEAHKAXkSSAAQpBntpOvA957.png" alt="action 通信"></p>
+<p><strong>action文件</strong></p>
+<p>action通信的数据格式</p>
+<p>定义在*.action文件中</p>
+<p>action文件包括了三部分：</p>
+<p>①goal</p>
+<p>②result</p>
+<p>③feedback message</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/2761157-891779a966d50568.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/805/format/webp" alt="action文件"></p>
+<p></p><h4>五.ROS常用工具</h4><p></p>
+<pre class="mermaid">graph LR;
+a[ROS常用工具] --> b(仿真:Gazebo)
+a --> c(调试/可视化:Rviz,rqt)
+a --> d(命令行工具:rostopic list,rosbag...)
+a --> e(专用工具:moveit)</pre>
+<p><strong>Ⅰ.Gazebo</strong></p>
+<p>机器人仿真工具（其他的：V-Rep、carsim等等）</p>
+<p>ODE物理引擎</p>
+<p>用于动力学、导航、感知等任务的模拟</p>
+<p><img src="http://www.theconstructsim.com/wp-content/uploads/2018/05/Gazebo-ROS-Gazebo9-Summit-XL-robot-simulation-768x420.jpg" alt="Gazebo"></p>
+<p><strong>Ⅱ.Rviz</strong></p>
+<p>The Robot Visualization tool —— 可视化工具</p>
+<p>方便监控和调试</p>
+<p><img src="https://tr-ros-tutorial.readthedocs.io/zh_CN/latest/_images/rviz_plugin_head.png" alt="rviz"></p>
+<p><strong>Ⅲ.rqt</strong></p>
+<p>可视化工具</p>
+<p>常用指令：</p>
+<p>rqt_graph：显示通信框架</p>
+<p>rqt_plot：绘制曲线</p>
+<p>rqt_console：查看日志</p>
+<p><img src="http://www.guyuehome.com/wp-content/uploads/2018/03/4.png" alt="rqt"></p>
+<p><strong>Ⅳ.rosbag</strong></p>
+<p>ROS命令行工具</p>
+<p>记录和回放数据流</p>
+<pre class="mermaid">graph LR;
+a[/topic1] --> b[record]
+c[/topic2] --> b
+d[/topic...] --> b
+b --> e[.bag文件]
+e --> f[play]
+f --> g[/topic1]
+f --> h[/topic2]
+f --> i[/topic...]</pre>
+<p>rosbag常用指令：</p>
+<p>记录某些topic到bag中：</p>
+<pre><code>rosbag record &lt;topic-names&gt;
+</code></pre>
+<p>记录所有topic到bag中：</p>
+<pre><code>rosbag record -a
+</code></pre>
+<p>回放bag：</p>
+<pre><code>rosbag play &lt;bag-names&gt;
+</code></pre>
+<p><strong>Ⅴ.Client Library</strong></p>
+<p>提供ROS编程的库（接口）</p>
+<p>例如：建立node，发布消息，调用服务…</p>
+<pre class="mermaid">graph LR;
+a[Client Library] --> b(roscpp)
+b --> c(C++)
+c --> h(执行效率高)
+h --> i(图像处理)
+h --> j(SLAM导航)
+h --> k(...)
+a --> d(rospy)
+d --> e(python)
+e --> l(开发效率高)
+l --> m(小工具)
+l --> n(node节点)
+l --> o(...)
+a --> f(roslisp)
+a --> g(...)</pre>
+<p><strong>（1）roscpp</strong>:</p>
+<p>topic、service、param、timer</p>
+<p>roscpp主要包括：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">函数</th>
+<th style="text-align:center">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">ros::init()</td>
+<td style="text-align:center">解析传入的ROS参数，使用roscpp第一步需要用到的函数</td>
+</tr>
+<tr>
+<td style="text-align:center">ros::NodeHandle</td>
+<td style="text-align:center">和topic、service、param等交互的公共接口</td>
+</tr>
+<tr>
+<td style="text-align:center">ros::master</td>
+<td style="text-align:center">包含从master查询信息的函数</td>
+</tr>
+<tr>
+<td style="text-align:center">ros::this_node</td>
+<td style="text-align:center">包含查询这个进程（node）的函数</td>
+</tr>
+<tr>
+<td style="text-align:center">ros::service</td>
+<td style="text-align:center">包含查询服务的函数</td>
+</tr>
+<tr>
+<td style="text-align:center">ros::param</td>
+<td style="text-align:center">包含查询参数服务器的函数，而不需要用到NodeHandle</td>
+</tr>
+<tr>
+<td style="text-align:center">ros::names</td>
+<td style="text-align:center">包含处理ROS图资源名称的函数</td>
+</tr>
+</tbody>
+</table>
+<p><strong>ros::init()</strong></p>
+<p>void ros::init();      //解析ROS参数，为本node命名</p>
+<p><strong>ros::NodeHandle Class(类)</strong></p>
+<p>常用成员函数：</p>
+<p>//创建与发布消息</p>
+<p>ros::NodeHandle nh;</p>
+<p>ros::Publisher pub = nh.advertise(…);</p>
+<p>pub.publish(msg);</p>
+<p>//创建话题的publisher</p>
+<p>ros::Publisher advertise(const string &amp;topic, uint32_t queue_size)</p>
+<p>//创建话题的subscriber</p>
+<p>ros::Subscriber subscribe(const string &amp;topic, uint32_t queue_size, void(*)(M));</p>
+<p>//创建服务的server</p>
+<p>ros::ServiceServer advertiseService(const string &amp;service, bool(*srv_func)(Mreq &amp;, Mres &amp;));</p>
+<p>//创建服务的client</p>
+<p>ros::ServiceClient serviceClient(const string &amp;string_name, bool persistent=false);</p>
+<p>//查询某个参数的值</p>
+<p>bool getParam(const string &amp;key, void &amp;val);</p>
+<p>//给参数赋值</p>
+<p>bool setparam(const string &amp;key, void val);</p>
+<p><strong>ros::master Namespace</strong></p>
+<p>常用函数：</p>
+<p>//检查,master是否启动</p>
+<p>bool check();</p>
+<p>//返回master所处的hostname</p>
+<p>const string&amp; getHost ();</p>
+<p>从master返回已知的node名称列表</p>
+<p>bool getNodes(V_string &amp;nodes);</p>
+<p>//返回所有正在被发布的topic列表</p>
+<p>bool getTopics(V_TopicInfo &amp;topics);</p>
+<p>//返回到master的URI地址，如http://host:port/</p>
+<p>bool getUPI();</p>
+<p>//返回master运行在的端口</p>
+<p>uint32_t getPort();</p>
+<p><strong>ros::this_node Namespace</strong></p>
+<p>常用函数：</p>
+<p>//返回本node发布的topic</p>
+<p>void getAdvertisedTopics(V_string &amp;topics);</p>
+<p>//返回当前node的名称</p>
+<p>const string &amp;getName ();</p>
+<p>//返回当前node的命名空间</p>
+<p>const string &amp;getNamespace();</p>
+<p>//返回当前node订阅的topic</p>
+<p>void getSubscribedTopics (V_string &amp;topics);</p>
+<p><strong>ros::service Namespace</strong></p>
+<p>常用函数：</p>
+<p>//调用一个RPC服务</p>
+<p>bool call(const string &amp;service, Service &amp;service);</p>
+<p>//创建一个服务的client</p>
+<p>ServiceClient createClient(const string&amp; service_name, bool persistent=false, const M_string &amp;header_values=M_string());</p>
+<p>//确认服务可调用</p>
+<p>bool exists(const string &amp;service_name, bool print_failure_reason);</p>
+<p>//等待一个服务，直到它可调用</p>
+<p>bool waitForService(const string &amp;service_name, int32_t timeout);</p>
+<p><strong>ros::names Namespace</strong></p>
+<p>常用函数：</p>
+<p>//追加名称</p>
+<p>string append(const std::string &amp;left, const std::string &amp;right);</p>
+<p>//清除图资源名称：删除双斜线、结尾斜线</p>
+<p>string clean (const string &amp;name);</p>
+<p>//返回重映射remapping</p>
+<p>const M_string &amp;getRemappings ();</p>
+<p>//对名称重映射</p>
+<p>string remap (const string &amp;name);</p>
+<p>//解析出名称的全称</p>
+<p>string resolve(const string &amp;name, bool remap = true);</p>
+<p>//验证名称</p>
+<p>bool validate(const string &amp;name, string &amp;error);</p>
+<p><strong>（2）rospy</strong></p>
+<p>Node,Topic,Service,Param,Time</p>
+<p><strong>Node相关函数</strong>：</p>
+<p>init_node(name)          #注册和初始化node</p>
+<p>get_master()                 #获取master的句柄</p>
+<p>is_shutdown()               #返回是否关闭</p>
+<p>on_shutdown(fn)          #在node关闭时调用函数</p>
+<p>get_node_uri()               #返回节点的URI</p>
+<p>get_name()                     #返回本节点的全名</p>
+<p>get_namespace()           #返回本节点的名字空间</p>
+<p><strong>Topic相关函数</strong>：</p>
+<p>函数：</p>
+<p>get_published_topics()  #返回正在被发布的所有topic名称和类型</p>
+<p>wait_for_message(topic, topic_type, time_out=None)  #等待指定topic的一个message</p>
+<p>spin()  #触发topic或service的处理，会阻塞直到关闭</p>
+<p>Publisher类：</p>
+<p>_init_(self, name, data_class, queue_size=None)  #构造函数</p>
+<p>publish(self, msg)  #成员函数，发布消息</p>
+<p>unregister(self)  #成员函数，停止发布</p>
+<p>Subscriber类：</p>
+<p>_<em>init</em>_(self, name, data_class, call_back=None, queue_size=None)  #构造函数</p>
+<p>unregister(self)  #成员函数，停止订阅</p>
+<p><strong>Service相关函数</strong></p>
+<p>函数：</p>
+<p>wait_for_service(service, timeout=None)  #阻塞直到服务可用</p>
+<p>Service类：</p>
+<p>_<em>init</em>_(self, name, service_clasee)  #构造函数，提供服务</p>
+<p>shutdown(self)  #成员函数，关闭服务</p>
+<p>SerivceProxy类：</p>
+<p>_<em>init</em>_(self, name,service_class)  #构造函数，服务的请求方</p>
+<p>call(self, *args, **kwds)  #调用服务</p>
+<p>_<em>call</em>_(self, *args, **kwds)  #调用服务</p>
+<p><strong>Param相关函数</strong></p>
+<p>get_param(param_name,default=unspecified)  #获取参数的值</p>
+<p>get_param_names()  #获取参数的名称</p>
+<p>set_param(param_name,param_value) #设置参数的值(key,value)</p>
+<p>delete_param(param_name) #删除参数</p>
+<p>has_param(param_name) #参数是否存在于参数服务器上</p>
+<p>search_param() #搜索参数</p>
+<p><strong>Time相关函数</strong></p>
+<p>Time类：</p>
+<p>_<em>init</em>_(self,secs=0,nsecs=0) #构造函数</p>
+<p>now() #静态方法，返回当前时刻的Time对象</p>
+<p>函数：</p>
+<p>Time get_rostime() #当前时刻的Time对象</p>
+<p>get_time() #返回当前时间，返回float，单位为秒</p>
+<p>sleep(duration) #执行挂起</p>
+<p>Rate类：</p>
+<p>_<em>init</em>_(self,frequency) # 构造函数</p>
+<p>sleep(self) #挂起，考虑上一次的rate.sleep()时间</p>
+<p>remaining(self) #成员函数，剩余sleep时间</p>
+<p>Duration类：</p>
+<p>_<em>init</em>_(self,secs=0,nsecs=0) #构造函数，秒和纳秒</p>
+<p>注意：</p>
+<p>Time - Time = Duration</p>
+<p>Time + Duration = Time</p>
+<p>Duration + Duration = Duration</p>
+<p>Duration - Duration = Duration</p>
+<p>没有Time + Time</p>
+<p></p><h4>六.Example</h4><p></p>
+<p><strong>Ⅰ.topic_demo</strong></p>
+<p>功能描述：两个node，一个发布模拟的GPS消息（格式为自定义，包括坐标和工作状态），另一个接收并处理该信息（计算到原点的距离）。</p>
+<p><strong>C++</strong>:</p>
+<p>步骤：</p>
+<p>①创建package</p>
+<pre><code>cd ~/catkin_ws/src
+catkin_create_pkg topic_demo roscpp rospy std_msgs
+</code></pre>
+<p>②创建msg</p>
+<pre><code>cd topic_demo
+mkdir msg
+cd msg
+vi gps.msg
+</code></pre>
+<p><strong>gps.msg</strong>→编译→~/catkin_Ws/devel/include/topic_demo/gps.h</p>
+<blockquote>
+<p>float32 x</p>
+<p>float32 y</p>
+<p>string state</p>
+</blockquote>
+<p>③创建talker.cpp</p>
+<pre class=" language-language-c++"><code class="language-language-c++">#include <ros ros.h>
+#include <topic_demo gps.h>
+int main(int argc, char** argv)
+{
+    ros::init(argc, argv, "talker"); //解析参数，命名节点
+    ros::NodeHandle nh;  //创建句柄，实例化node
+    topic_demo::gps msg; //创建gps信息
+    msg.x = 1.0;
+    msg.y = 1.0;
+    msg.rate = "working";
+    ros::Publisher pub = nh.advertise<topic_demo::gps>("gps_info", 1);  //创建publisher
+    ros::Rate loop_rate(1.0);  //定义循环发布的频率
+    while(ros::ok())
+    {
+        msg.x = 1.03 * msg.x;  //以指数增长，每隔1s
+        msg.y = 1.03 * msg.y;
+        ROS_INFO("Talker:GPS:x=%f, y=%f", msg.x, msg.y); //输出当前msg
+        pub.piblish(msg);  //发布消息
+        loop_rate.sleep();  //根据定义的发布频率，sleep
+    }
+    return 0;
+}
+</topic_demo::gps></topic_demo></ros></code></pre>
+<p>④创建listen.cpp</p>
+<pre class=" language-language-c++"><code class="language-language-c++">#include <ros ros.h>
+#include <topic_demo gps.h>
+#include <std_msgs float32.h>
+
+void gpsCallback(const topic_demo::gps::ConstPtr &msg)
+{
+    std_msgs::Float32 distance;
+    distance.data = sqrt(pow(msg->x,2),pow(msg->y,2));
+    ROS_INFO("Listener:Distance to origin = %f", distance.data, msg->state.c_str());
+}
+int main(int argc, char** argv)
+{
+    ros::init(argc, argv, "listener");
+    ros::NodeHandle n;
+    ros::Subscriber sub = n.subscribe("gps_info", 1, gpsCallback); //创建subscriber
+    ros::spin(); //反复调用当前可触发的回调函数，阻塞
+    return 0;
+}
+</std_msgs></topic_demo></ros></code></pre>
+<p>⑤修改CMakelists.txt文件：</p>
+<pre><code>find_package(catkin REQUIRED COMPONENTS message_generation roscpp rospy std_msgs)                           #指定依赖
+add_message_files(FILES gps.msg)          #添加自定义的msg
+generate_message(DEPENDENCIES std_msgs)   #生成msg对应的头文件
+
+add_executable(listener src/listener.cpp)                     #生成可执行目标文件
+add_dependencies(listener topic_demo_generate_message_cpp)  #添加依赖，生成msg
+target_link_libraries(listener ${catkin_LIBRARIES})         #链接
+
+add_executable(talker src/talker.cpp)                     #生成可执行目标文件
+add_dependencies(talker topic_demo_generate_message_cpp)  #添加依赖，生成msg
+target_link_libraries(talker ${catkin_LIBRARIES})         #链接
+</code></pre>
+<p>⑥修改package.xml文件</p>
+<p>添加下面代码：</p>
+<pre><code>&lt;build_depend&gt;message_generation&lt;/build_depend&gt;
+...
+&lt;run_depend&gt;message_runtime&lt;/run_depend&gt;
+</code></pre>
+<p>⑦编译，执行publisher和talker两个程序</p>
+<p><strong>python</strong>:</p>
+<p>①创建package</p>
+<pre><code>cd ~/catkin_ws/src
+catkin_create_pkg topic_demo roscpp rospy std_msgs
+</code></pre>
+<p>②创建msg</p>
+<pre><code>cd topic_demo
+mkdir msg
+cd msg
+vi gps.msg
+</code></pre>
+<p><strong>gps.msg</strong>→编译→~/catkin_Ws/devel/lib/python2.7/dis-packages/topic_demo/msg/_init_.py</p>
+<blockquote>
+<p>float32 x</p>
+<p>float32 y</p>
+<p>string state</p>
+</blockquote>
+<p><a href="http://xn--pylistener-br6fm031c478a.py">③创建pylistener.py</a></p>
+<pre class=" language-language-python"><code class="language-language-python">#!/usr/bin/env python
+
+import rospy
+import math
+from topic_demo.msg import gps
+
+def callBack(gps):
+	distance = math.sqrt(math.pow(gps.x,2) + math.pow(gps.y,2))
+	rospy.loginfo("Listener:GPS distance=%f,state:%s",distance,gps.state)
+
+def listener():
+	rospy.init_node('pylistener')
+	rospy.Subscriber('gps_info',gps,callback)
+	rospy.spin()
+
+if __name__ == '__main__':
+	listener()
+</code></pre>
+<p><a href="http://xn--pytalker-nr1ew844buu3a.py">④创建pytalker.py</a></p>
+<pre class=" language-language-python"><code class="language-language-python">#!/usr/bin/env python
+import rospy
+from topic_demo.msg import gps
+
+def talker():
+	pub = rospy.Publisher('gps_info', gps, queue_size=10)
+	rospy.init_node('pytalker', anonymous=True)
+	rate = rospy.Rate(1)
+	x = 1.0
+	y = 2.0
+	state = 'working'
+	while not rospy.is_shutdown():
+		rospy.info('Talker:GPS:x=%f, y=%f')
+		pub.publish(gps(state,x,y))
+		x = 1.03 * x
+		y = 1.01 * y
+		rate.sleep()
+		
+if __name__ == '__main__':
+	talker()
+</code></pre>
+<p>⑤修改CMakelists.txt文件</p>
+<pre><code>find_package(catkin REQUIRED COMPONENTS message_generation roscpp rospy std_msgs)                           #指定依赖
+add_message_files(FILES gps.msg)          #添加自定义的msg
+generate_message(DEPENDENCIES std_msgs)   #生成msg对应的头文件
+</code></pre>
+<p>⑥修改package.xml文件</p>
+<p>添加下面代码：</p>
+<pre><code>&lt;build_depend&gt;message_generation&lt;/build_depend&gt;
+...
+&lt;run_depend&gt;message_runtime&lt;/run_depend&gt;
+</code></pre>
+<p>⑦编译执行两个文件</p>
+<p><strong>Ⅱ.service_demo</strong></p>
+<p>功能描述：两个node，一个发布请求（自定义格式），另一个接收处理该信息，并返回信息。</p>
+<p><strong>C++</strong>:</p>
+<p>步骤：</p>
+<p>①创建package</p>
+<pre><code>cd ~/catkin_ws/src
+catkin_create_pkg service_demo roscpp rospy std_msgs
+</code></pre>
+<p>②创建srv文件</p>
+<pre><code>cd service_demo/
+mkdir srv
+vi Greeting.srv
+</code></pre>
+<p><strong>Greeting.srv</strong>→编译→~/catkin_ws/devel/include/service_demo/Greeting.h</p>
+<blockquote>
+<p>string name</p>
+<p>int32 age</p>
+<p><code>---</code></p>
+<p>string feedback</p>
+</blockquote>
+<p>③创建server.cpp</p>
+<pre class=" language-language-c++"><code class="language-language-c++">#include <ros ros.h>
+#include <service_demo greeting.h>
+
+bool handle_function(service::demo::Greeting::Request &req, service::demo::Greeting::Response &res)
+{
+    ROS_INFO("Request from %s with age %d", req.nme.c_str(), req.age);  //显示请求信息
+    res.feeedback = "Hi" + req.name + "I'm server!"; //处理请求，结果写入response
+    return true; //返回true，正确处理了请求
+}
+int main(int argc, char** argv)
+{
+    ros::init(argc, argv, "greeting_server"); //解析参数，命名节点
+    ros::NodeHandle nh;  //创建句柄，实例化node
+    ros::ServiceServer sevice = nh.advertiseService("greetings", handle_function);
+    return 0;
+}
+</service_demo></ros></code></pre>
+<p>④创建client.cpp</p>
+<pre class=" language-language-c++"><code class="language-language-c++">#include <ros ros.h>
+#include <service_demo greeting.h>
+
+int main(int argc, char** argv)
+{
+    ros::init(argc,argv,"freeting_server");
+    ros::NodeHandle nh;
+    ros::ServiceClient client = nh.serviceClient<service_demo::greeting>("greetings");
+    service_demo::Greeting srv;
+    srv.request.name = "HAN";
+    srv.request.age = "20";
+    if(client.call(srv))
+    {
+        ROS_INFO("Feedback from server:%s." , srv.response.feedback);
+    }
+    else
+    {
+        ROS_ERROR("Failed to call service greetings");
+        return 1;
+    }
+    return 0;
+}
+</service_demo::greeting></service_demo></ros></code></pre>
+<p><strong>python</strong>：</p>
+<p>①创建package</p>
+<pre><code>cd ~/catkin_ws/src
+catkin_create_pkg service_demo roscpp rospy std_msgs
+</code></pre>
+<p>②创建srv文件</p>
+<pre><code>cd service_demo/
+mkdir srv
+vi Greeting.srv
+</code></pre>
+<p><strong>Greeting.srv</strong>→编译→~/catkin_ws/devel/lib/python2.7/dis-packages/service_demo/srv/_<em>init</em>_.py</p>
+<blockquote>
+<p>string name</p>
+<p>int32 age</p>
+<p><code>---</code></p>
+<p>string feedback</p>
+</blockquote>
+<p>③创建server_demo.py</p>
+<pre class=" language-language-python"><code class="language-language-python">#!/usr/bin/env python
+import rospy
+from service_demo.srv import *
+
+def server_srv():
+	rospy.init_node('greetings_server')
+	s = rospy.Service('greetings', Greeting, handle_function) #定义程序的server端
+	rospy.loginfo('Ready to handle the request')
+	rospy.spin()
+	
+def handle_function(req):
+	rospy.loginfo('Request from', req.name, 'with age', req.age)
+	return GreetingReespose('Hi %s. I'm server!' %req.name)
+	
+if __name__ == '__main__':
+	server_srv()
+</code></pre>
+<p>④创建client_demo.py</p>
+<pre class=" language-language-python"><code class="language-language-python">#!/usr/bin/env python
+
+import rospy
+from service_demo.srv import *
+
+def client.srv():
+	rospy.init_node('greetings_client')
+	ros.wait_for_service('greetings'))
+	try:
+		greetings.client = rospy.ServiceProxy('greetings',Greeting)
+		rosp = greetings_client('HAN', 20)
+		rospy.loginfo('Message From Server:%s' %rosp.feedback)
+	except rospy.ServiceException, e:
+		rospy.logwarn('Service call failed:%s' %e)
+		
+if __name__ == '__name__':
+	client.srv()
+</code></pre>
+<p><strong>Ⅲ.param_demo</strong></p>
+<p>两种API：ros::param和ros::NodeHandle</p>
+<p>param_demo.cpp:</p>
+<pre class=" language-language-c++"><code class="language-language-c++">#include <ros ros.h>
+int main(int argc, char** argv)
+{
+    ros::init(argc,argv, "greetings_server");
+    ros::NodeHandle nh;
+    int parameter1, parameter2, parameter3, parameter4, parameter5;
+    //获取参数
+    ros::param::get("param1", parameter1);
+    nh.getParam("param2", parameter2);
+    nh.param("param3", parameter3, 123);
+    //设置参数
+    ros::param::set("param4", parameter4);
+    nh.setParam("param5", parameter5);
+    //检查参数是否存在
+    ros::param::has("param5");
+    nh.hasParam("param6");
+    //删除参数
+    ros::param::del("param5");
+    nh.deleteParam("param6");
+    return 0;
+}
+</ros></code></pre>
+<p></p><h4><a href="http://xn--7gq.TF">七.TF</a> 与 URDF</h4><p></p>
+<p>TF(TransForm):坐标变换（位置+姿态），坐标系数据维护工具</p>
+<p>ROS中的tf：坐标转换的标准、话题、工具、接口</p>
+<p><strong>tf in C++</strong>:</p>
+<p>TF相关数据类型：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">函数</th>
+<th style="text-align:center">数学含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">tf::Vector3</td>
+<td style="text-align:center">向量</td>
+</tr>
+<tr>
+<td style="text-align:center">tf::Point</td>
+<td style="text-align:center">点</td>
+</tr>
+<tr>
+<td style="text-align:center">tf::Quaternion</td>
+<td style="text-align:center">四元数</td>
+</tr>
+<tr>
+<td style="text-align:center">tf::Matrix3x3</td>
+<td style="text-align:center">3x3矩阵（旋转矩阵）</td>
+</tr>
+<tr>
+<td style="text-align:center">tf::Pose</td>
+<td style="text-align:center">位姿</td>
+</tr>
+<tr>
+<td style="text-align:center">tf::Transform</td>
+<td style="text-align:center">变换</td>
+</tr>
+<tr>
+<td style="text-align:center">tf::Stamped<t></t></td>
+<td style="text-align:center">带时间戳的以上类型</td>
+</tr>
+<tr>
+<td style="text-align:center">tf::StampedTransform</td>
+<td style="text-align:center">带时间戳的变换</td>
+</tr>
+</tbody>
+</table>
+<p>tf::TransformBroadcaster 类：</p>
+<pre><code>void sendTrnsform(const StampedTransform &amp;transform)
+void sendTransform(const std::vector&lt;StampTransform&gt; &amp;transform)
+void sendTransform(const geometry_msgs::TransformStamped &amp;transform)
+void sendTransform(const std::vector&lt;geometry_msgs::TransformStamped&gt; &amp;transform)
+</code></pre>
+<p>tf::TransformListener 类：</p>
+<pre><code>void lookup Transform(const std::string &amp;target_frame, const std::string &amp;source_frame, const ros::Time &amp;time, StampedTransform &amp;transform) const
+bool canTransform()
+bool waitForTransform() const
+</code></pre>
+<p><strong>tf in python</strong>:</p>
+<p>TF相关数据类型：</p>
+<p>向量、点、四元数、矩阵都表示成类似数组形式</p>
+<p>Tuple,List,Numpy Array通用</p>
+<p>例子：</p>
+<p>t = (1.0, 1.5, 0)   #平移</p>
+<p>q = [1,0,0,0]  #四元数</p>
+<p>m = numpy.identity(3)  #旋转矩阵</p>
+<p>tf.transformations基本数学运算函数：</p>
+<p>euler_matrix(ai,aj,ak,axes=‘sxyz’)  #欧拉角到矩阵</p>
+<p>euler_from_matrix(matrix, axes=‘sxyz’)  #矩阵到欧拉角</p>
+<p>euler_from_quaternion(quaternion, axes=‘sxyz’) #四元数到欧拉角</p>
+<p>quaternion_from_euler(ai,aj,ak,axes=‘sxyz’) #欧拉角到四元数</p>
+<p>quaternion_matrix(quaternion) #四元数到矩阵</p>
+<p>quaternion_from_matrix(matrix) #矩阵到四元数</p>
+<p>tf.TransformListener 类：</p>
+<p>canTransform(self,target_frame,source_frame,time)  #frame是否相通</p>
+<p>waitForTransform(self,target_frame,source_frame,time,timeout)  #阻塞直到frame相通</p>
+<p>lookupTransform(self,target_frame,source_frame,time) #查看相对的tf，返回(trans,quat)</p>
+<p>chain(target_frame, target_time, source_frame, source_time, fixed_frame) #frame的连接关系</p>
+<p>frameExists(self, frame_id) #frame是否存在</p>
+<p>getFrameStrings(self) #返回所有tf的名称</p>
+<p>fromTranslationRotation(translation,rotation)  #根据平移和旋转返回4x4矩阵</p>
+<p>fromformPoint(target_frame,point_msg) #将PointStamped消息转换到新的frame下</p>
+<p>transformPose(target_frame,pose_msg) #将PoseStamped消息转换到新frame下</p>
+<p>transformQuaternion(target_frame,quat_msg) #将Quaternion消息转换到新的frame下（返回相同类型）</p>
+<p>tf.TransformBroadcaster 类：</p>
+<p>sendTransform(translation,rotation,time,child,parent) #向/tf发布消息</p>
+<p>sendTransformMessage(transform) #向/tf发布消息</p>
+<p><strong>tf常用指令</strong>：</p>
+<p>根据当前的tf树创建一个pdf图：</p>
+<pre><code>rosrun tf view_frames
+</code></pre>
+<p>查看当前的tf树：(动态)</p>
+<pre><code>rosrun rqt_tf_tree rqt_tf_tree
+</code></pre>
+<p>查看两个frame之间的变换关系：</p>
+<pre><code>rosrun tf tf_echo [reference_frame] [target_frame]
+</code></pre>
+<p><strong>URDF</strong></p>
+<p>URDF：Unified Robot Description Format(定义机器人结构，可视化，仿真)</p>
+<p>一个机器人拆开的话大致上可以分为两个部分，一个是连杆、两个连杆（link）之间通过关节（joint）来连接。</p>
+<p>link标签：</p>
+<pre><code>&lt;link&gt;
+	&lt;inertial&gt;     #惯性属性
+		&lt;origin&gt;   #相对link的坐标
+		&lt;mass&gt;     #质量
+		&lt;inertial&gt; #转动惯量
+	&lt;visual&gt;       #视觉属性
+		&lt;origin&gt;   #相对link的坐标
+		&lt;geometry&gt; #形状
+		&lt;material&gt; #材质
+	&lt;collision&gt;    #碰撞属性
+		&lt;origin&gt;   #相对坐标
+		&lt;geometry&gt; #形状
+</code></pre>
+<p><img src="https://img-blog.csdnimg.cn/20181111204556706.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zOTA1OTAzMQ==,size_16,color_FFFFFF,t_70" alt="link"></p>
+<p>joint标签：</p>
+<pre><code>&lt;joint&gt;           
+	&lt;origin&gt;      #从父link到子link的变换
+	&lt;parent&gt;      #父link
+	&lt;child&gt;       #子link
+	&lt;axis&gt;        #关节轴
+	&lt;calibration&gt; #视觉属性
+	&lt;dynamics&gt;    #动力学参数
+	&lt;limit&gt;       #关节限位
+</code></pre>
+<p><img src="https://img-blog.csdnimg.cn/20181111205213694.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zOTA1OTAzMQ==,size_16,color_FFFFFF,t_70" alt="joint"></p>
 
             </div>
 
