@@ -178,33 +178,33 @@
                 <h1>搭建博客见闻录</h1>
 <p>这几天搭建了github的博客，为了可以记录学习和分享学过的知识，第一篇就来记录一下怎样搭建博客的吧。</p>
 <h2 id="搭建步骤">搭建步骤</h2>
-<p>一.去<a href="https://nodejs.org/en/download/">官网</a>安装node.js(直接下载对应的版本安装就好)</p>
-<p>二.安装<a href="https://git-scm.com/downloads">git</a>(下载安装对应的版本就好)</p>
+<p>一.去<a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">官网</a>安装node.js(直接下载对应的版本安装就好)</p>
+<p>二.安装<a href="https://git-scm.com/downloads" target="_blank" rel="noopener">git</a>(下载安装对应的版本就好)</p>
 <p>下载之后安装依赖</p>
 <blockquote>
 <p>npm install hexo-deployer-git --save</p>
 </blockquote>
 <p>设置全局配置</p>
 <blockquote>
-<p>git config –-global <a href="http://user.name">user.name</a> “自己的github注册账号&quot;<br>
-git config –-global user.email <a href="mailto:%22xxx@xxx.com">&quot;xxx@xxx.com</a>（自己的邮箱）”</p>
+<p>git config –-global <a href="http://user.name" target="_blank" rel="noopener">user.name</a> “自己的github注册账号&quot;<br>
+git config –-global user.email <a href="mailto:%22xxx@xxx.com" target="_blank" rel="noopener">&quot;xxx@xxx.com</a>（自己的邮箱）”</p>
 </blockquote>
 <p>配置SSH key</p>
 <blockquote>
 <p>cd ~/.ssh<br>
-ssh-keygen -t rsa -C <a href="mailto:%22xxx@xxx.com">&quot;xxx@xxx.com</a>（邮件地址）&quot;</p>
+ssh-keygen -t rsa -C <a href="mailto:%22xxx@xxx.com" target="_blank" rel="noopener">&quot;xxx@xxx.com</a>（邮件地址）&quot;</p>
 </blockquote>
 <p>连续3次回车，最终会生成一个文件在用户目录下，打开用户目录，找到<code>.ssh\id_rsa.pub</code>文件，记事本打开并复制里面的内容，打开你的github主页，进入个人设置 -&gt; SSH and GPG keys -&gt; New SSH key，将复制内容粘贴到key，保存。</p>
 <p>测试SSH：</p>
 <blockquote>
-<p>ssh -T <a href="mailto:git@github.com">git@github.com</a>（不用更改）</p>
+<p>ssh -T <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>（不用更改）</p>
 </blockquote>
 <p>如果看到：</p>
 <blockquote>
 <p>Hi JerryRain! You’ve successfully authenticated, but GitHub does not provide shell access.</p>
 </blockquote>
 <p>就表示远程连接已经成功。</p>
-<p>三.安装<a href="https://hexo.io/zh-cn/">hexo</a>(cmd打开终端，使用命令行安装)</p>
+<p>三.安装<a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">hexo</a>(cmd打开终端，使用命令行安装)</p>
 <blockquote>
 <p>npm install hexo-cli -g<br>
 hexo init blog<br>
@@ -213,7 +213,7 @@ npm install<br>
 hexo server</p>
 </blockquote>
 <p>修改主题</p>
-<p>在<a href="https://hexo.io/themes/">hexo主题</a>中选择喜欢的主题，使用git clone命令下载到对应的主题（/hexo/themes）文件夹中，修改_config 文件的主题名称为下载的主题名称即可，还根据博主的介绍修改对应的参数达到自己想要的效果。</p>
+<p>在<a href="https://hexo.io/themes/" target="_blank" rel="noopener">hexo主题</a>中选择喜欢的主题，使用git clone命令下载到对应的主题（/hexo/themes）文件夹中，修改_config 文件的主题名称为下载的主题名称即可，还根据博主的介绍修改对应的参数达到自己想要的效果。</p>
 <p>四.在github上创建一个仓库</p>
 <p>仓库名字必须是：<code>username.github.io</code>，其中<code>username</code>是你的用户名，之后你的网站访问地址就是<code>https://username.github.io</code></p>
 <p>五.修改blog文件下的 _config.yml 文件</p>
@@ -221,7 +221,7 @@ hexo server</p>
 <blockquote>
 <p>deploy:<br>
 type: git<br>
-repository: <a href="mailto:git@github.com">git@github.com</a>:用户名/用户名.github.io.git<br>
+repository: <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:用户名/用户名.github.io.git<br>
 branch: master</p>
 </blockquote>
 <p>六.上传博客</p>
