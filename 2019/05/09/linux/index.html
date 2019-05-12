@@ -177,14 +177,14 @@
             <div class="typo" style="padding: 3rem;">
                 <p></p><h2 style="text-align:center">Linux学习笔记</h2><p></p>
 <h3 id="linux基础知识">Linux基础知识</h3>
-<p><strong>一.虚拟机网络连接的三种形式说明</strong></p>
+<p></p><h4>一.虚拟机网络连接的三种形式说明</h4><p></p>
 <p>1.桥连接模式</p>
 <p>Linux可以和其他的系统通信，但可能会造成ip冲突</p>
 <p>2.NAT模式</p>
 <p>网络地址转换方式：Linux可以访问外网，不会造成ip冲突</p>
 <p>3.主机模式</p>
 <p>Linux是一个独立的主机，不能访问外网</p>
-<p><strong>二.Linux的目录结构</strong></p>
+<p></p><h4>二.Linux的目录结构</h4><p></p>
 <p>Linux的文件系统是采用==级层式的树状目录结构==，在此结构中的最上层是<strong>根目录</strong>“ / ”（有且只有一个根目录），然后在此目录下再创建其他的目录。</p>
 <p>Linux的各个目录村发放的内容是规划好的，不要乱放其他文件。</p>
 <p>Linux是以文件的形式管理我们的设备，因此在Linux系统中，一切皆为文件。</p>
@@ -301,7 +301,7 @@ a --> l[......]</pre>
 </tr>
 </tbody>
 </table>
-<p><strong>三.远程登陆</strong></p>
+<p></p><h4>三.远程登陆</h4><p></p>
 <p>远程登陆到Linux系统的软件： XShell</p>
 <p>前提：Linux需要启用sshd服务端口（22号端口）</p>
 <p>XShell远程链接内容编辑：</p>
@@ -364,7 +364,7 @@ a --> l[......]</pre>
 </tr>
 </tbody>
 </table>
-<p><strong>四.vi语法和vim编辑器</strong></p>
+<p></p><h4>四.vi语法和vim编辑器</h4><p></p>
 <p>所有的Linux系统都会内建vi文本编辑器。</p>
 <p>Vim具有程序编程的能力，可以看作是Vi的增强版本，可以主动的以字体颜色辨别语法的丰富性，方便程序设计。代码补全、编译以及错误跳转等方便编程的功能特别丰富，被广泛使用。</p>
 <p>vi和vim的三种常见模式：</p>
@@ -509,8 +509,8 @@ mesg：允许vi显示其他用户用write写到自己终端上的信息</p>
 ndd：将当前行及其下共n行文本删除，并将所删内容放到1号删除寄存器中。</p>
 <p>想了解更多关于vi的快捷键 用法，可以参考<a href="https://www.jianshu.com/p/afcf3ae8b015" target="_blank" rel="noopener">VI快捷键</a>和<a href="https://www.jianshu.com/p/dde77e3b299f" target="_blank" rel="noopener">vim常用快捷键及使用技巧</a>这两篇文章。</p>
 <p><img src="https://www.runoob.com/wp-content/uploads/2015/10/vi-vim-cheat-sheet-sch.gif" alt="vi键盘图"></p>
-<p><strong>五.关机、重启、用户登录与注销</strong></p>
-<p>关机、重启指令：</p>
+<p></p><h4>五.关机、重启、用户登录与注销</h4><p></p>
+<p><strong>关机、重启指令</strong>：</p>
 <p>①shutdown指令:</p>
 <p>shutdown -h now : 立刻进行关机</p>
 <p>shutdown -h 1 : 分钟之后关机</p>
@@ -519,11 +519,11 @@ ndd：将当前行及其下共n行文本删除，并将所删内容放到1号删
 <p>③reboot : 现在重新启动计算机</p>
 <p>④sync : 把内存的数据同步到磁盘</p>
 <p>注意：不管是重启系统还是关闭系统，首先要运行sync命令，把内存中的数据写到磁盘中。</p>
-<p>用户登录与注销：</p>
+<p><strong>用户登录与注销</strong>：</p>
 <p>①登录时尽量少用root账号登陆，因为它是系统管理员，最大的权限，避免操作失误。可以用普通用户登录，登录后早用“==su -用户名==”命令来切换成系统管理员身份</p>
 <p>②在提示符下输入==logout==即可注销用户</p>
 <p>使用细节：logout注销指令在图形运行级别无效，在运行级别3下有效</p>
-<p><strong>六.用户管理</strong></p>
+<p></p><h4>六.用户管理</h4><p></p>
 <p>Linux系统是一个多用户多任务的操作系统，任何一个要使用系统资源的用户，都必须首先向系统管理员申请一个账号，然后以这个账号的身份进入系统。</p>
 <p>Linux的用户至少需要属于一个组。</p>
 <p><strong><em>添加用户</em></strong></p>
@@ -573,7 +573,7 @@ ndd：将当前行及其下共n行文本删除，并将所删内容放到1号删
 <p>/etc/group文件：</p>
 <p>组(group)的配置文件，记录Linux包含的信息</p>
 <p>每行含义：==组名：口令：组标识号：组内用户：组内用户列表==</p>
-<p><strong>七.指定运行级别</strong></p>
+<p></p><h4>七.指定运行级别</h4><p></p>
 <p>运行级别说明：</p>
 <p>0：关机</p>
 <p>1：单用户【找回丢失密码】</p>
@@ -587,7 +587,7 @@ ndd：将当前行及其下共n行文本删除，并将所删内容放到1号删
 <p>如何找回root密码：</p>
 <p>（进入到单用户模式，然后修改root密码。因为进入单用户模式，root不需要密码就可以登录）</p>
 <p>开机→在引导时输入回车键→看到一个界面输入e→看到一个新的界面，选中第二行（编辑内核）再输入e→在这行最后输入1→回车→再次输入b，这时就会进入到单用户模式，使用passwd指令来修改root密码。</p>
-<p><strong>八.帮助指令</strong></p>
+<p></p><h4>八.帮助指令</h4><p></p>
 <p>介绍：当我们对某个指令不熟悉时，我们可以使用Linux提供的帮助指令来了解这个指令的使用方法。</p>
 <p><strong><em>man获得帮助信息</em></strong></p>
 <p>基本语法：</p>
@@ -595,7 +595,7 @@ ndd：将当前行及其下共n行文本删除，并将所删内容放到1号删
 <p><strong><em>help指令</em></strong></p>
 <p>基本语法：</p>
 <p>==help 命令（功能描述：获得shell内置命令的帮助信息）==</p>
-<p><strong>九.文件目录类指令</strong></p>
+<p></p><h4>九.文件目录类指令</h4><p></p>
 <p><strong><em>1.pwd指令</em></strong></p>
 <p>基本语法：</p>
 <p>==pwd==（功能描述：显示当前工作目录的绝对路径）</p>
@@ -738,6 +738,380 @@ ndd：将当前行及其下共n行文本删除，并将所删内容放到1号删
 </tr>
 </tbody>
 </table>
+<p><strong><em>13.&gt;指令和 &gt;&gt;指令</em></strong></p>
+<p><code>&gt;</code>指令表示输出重定向（会将原来文件的内容覆盖）</p>
+<p><code>&gt;&gt;</code>指令表示追加（不会覆盖原来文件的内容，而是追加到文件的尾部）</p>
+<p>基本语法：</p>
+<p>==ls -l 文件==（功能描述：列表的内容写入文件当中（没有则创建该文件，有该文件则覆盖写入文件中））</p>
+<p>==ls -al &gt;&gt;文件==（功能描述：列表的内容追加到文件的末尾）</p>
+<p>==cat 文件1 &gt; 文件2==（功能描述：将文件1的内容覆盖到文件2）</p>
+<p>==echo “内容” &gt;&gt; 文件==（功能描述：将文件1的内容追加到文件2的末尾）</p>
+<p>==cal==（功能描述：打印当前日历信息）</p>
+<p><strong><em>14.echo指令</em></strong></p>
+<p>echo输出内容到控制台</p>
+<p>基本语法：</p>
+<p>==echo [选项] [输出内容]==</p>
+<p><code>echo $PATH</code>指令用于打印当前文件变量路径到控制台</p>
+<p><code>echo &quot;XXX&quot;</code>指令表示打印XXX到控制台显示</p>
+<p><strong><em>15.head指令</em></strong></p>
+<p>head用于显示文件的开头部分内容，默认情况下head指令显示文件的前10行内容</p>
+<p>基本语法：</p>
+<p>==head 文件==（功能描述：默认查看文件头10行内容）</p>
+<p>==head -n 数字(a) 文件==（功能描述：查看文件头a行内容，a可以是任意行数）</p>
+<p><strong><em>16.tail指令</em></strong></p>
+<p>tail用于输出文件中尾部的内容，默认情况下tail指令显示文件的后10行内容</p>
+<p>基本语法：</p>
+<p>==tail 文件==（功能描述：查看文件后10行内容）</p>
+<p>==tail -n 5 文件==（功能描述：查看文件后5行的内容，5可以是任意行数）</p>
+<p>==tail -f 文件==（功能描述：实时追踪该文档的所有更新）</p>
+<p><strong><em>17.软链接指令</em></strong></p>
+<p>软链接也叫符号连接，类似于windows里面的快捷方式，主要存放了链接其他文件的路径</p>
+<p>基本语法：</p>
+<p>==ln -s [原文件或目录] [软链接名]==（功能描述：给原文件创建一个软链接）</p>
+<p>说明：当我们使用pwd指令查看目录时，仍然看到的是软链接所在目录。</p>
+<p>==rm -rf [软链接名]==（功能描述：删除软链接，注意不要带/）</p>
+<p><strong><em>18.history指令</em></strong></p>
+<p>查看已经执行过的历史指令，也可以执行历史指令</p>
+<p>基本语法：</p>
+<p>==history==（功能描述：查看已经执行过的历史指令）</p>
+<p>==history 10==（功能描述：显示最近执行过的10个历史指令）</p>
+<p>==!历史指令编号==（功能描述：执行对应历史编号的指令）</p>
+<p></p><h4>十.时间日期类指令</h4><p></p>
+<p><strong><em>date指令</em></strong></p>
+<p>date指令用于显示当前日期</p>
+<p>基本语法：</p>
+<p>==date==（功能描述：显示当前时间0</p>
+<p>==date +%Y==（功能描述：显示当前年份）</p>
+<p>==date +%m==（功能描述：显示当前月份）</p>
+<p>==date +%d==（功能描述：显示当前是哪一天）</p>
+<p>==date “+%Y-%m-%d %H:%M:%S”==（功能描述：显示年月日时分秒）</p>
+<p>==date -s 字符串时间==（功能描述：设置系统时间）</p>
+<p><strong><em>cal指令</em></strong></p>
+<p>cal指令用于查看日历</p>
+<p>基本语法：</p>
+<p>==cal [选项（年份）]==（功能描述：不加选项，显示本月日历）</p>
+<p></p><h4>十一.搜索查找类</h4><p></p>
+<p><strong><em>find指令</em></strong></p>
+<p>find指令将从指定目录向下递归地遍历其各个子目录，将满足条件的文件或目录显示在终端。</p>
+<p>基本语法：</p>
+<p>==find [搜索范围] [选项]==</p>
+<p>选项说明：</p>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>功能</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-name&lt;查询方式&gt;</td>
+<td>按照指定的文件名查找模式查找文件</td>
+<td>find 搜索范围 -name 要查找的文件</td>
+</tr>
+<tr>
+<td>-user&lt;用户名&gt;</td>
+<td>查找属于指定用户名所有文件</td>
+<td>find 搜索范围 文件用户名 要查找文件</td>
+</tr>
+<tr>
+<td>-size&lt;文件大小&gt;</td>
+<td>按照指定的文件大小查找文件</td>
+<td>find 搜索范围 -size 文件指定大小<br>（单位：m/k +表示大于/-表示小于/=表示等于）</td>
+</tr>
+</tbody>
+</table>
+<p>按照通配符查找：find 搜索范围 -name *.txt（查找所有txt文件）</p>
+<p><strong><em>locate指令</em></strong></p>
+<p>locate指令可以快速定位文件路径，locate指令利用事先建立的系统中所有文件名称及路径的locate数据库实现快速定位给定的文件。</p>
+<p>locate指令无需遍历整个文件系统，查询速度较快，为了保证查询结果的准确度，管理员必须定期更新loate时刻。</p>
+<p>基本语法：</p>
+<p>==locatedb==（创建locate数据库）</p>
+<p>==locate 搜索文件名==</p>
+<p>由于locate指令基于数据库进行查询，所以第一次运行前，必须使用updatedb指令创建locate数据库。</p>
+<p><strong><em>grep指令和管道符号 |</em></strong></p>
+<p>grep过滤查找，管道符“|”表示将前一个命令的处理结果输出传递给后面的命令处理。</p>
+<p>基本语法：</p>
+<p>==grep [选项] 查找内容 源文件==</p>
+<p>==cat 文件名 | grep -[选项] 查找内容==</p>
+<p>常用选项：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">选项</th>
+<th style="text-align:center">功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">-n</td>
+<td style="text-align:center">显示匹配行及行号</td>
+</tr>
+<tr>
+<td style="text-align:center">-i</td>
+<td style="text-align:center">忽略字母大小写</td>
+</tr>
+</tbody>
+</table>
+<p></p><h4>十二.压缩和解压缩类</h4><p></p>
+<p><strong><em>1.gzip和gunzip指令</em></strong></p>
+<p>gzip用于压缩文件，gunzip用于解压文件。</p>
+<p>基本用法：</p>
+<p>==gzip 文件==（功能描述：压缩文件，只能将文件压缩为*.gz文件）</p>
+<p>说明：当使用gzip对文件进行压缩后，不会保留原来的文件。</p>
+<p>==gunzip 文件==（功能描述：解压缩文件命令）</p>
+<p><strong><em>2.zip和unzip指令</em></strong></p>
+<p>zip用于压缩文件，unzip用于解压文件。</p>
+<p>基本语法：</p>
+<p>==zip [选项] XXX.zip 将要压缩的内容==（功能描述：压缩文件和目录的指令）</p>
+<p>==unzip [选项] XXX.zip==（功能描述：解压缩文件）</p>
+<p>zip常用选项：</p>
+<p>-r：递归压缩，即压缩目录</p>
+<p>unzip常用选项：</p>
+<p>-d&lt;目录&gt;：指定解压后文件的存放目录</p>
+<p><strong><em>3.tar指令</em></strong></p>
+<p>tar指令是打包指令，最后打包的文件是.tar.gz文件</p>
+<p>基本语法：</p>
+<p>==tar [选项] XXX.rat.gz 打包的内容==（功能描述：打包目录，压缩后的文件格式为.tar.gz）</p>
+<p>一般常用指令：</p>
+<p>==tar -zcvf 打包压缩后的文件名 要打包压缩的文件/目录==</p>
+<p>==tar -zxvf tar文件 -C /目录==（功能描述：解包文件到指定目录，前提是指定目录存在）</p>
+<p>选项说明：</p>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-c</td>
+<td>产生.tar打包文件</td>
+</tr>
+<tr>
+<td>-v</td>
+<td>显示详细信息</td>
+</tr>
+<tr>
+<td>-f</td>
+<td>指定压缩后的文件名</td>
+</tr>
+<tr>
+<td>-z</td>
+<td>打包同时压缩</td>
+</tr>
+<tr>
+<td>-x</td>
+<td>解包.tar文件</td>
+</tr>
+</tbody>
+</table>
+<p></p><h4>十三.组管理和权限管理</h4><p></p>
+<p><strong>Ⅰ.Linux组基本介绍</strong></p>
+<p>在Linux中的每个用户都必须属于一个组，不能独立于组外。在Linux中每个文件有所有者、所在组、其他组的概念。</p>
+<p>文件：</p>
+<p>（1）所有者</p>
+<p>（2）所在组</p>
+<p>（3）其他组</p>
+<p>（4）改变用户所在的组</p>
+<p><strong>1.文件/目录所有者</strong></p>
+<p>一般为文件的创建者，谁创建了该文件，就自然地成为该文件的所有者。</p>
+<p><strong><em>查看文件的所有者</em></strong></p>
+<p>指令：==ls -ahk==</p>
+<p><strong><em>修改文件所有者</em></strong></p>
+<p>指令：==chown 用户名 文件名==（不改变文件所在组）</p>
+<p><strong><em>组的创建</em></strong></p>
+<p>指令：==groupadd 组名==</p>
+<p><strong>2.文件/目录所在组</strong></p>
+<p>当某个用户创建了一个文件后，默认这个文件的所在组就是该用户所在的组。</p>
+<p><strong><em>查看文件/目录所在组</em></strong></p>
+<p>指令：==ls -ahl==</p>
+<p><strong><em>修改文件所在组</em></strong></p>
+<p>指令：==chgrp 组名 文件名==</p>
+<p><strong>3.其他组</strong></p>
+<p>除文件的所有者和所在组的用户外，系统的其他用户也都文件的其他组。</p>
+<p><strong>4.改变用户的其他组</strong></p>
+<p>在添加用户时，可以指定该用户添加到哪个组中，同样的用root的管理权限可以改变某个用户所在的组。</p>
+<p><strong><em>改变用户所在组指令</em></strong></p>
+<p>==usermod -g 组名 用户名==</p>
+<p>==usermod -d 目录名 用户名==（改变噶爱用户登录的初始目录）</p>
+<p><strong>Ⅱ.权限管理</strong></p>
+<p>==ls -l==可用于查看文件权限，显示内容如下：</p>
+<p>-rwxrw-r-- 1 root 1213 Feb 2 09:39 abc.txt</p>
+<p>各个参数介绍：</p>
+<p>①第0位表示文件类型(d,-,l,c,b)</p>
+<p>文件类型：</p>
+<p><code>- : 普通文件</code></p>
+<p><code>d : 目录</code></p>
+<p><code>l : 软链接文件</code></p>
+<p><code>c : 字符设备【键盘、鼠标】</code></p>
+<p><code>b : 块文件【硬盘】</code></p>
+<p>②文件权限说明：</p>
+<p>第1-3位确定所有者（该文件的所有者）拥有该文件的权限——User</p>
+<p>第4-6位确定所属组（同用户组的）拥有该文件的权限——Group</p>
+<p>第7-9位确定其他用户拥有该文件的权限——Other</p>
+<p>rwx：文件拥有者的权限是读、写和执行</p>
+<p>rw-：与文件拥有者同一组的用户的权限是读、写，但不能执行</p>
+<p>r–：不与文件拥有者同组的其他用户的权限是读，不能写和执行</p>
+<p>rwx权限说明：</p>
+<p>(1)rwx作用到文件</p>
+<p>r代表read权限，可以读取、查看，权重为4</p>
+<p>w代表write权限，可以修改文件（但是不代表可以删除该文件，删除该文件的前提条件是该文件所在的目录具有写权限，才能删除该文件）权重为2</p>
+<p>x代表excute权限，可以被执行（绿色），权重为1</p>
+<p>(2)rwx作用到目录：</p>
+<p>r代表可读[read]：可以读取，ls查看目录内容</p>
+<p>w代表可写[write]：可以修改，目录内创建+删除+重命名目录</p>
+<p>x代表可执行[excute]：可以进入该目录</p>
+<p>常用linux文件权限：</p>
+<blockquote>
+<p><em>444</em> <em>r</em>–<em>r</em>–<em>r</em>–<br>
+<em>600</em> <em>rw</em>-------<br>
+<em>644</em> <em>rw</em>-<em>r</em>–<em>r</em>–<br>
+<em>666</em> <em>rw</em>-<em>rw</em>-<em>rw</em>-<br>
+<em>700</em> <em>rwx</em>------<br>
+<em>744</em> <em>rwxr</em>–<em>r</em>–<br>
+<em>755</em> <em>rwxr</em>-<em>xr</em>-<em>x</em><br>
+<em>777</em> <em>rwxrwxrwx</em></p>
+</blockquote>
+<p>③1：表示文件硬链接数或者目录中的子目录数</p>
+<p>④第一个root表示用户</p>
+<p>⑤第二个root表示组</p>
+<p>⑥1213：表示文件大小（单位：字节k）（如果是文件夹，显示4096字节）</p>
+<p>⑦Feb 2 09:39→表示文件最后修改日期</p>
+<p>⑧abc：表示文件名和文件类型</p>
+<p><strong>Ⅲ.修改权限</strong></p>
+<p><img src="http://www.iczhl.com/uploads/allimg/181226/6-1Q226101425A3.jpg" alt="rwx权限"></p>
+<p>基本说明：</p>
+<p>通过chmod指令，可以修改文件或者目录的权限。</p>
+<p><strong>第一种方式：+、-、a变更权限</strong></p>
+<p>u：所有者</p>
+<p>g：所有组</p>
+<p>o：其他人</p>
+<p>a：所有人（u、g、o的总和）</p>
+<p>(1)==chmod  u=rwx,g=rx,o=x 文件目录名==</p>
+<p>(2)==chmod o+w 文件目录名==</p>
+<p>(3)==chmod a-x 文件目录名==</p>
+<p><strong>第二种方式：通过数字变更权限</strong></p>
+<p>r=4 w=2 x=1  →  rwx=4+2+1=7</p>
+<p>==chmod u=rwx,g=rx,o=x 文件目录名==相当于==chmod 751 文件目录名==</p>
+<p><strong>Ⅳ.修改文件所有者</strong></p>
+<p>基本介绍：</p>
+<p>==chown newowner file 改变文件的所有者==</p>
+<p>==chown newowner:newgroup file 改变用户的所有者和所有组==</p>
+<p>-R：如果是目录，则使其目录下所有的子文件或目录递归生效</p>
+<p><strong>Ⅳ.修改文件所在组</strong></p>
+<p>基本介绍：</p>
+<p>==chgrp newgroup file 改变文件的所有组==</p>
+<p></p><h4>十四.任务调度</h4><p></p>
+<p><strong>Ⅰ.crond任务调度</strong></p>
+<p>crontab进行定时任务的设置。</p>
+<p>任务调度：是指系统在某个时间执行的特定的命令或程序</p>
+<p>任务调度分类：</p>
+<p>1.系统工作：有些重要的工作必须周而复始地执行，如病毒扫描等</p>
+<p>2.个别用户工作：个别用户可能希望执行某些程序，比如对mysql数据库的备份</p>
+<p>基本语法：==crontab [选项]==</p>
+<p>常用选项：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">选项</th>
+<th style="text-align:center">功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">-e</td>
+<td style="text-align:center">编辑crontab定时任务</td>
+</tr>
+<tr>
+<td style="text-align:center">-l</td>
+<td style="text-align:center">查询crontab任务</td>
+</tr>
+<tr>
+<td style="text-align:center">-r</td>
+<td style="text-align:center">删除当前用户所有的crontab任务</td>
+</tr>
+</tbody>
+</table>
+<p>说明：</p>
+<p>(1)如果只是简单的任务，可以不用写脚本，直接在crontab中加入任务即可</p>
+<p>(2)对于比较复杂的任务，需要写脚本（Shell脚本）</p>
+<blockquote>
+<p>如：</p>
+<p>cton -e</p>
+<p>*/1 * * * * ls -l /etc/ &gt; /tmp/to.txt</p>
+</blockquote>
+<p>表示每小时的每分钟执行ls -l /etc &gt; /tmp/to.txt命令</p>
+<p>5个占位符的说明：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">项目</th>
+<th style="text-align:center">含义</th>
+<th style="text-align:left">范围</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">第一个*</td>
+<td style="text-align:center">一小时当中的第几分钟</td>
+<td style="text-align:left">0-59</td>
+</tr>
+<tr>
+<td style="text-align:left">第二个*</td>
+<td style="text-align:center">一天当中的第几个小时</td>
+<td style="text-align:left">0-23</td>
+</tr>
+<tr>
+<td style="text-align:left">第三个*</td>
+<td style="text-align:center">一个月当中的第几天</td>
+<td style="text-align:left">1-31</td>
+</tr>
+<tr>
+<td style="text-align:left">第四个*</td>
+<td style="text-align:center">一年当中的第几个月</td>
+<td style="text-align:left">1-12</td>
+</tr>
+<tr>
+<td style="text-align:left">第五个*</td>
+<td style="text-align:center">一周当中的星期几</td>
+<td style="text-align:left">0-7（0和7都代表星期日）</td>
+</tr>
+</tbody>
+</table>
+<p>特殊符号说明：</p>
+<table>
+<thead>
+<tr>
+<th>特殊符号</th>
+<th style="text-align:center">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>*</td>
+<td style="text-align:center">代表任何时间。比如第一个“*”就代表一小时中每分钟都执行一次的意思</td>
+</tr>
+<tr>
+<td>,</td>
+<td style="text-align:center">代表不连续时间。比如“0 8,12,16 * * *”命令，就代表在每天的8点、12点、16点都执行一次命令</td>
+</tr>
+<tr>
+<td>-</td>
+<td style="text-align:center">代表连续的时间范围。比如“0 5 * * 1-6”命令，代表在周一到周六的凌晨5点执行命令</td>
+</tr>
+<tr>
+<td>*/n</td>
+<td style="text-align:center">代表每隔多久执行一次。比如“*/10 * * * ”命令，代表每隔10分钟就执行一遍命令</td>
+</tr>
+</tbody>
+</table>
+<p><strong>crond相关指令</strong>：</p>
+<p>(1)crontab -r：终止任务调度</p>
+<p>(2)crontab -l：列出当前有哪些任务任务调度</p>
+<p>(3)service crond restart [重启任务调度]</p>
 
             </div>
 
