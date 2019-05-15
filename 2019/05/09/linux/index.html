@@ -1554,6 +1554,115 @@ ndd：将当前行及其下共n行文本删除，并将所删内容放到1号删
 <p>==yum list | grep xxx软件列表==</p>
 <p>安装指定的yum包：</p>
 <p>==yum install xxx==(下载安装)</p>
+<p></p><h4>十九.Ubuntu系统</h4><p></p>
+<p><strong>Ⅰ.介绍</strong></p>
+<p>Ubuntu（乌班图）是一个以桌面应用为主的开源GNU/Linux操作系统，Ubuntu是基于GNU/Linux，支持x86、amd64和ppc架构。</p>
+<p>Ubuntu和Centos都是基于GNU/Linux内核的，因此基本使用和Centos是几乎一样的，各种指令时可以通用的，只是界面和预安装的软件有所差别。</p>
+<p><a href="http://cn.ubuntu.com/download/" target="_blank" rel="noopener">Ubuntu下载地址</a></p>
+<p><strong>Ⅱ.root用户</strong></p>
+<p>ubuntu安装成功后，都是普通用户，并没有root最高权限，如果需要使用root权限的时候，通常都会在命令前面加上==sudo==</p>
+<p>我们也可以使用==su root==命令来直接切换到roo用户，但是如果没有给root设置初始密码，就会抛出su:Authentication failure这样的问题</p>
+<p><strong>给root用户设置密码并使用</strong></p>
+<p>1)输入==sudo passwd==命令，输入一般用户密码并设定root用户密码</p>
+<p>2)设定root密码成功后，输入==su==命令，并输入设定的roo密码，就可以切换成root用户。提示符$表示一般用户，提示符#表示root用户</p>
+<p>3)输入==exit==或者==logout==或者快捷键==Ctrl+D==,可以退出root返回一般用户</p>
+<p><strong>Ⅲ.apt包管理</strong></p>
+<p>apt介绍：</p>
+<p>apt是Advanced Packaging Tool的简称，是一款安装包管理工具，在Ubuntu下，我们可以使用apt命令用于软件包的安装、删除、清理等</p>
+<p>apt相关操作命令：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">指令</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">sudo apt-get update</td>
+<td style="text-align:center">更新源</td>
+</tr>
+<tr>
+<td style="text-align:center">sudo apt-get install package</td>
+<td style="text-align:center">安装包</td>
+</tr>
+<tr>
+<td style="text-align:center">sudo apt-get remove package</td>
+<td style="text-align:center">删除包</td>
+</tr>
+<tr>
+<td style="text-align:center">sudo apt-cache search package</td>
+<td style="text-align:center">搜索软件包</td>
+</tr>
+<tr>
+<td style="text-align:center">sudo apt-cache show package</td>
+<td style="text-align:center">获取包的相关信息，如说明、大小、版本等</td>
+</tr>
+<tr>
+<td style="text-align:center">sudo apt-get install package --reinstall</td>
+<td style="text-align:center">重新安装包</td>
+</tr>
+<tr>
+<td style="text-align:center">sudo apt-get -f install</td>
+<td style="text-align:center">修复安装</td>
+</tr>
+<tr>
+<td style="text-align:center">sudo apt-get remove package --purge</td>
+<td style="text-align:center">删除包，包括配置文件等</td>
+</tr>
+<tr>
+<td style="text-align:center">sudo apt-get build-dep package</td>
+<td style="text-align:center">安装相关的编译环境</td>
+</tr>
+<tr>
+<td style="text-align:center">sudo apt-get upgrade</td>
+<td style="text-align:center">更新已安装的包</td>
+</tr>
+<tr>
+<td style="text-align:center">sudo apt-get dist-upgrade</td>
+<td style="text-align:center">升级系统</td>
+</tr>
+<tr>
+<td style="text-align:center">sudo apt-cache depends package</td>
+<td style="text-align:center">了解使用该包依赖哪些包</td>
+</tr>
+<tr>
+<td style="text-align:center">sudo apt-cache redepends package</td>
+<td style="text-align:center">查看该包被哪些包依赖</td>
+</tr>
+<tr>
+<td style="text-align:center">sudo apt-get source package</td>
+<td style="text-align:center">下载该包的源码</td>
+</tr>
+</tbody>
+</table>
+<p>推荐使用Ubuntu清华源：(16.04版本)</p>
+<blockquote>
+<pre><code>deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial main restricted universe multiverse
+# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial main restricted universe multiverse
+deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-updates main restricted universe multiverse
+# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-updates main restricted universe multiverse
+deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-backports main restricted universe multiverse
+# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-backports main restricted universe multiverse
+deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-security main restricted universe multiverse
+# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-security main restricted universe multiverse
+
+# 预发布软件源，不建议启用
+# deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-proposed main restricted universe multiverse
+# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-proposed main restricted universe multiverse
+</code></pre>
+</blockquote>
+<p>更多<a href="https://mirrors.tuna.tsinghua.edu.cn/help/ubuntu/" target="_blank" rel="noopener">清华大学开源软件镜像</a></p>
+<p><strong>Ⅳ.ssh远程登陆</strong></p>
+<p>介绍：</p>
+<p>SSH为Secure Shell的缩写，SSH为建立在应用层和传输层基础上的安全协议。</p>
+<p>SSH是目前较可靠，专为远程登陆会话和其他网络服务提供安全性的协议，常用于远程登录、以及用户之间进行资料拷贝。几乎所有UNIX平台——包括HP-UX、Linux、AIX、Solaris、Digital UNIX、Irix以及其他平台，都可用SSH。</p>
+<p>使用SSH服务，需要安装相应的服务器和客户端。客户端和服务器的关系：如果A机器想被B机器远程控制，那么A机器需要安装SSH服务器，B机器需要安装SSH客户端。</p>
+<p>Ubuntu默认没有sshd服务，需要独立安装：</p>
+<p>安装SSH：</p>
+<p>==sudo apt-get install openssh-server==（在Linux安装SSH服务器和客户端）</p>
+<p>启动sshd服务：</p>
+<p>==service sshd restart==（监听22号端口）</p>
 
             </div>
 
