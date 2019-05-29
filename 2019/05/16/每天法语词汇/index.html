@@ -1,0 +1,2130 @@
+<!DOCTYPE HTML>
+<html>
+
+<head><meta name="generator" content="Hexo 3.8.0">
+	<link rel="bookmark" type="image/x-icon" href="/img/logo.png">
+	<link rel="shortcut icon" href="/img/logo.png">
+
+	
+			    <title>
+    JerryRain
+    </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="/css/mic_main.css">
+    <link rel="stylesheet" href="/css/dropdownMenu.css">
+    <meta name="keywords" content="JR">
+
+    
+    	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	 
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css">
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/kobe.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/love.js"></script>
+    <script src="/js/main.js"></script>
+	
+<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+    
+		
+<!-- Layouts -->
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_coy.css">
+<link rel="stylesheet" href="/css/typo.css">
+<link rel="stylesheet" href="/css/mouse.css">
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    
+        <script src="https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js"></script>
+        <script>
+          if (window.mermaid) {
+            mermaid.initialize({theme: 'forest'});
+          }
+        </script>
+    
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">Go on</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special">
+            <ul class="menu links">
+			<!-- Homepage  主页  --> 
+			<li>
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="category-link" href="/categories/BLOG/">BLOG</a></li><li><a class="category-link" href="/categories/CODING/">CODING</a></li><li><a class="category-link" href="/categories/French/">French</a></li><li><a class="category-link" href="/categories/Linux/">Linux</a></li><li><a class="category-link" href="/categories/Markdown/">Markdown</a></li><li><a class="category-link" href="/categories/blog/">blog</a></li><li><a class="category-link" href="/categories/robert/">robert</a>
+	                    </li></ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">归档</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="archive-link" href="/archives/2019/05/">May 2019</a></li><li><a class="archive-link" href="/archives/2019/04/">April 2019</a>
+	                    </li></ul>
+	        </li>
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/about/" title="简历">
+		                简历
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/group/" title="团队">
+		                团队
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/gallery/" title="图库">
+		                图库
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/tag/" title="标签">
+		                标签
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+                    
+                    <li>
+                        <a title="github" href="https://github.com/JerryRain?tab=repositories" target="_blank" rel="noopener">
+                            <i class="icon fa fa-github"></i>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a title="500px" href="https://v.qq.com/x/page/p0753p3sozo.html" target="_blank" rel="noopener">
+                            <i class="icon fa fa-500px"></i>
+                        </a>
+                    </li>
+                    
+			</ul>
+</nav>
+
+        <div id="main">
+            <div class="post_page_title_img" style="height: 25rem;background-image: url(http://ku.90sjimg.com/element_origin_min_pic/17/06/12/5098f04a1a1eb237ea768bf9ef2fc58b.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;">
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2>每日法语词汇积累</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <h1 style="text-align:center">每日法语词汇积累</h1>
+<h3 id="一-人际交往类">一.人际交往类</h3>
+<p></p><h4>见面问候</h4><p></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">法语</th>
+<th style="text-align:center">中文释义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">bonjour</td>
+<td style="text-align:center">你好，您好(interj.)</td>
+</tr>
+<tr>
+<td style="text-align:center">bonsoir</td>
+<td style="text-align:center">晚上好(interj.)</td>
+</tr>
+<tr>
+<td style="text-align:center">salut</td>
+<td style="text-align:center">你好，再见(用于熟人朋友之间)(interj.)</td>
+</tr>
+<tr>
+<td style="text-align:center">bien</td>
+<td style="text-align:center">好(adv.)</td>
+</tr>
+<tr>
+<td style="text-align:center">enchanté,e</td>
+<td style="text-align:center">幸会(adj.)</td>
+</tr>
+<tr>
+<td style="text-align:center">connaître</td>
+<td style="text-align:center">认识，了解(v.)</td>
+</tr>
+<tr>
+<td style="text-align:center">plaisir</td>
+<td style="text-align:center">高兴，乐趣(n.m.)</td>
+</tr>
+</tbody>
+</table>
+<p>Bonjour.</p>
+<p>Bonsoir.</p>
+<p>Salut.</p>
+<p>Coucou.  (嗨，你好)</p>
+<p>Comment allez-vous?</p>
+<p>Je vais très bien, et vous?</p>
+<p>Comment ça va?</p>
+<p>Ça va?</p>
+<p>Ça va bien, et toi?</p>
+<p>Ça va plutôt bien.  (很不错)</p>
+<p>Ça va, comme d’habitude.  (平平常常)</p>
+<p>Ça va assez bien.  (还行)</p>
+<p>Pas mal.  (不错)</p>
+<p>Comme ci, comme ça.  (马马虎虎)</p>
+<p>Ça ne va pas très bien.</p>
+<p>Quoi de neuf?  (最近有什么新鲜事吗？)</p>
+<p>Rien de neuf.  (还是老样子/没什么变化)</p>
+<p>Ça fait longetemps!  (好久不见！)</p>
+<p>Oui, bien trop longetemps.</p>
+<p>Enchanté(e)!  (幸会→Nice to meet you)</p>
+<p>Je suis content(e) de vous connaître.</p>
+<p>Ça fait plaisir de vous voir!</p>
+<p></p><h4>介绍相识</h4><p></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">法语</th>
+<th style="text-align:center">中文释义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">présenter</td>
+<td style="text-align:center">介绍(v.)</td>
+</tr>
+<tr>
+<td style="text-align:center">nom</td>
+<td style="text-align:center">名字(n.m.)</td>
+</tr>
+<tr>
+<td style="text-align:center">monsieur</td>
+<td style="text-align:center">先生(n.m.)</td>
+</tr>
+<tr>
+<td style="text-align:center">s’appeler</td>
+<td style="text-align:center">名叫</td>
+</tr>
+<tr>
+<td style="text-align:center">profession</td>
+<td style="text-align:center">职业(n.f.)</td>
+</tr>
+<tr>
+<td style="text-align:center">métier</td>
+<td style="text-align:center">职业(n.m.)</td>
+</tr>
+<tr>
+<td style="text-align:center">ravi,e</td>
+<td style="text-align:center">高兴的(adj.)</td>
+</tr>
+<tr>
+<td style="text-align:center">rencontrer</td>
+<td style="text-align:center">遇见(v.)</td>
+</tr>
+<tr>
+<td style="text-align:center">numéro</td>
+<td style="text-align:center">电话号码(n.m.)</td>
+</tr>
+<tr>
+<td style="text-align:center">carte de visite</td>
+<td style="text-align:center">名片</td>
+</tr>
+<tr>
+<td style="text-align:center">adresse email</td>
+<td style="text-align:center">电子邮件地址</td>
+</tr>
+</tbody>
+</table>
+<p>Vous vous connaissez?</p>
+<p>Je vous/te présente …</p>
+<p>Alors, voici …</p>
+<p>C’est …</p>
+<p>Comment vous applez-vous?</p>
+<p>Comment t’appelles-tu?</p>
+<p>Et votre nom, c’est …?</p>
+<p>Monsieur / Madame /Mademoiselle  (先生/女士/小姐)</p>
+<p>Permettez-moi de me présenter.  (请允许我做自我介绍)</p>
+<p>Je m’appelle …</p>
+<p>Je suis …</p>
+<p>Moi, c’est …</p>
+<p>Quelle est votre profession?</p>
+<p>Quel est votre métier?</p>
+<p>je suis ravi(e) de vous rencontrer.</p>
+<p>Voici mon numéro.</p>
+<p>Merci, voici le mien.  (这是我的)</p>
+<p>C’est ma carte de visite, mon adresse email est dessus. (这是我的名片，上面有我的电子邮箱)</p>
+<p>Merci, c’est la mienne.</p>
+<p></p><h4>告别</h4><p></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">法语</th>
+<th style="text-align:center">中文释义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">au revoir</td>
+<td style="text-align:center">再见(较为正式)</td>
+</tr>
+<tr>
+<td style="text-align:center">ciao</td>
+<td style="text-align:center">再见(用于熟人和朋友之间，年轻人用得较多)</td>
+</tr>
+<tr>
+<td style="text-align:center">aprè-midi</td>
+<td style="text-align:center">下午(n.m.)</td>
+</tr>
+<tr>
+<td style="text-align:center">soir</td>
+<td style="text-align:center">晚上(n.m.)</td>
+</tr>
+<tr>
+<td style="text-align:center">demain</td>
+<td style="text-align:center">明天(n.m.)</td>
+</tr>
+<tr>
+<td style="text-align:center">partir</td>
+<td style="text-align:center">出发，离开(v.)</td>
+</tr>
+<tr>
+<td style="text-align:center">laisser</td>
+<td style="text-align:center">留下(v.)</td>
+</tr>
+<tr>
+<td style="text-align:center">de ma part</td>
+<td style="text-align:center">代我</td>
+</tr>
+</tbody>
+</table>
+<p>Au revoir.</p>
+<p>Salut.</p>
+<p>Ciao.</p>
+<p>Bonne journée.</p>
+<p>Bonne soirée.</p>
+<p>Bonne nuit.</p>
+<p>A tout à l’heure.  (一会儿见)</p>
+<p>A cet apré-midi.</p>
+<p>A ce soir.</p>
+<p>A demain.</p>
+<p>A plus tard.  (回头见)</p>
+<p>A bientôt.  (一会儿见)</p>
+<p>A la prochaine.  (下次见)</p>
+<p>Je dois partir.  (我得走了)</p>
+<p>Je vous/te laisse.  (我先走了)</p>
+<p>Dis(Dites) bonjour à … de ma part!   (请你/您代我向…问好！)</p>
+<p></p><h4>感谢与回应</h4><p></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">法语</th>
+<th style="text-align:center">中文释义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">merci</td>
+<td style="text-align:center">谢谢(interj.)</td>
+</tr>
+<tr>
+<td style="text-align:center">remercier</td>
+<td style="text-align:center">感激(v.)</td>
+</tr>
+<tr>
+<td style="text-align:center">d’avance</td>
+<td style="text-align:center">提前</td>
+</tr>
+<tr>
+<td style="text-align:center">gentil,le</td>
+<td style="text-align:center">客气的，和善的(adj.)</td>
+</tr>
+<tr>
+<td style="text-align:center">de rien</td>
+<td style="text-align:center">没什么</td>
+</tr>
+<tr>
+<td style="text-align:center">problème</td>
+<td style="text-align:center">难题(n.m.)</td>
+</tr>
+</tbody>
+</table>
+<p>Merci.</p>
+<p>Merci bien.</p>
+<p>Merci beaucoup.</p>
+<p>Je vous remercie.</p>
+<p>Je te remercie.</p>
+<p>Merci d’avance.</p>
+<p>C’est gentil.</p>
+<p>Je vous en prie.  (不客气)</p>
+<p>Je t’en prie.</p>
+<p>De rien.  (没什么)</p>
+<p>Ce n’est rien.  (不值一提啦)</p>
+<p>Accun problème.  (没关系/没问题)</p>
+<p></p><h4>道歉与回应</h4><p></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">法语</th>
+<th style="text-align:center">中文释义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">pardon</td>
+<td style="text-align:center">对不起(interj.)</td>
+</tr>
+<tr>
+<td style="text-align:center">excusez-moi</td>
+<td style="text-align:center">请原谅我</td>
+</tr>
+<tr>
+<td style="text-align:center">désolé,e</td>
+<td style="text-align:center">抱歉的(adj.)</td>
+</tr>
+<tr>
+<td style="text-align:center">grave</td>
+<td style="text-align:center">严重的(adj.)</td>
+</tr>
+<tr>
+<td style="text-align:center">en retard</td>
+<td style="text-align:center">迟到</td>
+</tr>
+<tr>
+<td style="text-align:center">entrer</td>
+<td style="text-align:center">进来(v.)</td>
+</tr>
+</tbody>
+</table>
+<p>Parton.</p>
+<p>Excusez-moi.</p>
+<p>Excuse-moi.</p>
+<p>Je suis désolé(e).</p>
+<p>Je ne l’ai pas fait exprès.  (我不是故意的)</p>
+<p>Cela arrive.  (这是难免的)</p>
+<p>Ce n’est pas grave.  (不要紧)</p>
+<p>Ne vous en faites pas.  (别担心)</p>
+<p>Ce n’est rien.  (没什么)</p>
+<p></p><h4>邀请与回应</h4><p></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">法语</th>
+<th style="text-align:center">中文释义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">venir</td>
+<td style="text-align:center">来(v.)</td>
+</tr>
+<tr>
+<td style="text-align:center">d’accord</td>
+<td style="text-align:center">同意，好的</td>
+</tr>
+<tr>
+<td style="text-align:center">libre</td>
+<td style="text-align:center">自由的，有空的(adj.)</td>
+</tr>
+<tr>
+<td style="text-align:center">pris,e</td>
+<td style="text-align:center">忙的(adj.)</td>
+</tr>
+</tbody>
+</table>
+<p>Vous faites quelque chose demain?</p>
+<p>Est-ce que vous voulez venir?</p>
+<p>Avec plaisir.  (很愿意)</p>
+<p>D’accord, je viens.</p>
+<p>Je suis libre demain.</p>
+<p>Je suis pris(e) demain, désilé(e).   (我明天有事，抱歉)</p>
+<p></p><h4>电话交流</h4><p></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">法语</th>
+<th style="text-align:center">中文释义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">allô</td>
+<td style="text-align:center">喂(打电话打招呼用语)</td>
+</tr>
+<tr>
+<td style="text-align:center">mobile</td>
+<td style="text-align:center">手机(n.m.)</td>
+</tr>
+<tr>
+<td style="text-align:center">message</td>
+<td style="text-align:center">信息，口信(n.m.)</td>
+</tr>
+<tr>
+<td style="text-align:center">copain</td>
+<td style="text-align:center">男性朋友(n.m.)</td>
+</tr>
+<tr>
+<td style="text-align:center">copine</td>
+<td style="text-align:center">女性朋友(n.f.)</td>
+</tr>
+<tr>
+<td style="text-align:center">faculté(fac)</td>
+<td style="text-align:center">大学，学院(n.f.)</td>
+</tr>
+<tr>
+<td style="text-align:center">poste</td>
+<td style="text-align:center">电话机(n.m.)</td>
+</tr>
+<tr>
+<td style="text-align:center">patienter</td>
+<td style="text-align:center">等待(v.)</td>
+</tr>
+<tr>
+<td style="text-align:center">prendre un message</td>
+<td style="text-align:center">记一下留言</td>
+</tr>
+<tr>
+<td style="text-align:center">occupé,e</td>
+<td style="text-align:center">电话占线(adj.)</td>
+</tr>
+<tr>
+<td style="text-align:center">en ligne</td>
+<td style="text-align:center">电话占线</td>
+</tr>
+<tr>
+<td style="text-align:center">appeler</td>
+<td style="text-align:center">打电话给某人</td>
+</tr>
+<tr>
+<td style="text-align:center">rapprler</td>
+<td style="text-align:center">再打电话给某人</td>
+</tr>
+</tbody>
+</table>
+<p>Je voudrais parler à …</p>
+<p>Est-ce que je peux parler à …?</p>
+<p>Est-ce que … est là?</p>
+<p>C’est de la part de qui?  (您是哪位？)</p>
+<p>Ne quittez pas.  (请不要挂电话)</p>
+<p>Je vous le/la passe.  (我给他/她转过去)</p>
+<p>Son poste est occupé.</p>
+<p>Il n’est pas là.</p>
+<p>Vous patientez?</p>
+<p>Vous voulez laisser un message?</p>
+<h3 id="二-日常家居生活和休闲">二.日常家居生活和休闲</h3>
+<p></p><h4>时间</h4><p></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">法语</th>
+<th style="text-align:center">中文释义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">heure</td>
+<td style="text-align:center">小时，钟点(n.f.)</td>
+</tr>
+<tr>
+<td style="text-align:center">une heure</td>
+<td style="text-align:center">一点，一小时</td>
+</tr>
+<tr>
+<td style="text-align:center">deux heures</td>
+<td style="text-align:center">两点，两小时</td>
+</tr>
+<tr>
+<td style="text-align:center">trois heures</td>
+<td style="text-align:center">三点，三小时</td>
+</tr>
+<tr>
+<td style="text-align:center">quatre heures</td>
+<td style="text-align:center">四点，四小时</td>
+</tr>
+<tr>
+<td style="text-align:center">cinq heures</td>
+<td style="text-align:center">五点，五小时</td>
+</tr>
+<tr>
+<td style="text-align:center">six heures</td>
+<td style="text-align:center">六点，六小时</td>
+</tr>
+<tr>
+<td style="text-align:center">sept heures</td>
+<td style="text-align:center">七点，七小时</td>
+</tr>
+<tr>
+<td style="text-align:center">huit heures</td>
+<td style="text-align:center">八点，八小时</td>
+</tr>
+<tr>
+<td style="text-align:center">neuf heures</td>
+<td style="text-align:center">九点，九小时</td>
+</tr>
+<tr>
+<td style="text-align:center">dix heures</td>
+<td style="text-align:center">十点，十小时</td>
+</tr>
+<tr>
+<td style="text-align:center">onze heures</td>
+<td style="text-align:center">十一点，十一小时</td>
+</tr>
+<tr>
+<td style="text-align:center">douze heures</td>
+<td style="text-align:center">十二点，十二小时</td>
+</tr>
+<tr>
+<td style="text-align:center">à l’heure</td>
+<td style="text-align:center">准时</td>
+</tr>
+<tr>
+<td style="text-align:center">montre</td>
+<td style="text-align:center">手表(n.f.)</td>
+</tr>
+<tr>
+<td style="text-align:center">horloge</td>
+<td style="text-align:center">钟表(n.f.)</td>
+</tr>
+<tr>
+<td style="text-align:center">avancer</td>
+<td style="text-align:center">提前(v.)</td>
+</tr>
+<tr>
+<td style="text-align:center">pendule</td>
+<td style="text-align:center">挂钟(n.f.)</td>
+</tr>
+<tr>
+<td style="text-align:center">retarder</td>
+<td style="text-align:center">迟到，晚点(v.)</td>
+</tr>
+<tr>
+<td style="text-align:center">7 jours sur 7</td>
+<td style="text-align:center">一周七天</td>
+</tr>
+<tr>
+<td style="text-align:center">24 heures sur 24</td>
+<td style="text-align:center">每天24小时</td>
+</tr>
+<tr>
+<td style="text-align:center">prendre son temps</td>
+<td style="text-align:center">不紧不慢，有条不紊</td>
+</tr>
+<tr>
+<td style="text-align:center">se dépêcher</td>
+<td style="text-align:center">赶快，加快速度</td>
+</tr>
+<tr>
+<td style="text-align:center">avoir le temps</td>
+<td style="text-align:center">有时间</td>
+</tr>
+<tr>
+<td style="text-align:center">pressé,e</td>
+<td style="text-align:center">赶时间的(adj.)</td>
+</tr>
+<tr>
+<td style="text-align:center">être en avance</td>
+<td style="text-align:center">提早</td>
+</tr>
+<tr>
+<td style="text-align:center">être en retard</td>
+<td style="text-align:center">迟到</td>
+</tr>
+<tr>
+<td style="text-align:center">être à l’heure</td>
+<td style="text-align:center">准时</td>
+</tr>
+</tbody>
+</table>
+<p>时间表达方法：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">时间</th>
+<th style="text-align:center">12小时制</th>
+<th style="text-align:center">24小时制</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">12h</td>
+<td style="text-align:center">midi</td>
+<td style="text-align:center">douze heures</td>
+</tr>
+<tr>
+<td style="text-align:center">12h05</td>
+<td style="text-align:center">midi cinq</td>
+<td style="text-align:center">douze heures cinq</td>
+</tr>
+<tr>
+<td style="text-align:center">12h10</td>
+<td style="text-align:center">midi dix</td>
+<td style="text-align:center">douze heures dix</td>
+</tr>
+<tr>
+<td style="text-align:center">12h15</td>
+<td style="text-align:center">midi et quart</td>
+<td style="text-align:center">douze heures quinze</td>
+</tr>
+<tr>
+<td style="text-align:center">12h20</td>
+<td style="text-align:center">midi vingt</td>
+<td style="text-align:center">douze heures vingt</td>
+</tr>
+<tr>
+<td style="text-align:center">12h25</td>
+<td style="text-align:center">midi vingt-cinq</td>
+<td style="text-align:center">douze heures vingt-cinq</td>
+</tr>
+<tr>
+<td style="text-align:center">12h30</td>
+<td style="text-align:center">midi et demie</td>
+<td style="text-align:center">douze heures trente</td>
+</tr>
+<tr>
+<td style="text-align:center">12h35</td>
+<td style="text-align:center">une heure moins vingt-cinq</td>
+<td style="text-align:center">douze heures trente-cinq</td>
+</tr>
+<tr>
+<td style="text-align:center">12h40</td>
+<td style="text-align:center">une heures moins le quart</td>
+<td style="text-align:center">douze heures quarante</td>
+</tr>
+<tr>
+<td style="text-align:center">12h45</td>
+<td style="text-align:center">une heure moins le quart</td>
+<td style="text-align:center">douze heures quarante-cinq</td>
+</tr>
+<tr>
+<td style="text-align:center">12h50</td>
+<td style="text-align:center">une heure moins dix</td>
+<td style="text-align:center">douze heures cinquante</td>
+</tr>
+<tr>
+<td style="text-align:center">12h55</td>
+<td style="text-align:center">une heure moins cinq</td>
+<td style="text-align:center">douze heures cinquante-cinq</td>
+</tr>
+<tr>
+<td style="text-align:center">13h00</td>
+<td style="text-align:center">une heure</td>
+<td style="text-align:center">treize heures</td>
+</tr>
+<tr>
+<td style="text-align:center">0h00</td>
+<td style="text-align:center">minuit</td>
+<td style="text-align:center">zéro heure</td>
+</tr>
+</tbody>
+</table>
+<p>Ma montre est toujours à l’heure.  (我的表一直很准)</p>
+<p>L’horloge avance de 3 minutes.  (表)</p>
+<p>La pendule retarde de 10 minutes.  (挂钟)</p>
+<p>Quelle heure est-il?  (几点了？)</p>
+<p></p><h4>日期</h4><p></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">法语</th>
+<th style="text-align:center">中文释义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">printemps</td>
+<td style="text-align:center">春天(n.m.)</td>
+</tr>
+<tr>
+<td style="text-align:center">été</td>
+<td style="text-align:center">夏天(n.m.)</td>
+</tr>
+<tr>
+<td style="text-align:center">automne</td>
+<td style="text-align:center">秋天(n.m.)</td>
+</tr>
+<tr>
+<td style="text-align:center">hiver</td>
+<td style="text-align:center">冬天(n.m.)</td>
+</tr>
+<tr>
+<td style="text-align:center">janvier</td>
+<td style="text-align:center">一月</td>
+</tr>
+<tr>
+<td style="text-align:center">février</td>
+<td style="text-align:center">二月</td>
+</tr>
+<tr>
+<td style="text-align:center">mars</td>
+<td style="text-align:center">三月</td>
+</tr>
+<tr>
+<td style="text-align:center">avril</td>
+<td style="text-align:center">四月</td>
+</tr>
+<tr>
+<td style="text-align:center">mai</td>
+<td style="text-align:center">五月</td>
+</tr>
+<tr>
+<td style="text-align:center">juin</td>
+<td style="text-align:center">六月</td>
+</tr>
+<tr>
+<td style="text-align:center">juillet</td>
+<td style="text-align:center">七月</td>
+</tr>
+<tr>
+<td style="text-align:center">août</td>
+<td style="text-align:center">八月</td>
+</tr>
+<tr>
+<td style="text-align:center">septembre</td>
+<td style="text-align:center">九月</td>
+</tr>
+<tr>
+<td style="text-align:center">octobre</td>
+<td style="text-align:center">十月</td>
+</tr>
+<tr>
+<td style="text-align:center">novembre</td>
+<td style="text-align:center">十一月</td>
+</tr>
+<tr>
+<td style="text-align:center">décembre</td>
+<td style="text-align:center">十二月</td>
+</tr>
+<tr>
+<td style="text-align:center">lundi</td>
+<td style="text-align:center">周一</td>
+</tr>
+<tr>
+<td style="text-align:center">mardi</td>
+<td style="text-align:center">周二</td>
+</tr>
+<tr>
+<td style="text-align:center">mecredi</td>
+<td style="text-align:center">周三</td>
+</tr>
+<tr>
+<td style="text-align:center">jeudi</td>
+<td style="text-align:center">周四</td>
+</tr>
+<tr>
+<td style="text-align:center">vendredi</td>
+<td style="text-align:center">周五</td>
+</tr>
+<tr>
+<td style="text-align:center">samedi</td>
+<td style="text-align:center">周六</td>
+</tr>
+<tr>
+<td style="text-align:center">dimanche</td>
+<td style="text-align:center">周日</td>
+</tr>
+<tr>
+<td style="text-align:center">date</td>
+<td style="text-align:center">日期</td>
+</tr>
+<tr>
+<td style="text-align:center">jour</td>
+<td style="text-align:center">天</td>
+</tr>
+<tr>
+<td style="text-align:center">aujourd’hui</td>
+<td style="text-align:center">今天</td>
+</tr>
+</tbody>
+</table>
+<pre class="mermaid">graph LR;
+a[季节] --> b[au printemps]
+a --> c[en été]
+a --> d[en automne]
+a --> e[en hiver]</pre>
+<p>Quelle date est-ce aujourd’hui?  (今天几号？)</p>
+<p>Aujourd’hui, c’est le 27.</p>
+<p>Aujourd’hui, c’est le 27 mai.</p>
+<p>Nous sommes le combien?  (今天几号？)</p>
+<p>Nous sommes le 5 avril.</p>
+<p>Quel jour est-ce aujourd’hui?  (今天是周几？)</p>
+<p>Aujourd’hui, c’est samedi.</p>
+<p>On est quel jour, aujourd’hui?  (今天是周几？)</p>
+<p>On est jeudi.</p>
+<p></p><h4>天气</h4><p></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">法语</th>
+<th style="text-align:center">中文释义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">bulletin météo</td>
+<td style="text-align:center">天气预报</td>
+</tr>
+<tr>
+<td style="text-align:center">orage</td>
+<td style="text-align:center">暴风雨(n.m.)</td>
+</tr>
+<tr>
+<td style="text-align:center">beau,belle</td>
+<td style="text-align:center">美丽的，晴朗的(adj.)</td>
+</tr>
+<tr>
+<td style="text-align:center">mauvais,e</td>
+<td style="text-align:center">糟糕的，坏的(adj.)</td>
+</tr>
+<tr>
+<td style="text-align:center">agréable</td>
+<td style="text-align:center">怡人的，舒适的(adj.)</td>
+</tr>
+<tr>
+<td style="text-align:center">désagréable</td>
+<td style="text-align:center">令人不舒服的(adj.)</td>
+</tr>
+<tr>
+<td style="text-align:center">froid,e</td>
+<td style="text-align:center">冷的(adj.)</td>
+</tr>
+<tr>
+<td style="text-align:center">chaud,e</td>
+<td style="text-align:center">热的(adj.)</td>
+</tr>
+<tr>
+<td style="text-align:center">gris,e</td>
+<td style="text-align:center">灰色的，阴郁的(adj.)</td>
+</tr>
+<tr>
+<td style="text-align:center">doux,douce</td>
+<td style="text-align:center">温和的(adj.)</td>
+</tr>
+<tr>
+<td style="text-align:center">lourd,e</td>
+<td style="text-align:center">沉重的，气闷的(adj.)</td>
+</tr>
+<tr>
+<td style="text-align:center">humide</td>
+<td style="text-align:center">潮湿的(adj.)</td>
+</tr>
+<tr>
+<td style="text-align:center">frais,fraîche</td>
+<td style="text-align:center">清新的，清凉的(adj.)</td>
+</tr>
+</tbody>
+</table>
+<p>Il fait beau.  (天气晴朗)</p>
+<p>Il ffait mauvais.  (天气糟糕)</p>
+<p>Il fait agréable.  (天气宜人)</p>
+<p>Il fait désagréable.  (天气不是很好)</p>
+<p>Il fait froid.</p>
+<p>Il fait chaud.</p>
+<p>Il fait gris.  (阴天)</p>
+<p>Il fait doux.  (天气温和)</p>
+<p>il fait lourd.  (很闷)</p>
+<p>Il fait humide.  (潮湿)</p>
+<p>Il fait frais.  (天气凉爽)</p>
+<p>Il fait une belle journée.</p>
+<p>Il fait 32℃.</p>
+<p>Il fait -5℃.</p>
+<p>Il y a du vent.    (有风)</p>
+<p>Il y a des nuages.  (多云)</p>
+<p>Il y a du brouillard.  (有雾)</p>
+<p>Il pleut.</p>
+<p>Il neige.</p>
+<p>Il gèle.  (结冰了)</p>
+<p></p><h4>日常生活</h4><p></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">法语</th>
+<th style="text-align:center">中文释义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">se réveiller</td>
+<td style="text-align:center">醒来(<a href="http://v.pr" target="_blank" rel="noopener">v.pr</a>.)</td>
+</tr>
+<tr>
+<td style="text-align:center">se lever</td>
+<td style="text-align:center">起床(<a href="http://v.pr" target="_blank" rel="noopener">v.pr</a>.)</td>
+</tr>
+<tr>
+<td style="text-align:center">se laver</td>
+<td style="text-align:center">洗澡(<a href="http://v.pr" target="_blank" rel="noopener">v.pr</a>.)</td>
+</tr>
+<tr>
+<td style="text-align:center">faire sa toilette</td>
+<td style="text-align:center">梳洗(<a href="http://v.pr" target="_blank" rel="noopener">v.pr</a>.)</td>
+</tr>
+<tr>
+<td style="text-align:center">s’habiller</td>
+<td style="text-align:center">穿衣(<a href="http://v.pr" target="_blank" rel="noopener">v.pr</a>.)</td>
+</tr>
+<tr>
+<td style="text-align:center">écouter la radio</td>
+<td style="text-align:center">听广播</td>
+</tr>
+<tr>
+<td style="text-align:center">lire le journal</td>
+<td style="text-align:center">读报</td>
+</tr>
+<tr>
+<td style="text-align:center">prendre son petit déjeuner</td>
+<td style="text-align:center">吃早餐</td>
+</tr>
+<tr>
+<td style="text-align:center">tartine</td>
+<td style="text-align:center">面包片(n.f.)</td>
+</tr>
+<tr>
+<td style="text-align:center">beurre</td>
+<td style="text-align:center">黄油(n.m.)</td>
+</tr>
+<tr>
+<td style="text-align:center">baguette</td>
+<td style="text-align:center">法棍面包(n.f.)</td>
+</tr>
+<tr>
+<td style="text-align:center">croissant</td>
+<td style="text-align:center">牛角面包(n.m.)</td>
+</tr>
+<tr>
+<td style="text-align:center">confiture</td>
+<td style="text-align:center">果酱(n.f.)</td>
+</tr>
+<tr>
+<td style="text-align:center">miel</td>
+<td style="text-align:center">蜂蜜(n.m.)</td>
+</tr>
+<tr>
+<td style="text-align:center">café</td>
+<td style="text-align:center">咖啡(n.m.)</td>
+</tr>
+<tr>
+<td style="text-align:center">lait</td>
+<td style="text-align:center">牛奶(n.m.)</td>
+</tr>
+<tr>
+<td style="text-align:center">thé</td>
+<td style="text-align:center">茶(n.m.)</td>
+</tr>
+<tr>
+<td style="text-align:center">céréale</td>
+<td style="text-align:center">麦片( n.f.)</td>
+</tr>
+<tr>
+<td style="text-align:center">jud de fruit frais</td>
+<td style="text-align:center">果汁(新鲜)</td>
+</tr>
+<tr>
+<td style="text-align:center">aller au travail</td>
+<td style="text-align:center">去上班</td>
+</tr>
+<tr>
+<td style="text-align:center">aller à l’école</td>
+<td style="text-align:center">去上学</td>
+</tr>
+<tr>
+<td style="text-align:center">aller à la fac</td>
+<td style="text-align:center">去上大学</td>
+</tr>
+<tr>
+<td style="text-align:center">faire les courses</td>
+<td style="text-align:center">购物</td>
+</tr>
+<tr>
+<td style="text-align:center">faire le ménage</td>
+<td style="text-align:center">做家务</td>
+</tr>
+<tr>
+<td style="text-align:center">se préparer</td>
+<td style="text-align:center">准备(<a href="http://v.pr" target="_blank" rel="noopener">v.pr</a>.)</td>
+</tr>
+<tr>
+<td style="text-align:center">se dépêcher</td>
+<td style="text-align:center">赶快，匆匆忙忙(<a href="http://v.pr" target="_blank" rel="noopener">v.pr</a>.)</td>
+</tr>
+<tr>
+<td style="text-align:center">déjeuner</td>
+<td style="text-align:center">午饭(n.m.);吃午饭(v.)</td>
+</tr>
+<tr>
+<td style="text-align:center">rentrer</td>
+<td style="text-align:center">回家(v.)</td>
+</tr>
+<tr>
+<td style="text-align:center">préparer le repas</td>
+<td style="text-align:center">准备饭</td>
+</tr>
+<tr>
+<td style="text-align:center">dîner</td>
+<td style="text-align:center">晚饭(n.m.),吃晚饭(v.)</td>
+</tr>
+<tr>
+<td style="text-align:center">regarder la télé</td>
+<td style="text-align:center">看电视</td>
+</tr>
+<tr>
+<td style="text-align:center">prendre un bain</td>
+<td style="text-align:center">泡澡</td>
+</tr>
+<tr>
+<td style="text-align:center">se déshabiller</td>
+<td style="text-align:center">脱衣服(<a href="http://v.pr" target="_blank" rel="noopener">v.pr</a>.)</td>
+</tr>
+<tr>
+<td style="text-align:center">se coucher</td>
+<td style="text-align:center">去睡觉，躺下(<a href="http://v.pr" target="_blank" rel="noopener">v.pr</a>.)</td>
+</tr>
+<tr>
+<td style="text-align:center">s’endormir</td>
+<td style="text-align:center">入睡(<a href="http://v.pr" target="_blank" rel="noopener">v.pr</a>.)</td>
+</tr>
+<tr>
+<td style="text-align:center">prendre une douche</td>
+<td style="text-align:center">淋浴</td>
+</tr>
+</tbody>
+</table>
+<p>Le matin, on se dépêche.</p>
+<p>Je me lève tôt.</p>
+<p>Je prends mon petit déjeuner et écoute la radio.</p>
+<p>On fait les courses le weekend.</p>
+<p>Je rentre à 18 heures.</p>
+<p>Le dîner est prêt à 20 heures.</p>
+<p>Après le dîner, on regarde la télé.</p>
+<p>Je me couche très tard.</p>
+<h3 id="三-餐馆就餐">三.餐馆就餐</h3>
+<p></p><h4>参观预约</h4><p></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">法语</th>
+<th style="text-align:center">中文释义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">table</td>
+<td style="text-align:center">桌子(n.f.)</td>
+</tr>
+<tr>
+<td style="text-align:center">personne</td>
+<td style="text-align:center">人(n.f.)</td>
+</tr>
+<tr>
+<td style="text-align:center">réserver</td>
+<td style="text-align:center">预订(v.)</td>
+</tr>
+<tr>
+<td style="text-align:center">garder</td>
+<td style="text-align:center">保留(v.)</td>
+</tr>
+<tr>
+<td style="text-align:center">place</td>
+<td style="text-align:center">位子(n.f.)</td>
+</tr>
+</tbody>
+</table>
+<p>Avez-vous une table pour deux personnes?</p>
+<p>Je voudrais réserver une table pour ce soir, à 8 heures.</p>
+<p>C’est à quel nom?  (以谁的名字预订的？)</p>
+<p>On n’a plus de place.</p>
+<p></p><h4>餐馆点餐</h4><p></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">法语</th>
+<th style="text-align:center">中文释义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">demi</td>
+<td style="text-align:center">一杯啤酒(n.m.)</td>
+</tr>
+<tr>
+<td style="text-align:center">limonade</td>
+<td style="text-align:center">柠檬汽水(n.f.)</td>
+</tr>
+<tr>
+<td style="text-align:center">une demi-Bordeaux</td>
+<td style="text-align:center">一小瓶波尔多葡萄酒</td>
+</tr>
+<tr>
+<td style="text-align:center">une carafe d’eau</td>
+<td style="text-align:center">一瓶水</td>
+</tr>
+<tr>
+<td style="text-align:center">un jus de fruit</td>
+<td style="text-align:center">一杯果汁</td>
+</tr>
+<tr>
+<td style="text-align:center">un café</td>
+<td style="text-align:center">一杯咖啡</td>
+</tr>
+<tr>
+<td style="text-align:center">un déca</td>
+<td style="text-align:center">一杯无咖啡因的咖啡</td>
+</tr>
+<tr>
+<td style="text-align:center">un café-crème</td>
+<td style="text-align:center">一杯奶油咖啡</td>
+</tr>
+<tr>
+<td style="text-align:center">vin blanc</td>
+<td style="text-align:center">白葡萄酒</td>
+</tr>
+<tr>
+<td style="text-align:center">vin rouge</td>
+<td style="text-align:center">红葡萄酒</td>
+</tr>
+<tr>
+<td style="text-align:center">rosé</td>
+<td style="text-align:center">粉红葡萄酒</td>
+</tr>
+<tr>
+<td style="text-align:center">eau minérale en bouteille</td>
+<td style="text-align:center">瓶装矿泉水</td>
+</tr>
+<tr>
+<td style="text-align:center">eau du robinet</td>
+<td style="text-align:center">自来水</td>
+</tr>
+<tr>
+<td style="text-align:center">un express</td>
+<td style="text-align:center">一杯浓缩咖啡</td>
+</tr>
+<tr>
+<td style="text-align:center">un apéritif</td>
+<td style="text-align:center">一杯开胃酒</td>
+</tr>
+<tr>
+<td style="text-align:center">amuse-gueule</td>
+<td style="text-align:center">开胃菜，开胃小点心(n.m.)</td>
+</tr>
+<tr>
+<td style="text-align:center">digestif</td>
+<td style="text-align:center">餐后消化酒(n.m.)</td>
+</tr>
+<tr>
+<td style="text-align:center">croque-monsieur</td>
+<td style="text-align:center">火腿干酪三明治(n.m.)</td>
+</tr>
+<tr>
+<td style="text-align:center">omelette au jambon</td>
+<td style="text-align:center">火腿煎蛋(n.f.)</td>
+</tr>
+<tr>
+<td style="text-align:center">entrecôte</td>
+<td style="text-align:center">牛排骨肉(n.f.)</td>
+</tr>
+<tr>
+<td style="text-align:center">bleu,e</td>
+<td style="text-align:center">一到两分熟(adj.)</td>
+</tr>
+<tr>
+<td style="text-align:center">saignant,e</td>
+<td style="text-align:center">三到四分熟(adj.)</td>
+</tr>
+<tr>
+<td style="text-align:center">saignant-à-point</td>
+<td style="text-align:center">五分熟</td>
+</tr>
+<tr>
+<td style="text-align:center">à point</td>
+<td style="text-align:center">刚好熟的</td>
+</tr>
+<tr>
+<td style="text-align:center">bien cuit</td>
+<td style="text-align:center">全熟的，熟透的</td>
+</tr>
+<tr>
+<td style="text-align:center">boisson</td>
+<td style="text-align:center">饮料(n.f.)</td>
+</tr>
+<tr>
+<td style="text-align:center">carte</td>
+<td style="text-align:center">菜单(n.f.)</td>
+</tr>
+<tr>
+<td style="text-align:center">menu</td>
+<td style="text-align:center">套餐菜单(n.m.)</td>
+</tr>
+<tr>
+<td style="text-align:center">entrée</td>
+<td style="text-align:center">头盘，头道菜(n.f.)</td>
+</tr>
+<tr>
+<td style="text-align:center">plat du jour</td>
+<td style="text-align:center">当日特色菜</td>
+</tr>
+<tr>
+<td style="text-align:center">dessert</td>
+<td style="text-align:center">甜点(n.m.)</td>
+</tr>
+</tbody>
+</table>
+<p>Qu’est-ce que vous désirez?</p>
+<p>Vous avez choisi?  (您选好了吗？)</p>
+<p>Comme boisson?   (饮料要什么？)</p>
+<p>Vous prenez une entrée?</p>
+<p>Oui, je vais prendre …</p>
+<p>Oui, je voudrais …</p>
+<p>Qu’est-ce que vous avez comme entrée?  (你们有什么头盘？)</p>
+<p>Avez-vous des spécialités?</p>
+<p>Quel est le menu du jour?</p>
+<p>Je voudrais un steak.</p>
+<p></p><h4>餐馆用餐</h4><p></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">法语</th>
+<th style="text-align:center">中文释义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">manger</td>
+<td style="text-align:center">吃(v.)</td>
+</tr>
+<tr>
+<td style="text-align:center">faim</td>
+<td style="text-align:center">饥饿(n.f.)</td>
+</tr>
+<tr>
+<td style="text-align:center">magnifique</td>
+<td style="text-align:center">好的，妙的(adj.)</td>
+</tr>
+<tr>
+<td style="text-align:center">beau,belle</td>
+<td style="text-align:center">漂亮的(adj.)</td>
+</tr>
+<tr>
+<td style="text-align:center">appétissant,e</td>
+<td style="text-align:center">开胃的(adj.)</td>
+</tr>
+<tr>
+<td style="text-align:center">copieux,euse</td>
+<td style="text-align:center">丰盛的(adj.)</td>
+</tr>
+<tr>
+<td style="text-align:center">excellent,e</td>
+<td style="text-align:center">优秀的(adj.)</td>
+</tr>
+<tr>
+<td style="text-align:center">se régaler</td>
+<td style="text-align:center">享受美食(<a href="http://v.pr" target="_blank" rel="noopener">v.pr</a>.)</td>
+</tr>
+<tr>
+<td style="text-align:center">exquis,e</td>
+<td style="text-align:center">精致的，美味的(adj.)</td>
+</tr>
+<tr>
+<td style="text-align:center">fade</td>
+<td style="text-align:center">没有味道的(adj.)</td>
+</tr>
+<tr>
+<td style="text-align:center">dur,e</td>
+<td style="text-align:center">硬的(adj.)</td>
+</tr>
+<tr>
+<td style="text-align:center">immangeable</td>
+<td style="text-align:center">难吃的(adj.)</td>
+</tr>
+<tr>
+<td style="text-align:center">lourd,e</td>
+<td style="text-align:center">不易消化的，油腻的(adj.)</td>
+</tr>
+<tr>
+<td style="text-align:center">fort,e</td>
+<td style="text-align:center">强的，辣的(adj.)</td>
+</tr>
+</tbody>
+</table>
+<p>J’ai très bien mangé.</p>
+<p>J’ai assez mangé.</p>
+<p>J’ai très faim.  (我饿极了)</p>
+<p>C’est magnifique.  (太棒了)</p>
+<p>Que la décoration est belle.</p>
+<p>Mm! Ça sent bon!  (真香！)</p>
+<p>C’est appétissant!  (真是开胃)</p>
+<p>C’est copieux.  (真是太丰盛了)</p>
+<p>Cette tarte est excellente!</p>
+<p>Je me régale!  (我真是大饱口福了)</p>
+<p>Ce vin est exquis.  (这葡萄酒很醇香)</p>
+<p>La sauce est fade.  (调味汁没什么味道)</p>
+<p>La viande est dure!  (肉老了)</p>
+<p>C’est immangeable!  (根本不能吃)</p>
+<p>Que c’est lourd!  (太腻了)</p>
+<p>C’est trop fort!  (太辣啦)</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">法语</th>
+<th style="text-align:center">中文释义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">addition</td>
+<td style="text-align:center">账单(n.f.)</td>
+</tr>
+<tr>
+<td style="text-align:center">compris,e</td>
+<td style="text-align:center">包括在内的(adj.)</td>
+</tr>
+<tr>
+<td style="text-align:center">payer</td>
+<td style="text-align:center">付费(v.)</td>
+</tr>
+<tr>
+<td style="text-align:center">per carte</td>
+<td style="text-align:center">刷卡(消费)</td>
+</tr>
+<tr>
+<td style="text-align:center">en liquide</td>
+<td style="text-align:center">用现金(消费)</td>
+</tr>
+<tr>
+<td style="text-align:center">partager</td>
+<td style="text-align:center">分摊(v.)</td>
+</tr>
+<tr>
+<td style="text-align:center">pourboire</td>
+<td style="text-align:center">小费(n.m.)</td>
+</tr>
+<tr>
+<td style="text-align:center">monnaie</td>
+<td style="text-align:center">零钱(n.f.)</td>
+</tr>
+</tbody>
+</table>
+<p>L’addition, s’il vous plaît.</p>
+<p>Ça fait quarante euros. Service compris.  (包括服务费在内)</p>
+<p>Vous payez comment, monsieur?</p>
+<p>Par carte? En liquide?  (用卡还是用现金)</p>
+<p>C’est pour moi.  (我请客)</p>
+<p>On partage.  (我们分摊费用吧)</p>
+<p>Chacun paie sa part.  (各付各的→AA制)</p>
+<p>On donne combien de pourboire?  (我们该给多少小费)</p>
+<p>Quelques euros au moins?</p>
+<p>Gardez la monnaie.   (不用找零了)</p>
+<p>Je peux payer par carte?</p>
+<p>C’est pour quoi cette somme?  (这项费用是什么？)</p>
+<h3 id="三-消费购物">三.消费购物</h3>
+<p></p><h4>买衣服</h4><p></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">法语</th>
+<th style="text-align:center">中文释义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">vêtement</td>
+<td style="text-align:center">服装(n.m.)</td>
+</tr>
+<tr>
+<td style="text-align:center">jupe</td>
+<td style="text-align:center">短裙(n.f.)</td>
+</tr>
+<tr>
+<td style="text-align:center">pantalon</td>
+<td style="text-align:center">长裤(n.m.)</td>
+</tr>
+<tr>
+<td style="text-align:center">chmise</td>
+<td style="text-align:center">衬衣(n.f.)</td>
+</tr>
+<tr>
+<td style="text-align:center">haut</td>
+<td style="text-align:center">配裙子的上装(n.m.)</td>
+</tr>
+<tr>
+<td style="text-align:center">robe</td>
+<td style="text-align:center">连衣裙(n.f.)</td>
+</tr>
+<tr>
+<td style="text-align:center">veste</td>
+<td style="text-align:center">上衣(n.f.)</td>
+</tr>
+<tr>
+<td style="text-align:center">manteau</td>
+<td style="text-align:center">大衣(n.m.)</td>
+</tr>
+<tr>
+<td style="text-align:center">pull</td>
+<td style="text-align:center">毛衣(n.m.)</td>
+</tr>
+<tr>
+<td style="text-align:center">costume</td>
+<td style="text-align:center">男套装(n.m.)</td>
+</tr>
+<tr>
+<td style="text-align:center">ensemble</td>
+<td style="text-align:center">女套装(n.f.)</td>
+</tr>
+<tr>
+<td style="text-align:center">vendeur</td>
+<td style="text-align:center">男售货员(n.m.)</td>
+</tr>
+<tr>
+<td style="text-align:center">vendeuse</td>
+<td style="text-align:center">女售货员(n.f.)</td>
+</tr>
+<tr>
+<td style="text-align:center">cabine d’essayage</td>
+<td style="text-align:center">试衣间</td>
+</tr>
+</tbody>
+</table>
+<p>Ça va?</p>
+<p>Ça va la taille?</p>
+<p>Cette couleur vous va bien.</p>
+<p>Non, ça ne me va pas.</p>
+<p>Je cherche un manteau pour aller avec ce pantalon.</p>
+<p>Quelle taille faites-vous?</p>
+<p>Vous faites du combien?</p>
+<p>Je fais du 38.</p>
+<p></p><h4>买鞋子</h4><p></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">法语</th>
+<th style="text-align:center">中文释义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">magasin de chaussures</td>
+<td style="text-align:center">鞋店</td>
+</tr>
+<tr>
+<td style="text-align:center">une paire de chaussures à talons hauts</td>
+<td style="text-align:center">一双高跟鞋</td>
+</tr>
+<tr>
+<td style="text-align:center">une paire de chaussures à talons plats</td>
+<td style="text-align:center">一双平跟鞋</td>
+</tr>
+<tr>
+<td style="text-align:center">sandales</td>
+<td style="text-align:center">凉鞋(<a href="http://n.f.pl" target="_blank" rel="noopener">n.f.pl</a>.)</td>
+</tr>
+<tr>
+<td style="text-align:center">bottes</td>
+<td style="text-align:center">靴子(<a href="http://n.f.pl" target="_blank" rel="noopener">n.f.pl</a>.)</td>
+</tr>
+<tr>
+<td style="text-align:center">mocassins</td>
+<td style="text-align:center">轻便鞋(<a href="http://n.m.pl" target="_blank" rel="noopener">n.m.pl</a>.)</td>
+</tr>
+<tr>
+<td style="text-align:center">chaussures de sport</td>
+<td style="text-align:center">运动鞋</td>
+</tr>
+<tr>
+<td style="text-align:center">tennis</td>
+<td style="text-align:center">网球鞋(<a href="http://n.m.pl" target="_blank" rel="noopener">n.m.pl</a>.)</td>
+</tr>
+<tr>
+<td style="text-align:center">modèle</td>
+<td style="text-align:center">型号，式样(n.m.)</td>
+</tr>
+<tr>
+<td style="text-align:center">pointure</td>
+<td style="text-align:center">尺码(n.f.)</td>
+</tr>
+</tbody>
+</table>
+<p>Tu trouves … comment?</p>
+<p>Est-ce que je peux essayer …?  (我可以试穿…吗？)</p>
+<p>Je voudrais aasyer …</p>
+<p>Est-ce que vous avez ce modèle en …?</p>
+<p>Quelle est votre pointure?  (您穿几码的鞋？)</p>
+<p>Je fais du 43.</p>
+<p>Vous voulez quelle couleur?</p>
+<p>Je vais réfléchir.  (我考虑一下)</p>
+<p></p><h4>逛超市</h4><p></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">法语</th>
+<th style="text-align:center">中文释义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">liste des courses</td>
+<td style="text-align:center">购物清单</td>
+</tr>
+<tr>
+<td style="text-align:center">carte de fidélité</td>
+<td style="text-align:center">会员卡</td>
+</tr>
+</tbody>
+</table>
+<p>Qu’est-ce qu’on doit prendre?</p>
+<p>Vous payez comment?</p>
+<p>Par carte, s’il vous plaît.</p>
+<p>On a la liste des courses.</p>
+<p>Vous avez votre carte de fidélité?</p>
+<p></p><h4>在市场</h4><p></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">法语</th>
+<th style="text-align:center">中文释义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">tomate</td>
+<td style="text-align:center">番茄(n.f.)</td>
+</tr>
+<tr>
+<td style="text-align:center">carotte</td>
+<td style="text-align:center">胡萝卜(n.f.)</td>
+</tr>
+<tr>
+<td style="text-align:center">épinard</td>
+<td style="text-align:center">菠菜(n.m.)</td>
+</tr>
+<tr>
+<td style="text-align:center">salade</td>
+<td style="text-align:center">生菜(n.f.)</td>
+</tr>
+<tr>
+<td style="text-align:center">chou-fleur</td>
+<td style="text-align:center">花菜(n.m.)</td>
+</tr>
+<tr>
+<td style="text-align:center">avocat</td>
+<td style="text-align:center">鳄梨，牛油果(n.m.)</td>
+</tr>
+<tr>
+<td style="text-align:center">melon</td>
+<td style="text-align:center">甜瓜(n.m.)</td>
+</tr>
+<tr>
+<td style="text-align:center">pomme</td>
+<td style="text-align:center">苹果(n.f.)</td>
+</tr>
+<tr>
+<td style="text-align:center">poire</td>
+<td style="text-align:center">梨(n.f.)</td>
+</tr>
+<tr>
+<td style="text-align:center">raisin</td>
+<td style="text-align:center">葡萄(n.m.)</td>
+</tr>
+<tr>
+<td style="text-align:center">ananas</td>
+<td style="text-align:center">凤梨(n.m.)</td>
+</tr>
+<tr>
+<td style="text-align:center">kiwi</td>
+<td style="text-align:center">猕猴桃(n.m.)</td>
+</tr>
+</tbody>
+</table>
+<p>Qu’est-ce que vous prenez?</p>
+<p>Je voudrais un ananas, s’il vous plaît.</p>
+<p>C’est combien?</p>
+<p>Trois euros cinquante pièce.</p>
+<p>C’est cher.</p>
+<p>Vous voulez combien de pommes?</p>
+<p>Et avec ça?  (还要别的吗？)</p>
+<p>Qu’est-ce que vous voulez de plus?</p>
+<p>Non, merci, c’est tout.</p>
+<p>Ça suffit.  (够了)</p>
+<p>Ça fait combien, s’il vous plaît?</p>
+<p>En tout, ça fait …</p>
+<p>Et la monnaie.  (给您找零)</p>
+<h3 id="五-交通出行">五.交通出行</h3>
+<p></p><h4>问路指路</h4><p></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">法语</th>
+<th style="text-align:center">中文释义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">chercher</td>
+<td style="text-align:center">寻找(v.)</td>
+</tr>
+<tr>
+<td style="text-align:center">trouver</td>
+<td style="text-align:center">找到(v.)</td>
+</tr>
+<tr>
+<td style="text-align:center">tourner</td>
+<td style="text-align:center">转(v.)</td>
+</tr>
+<tr>
+<td style="text-align:center">gauche</td>
+<td style="text-align:center">左边(adj./n.f.)</td>
+</tr>
+<tr>
+<td style="text-align:center">droite</td>
+<td style="text-align:center">右边(adj./n.f.)</td>
+</tr>
+<tr>
+<td style="text-align:center">loin</td>
+<td style="text-align:center">远(adv.)</td>
+</tr>
+<tr>
+<td style="text-align:center">kilomètre</td>
+<td style="text-align:center">公里，千米(n.m.)</td>
+</tr>
+<tr>
+<td style="text-align:center">près</td>
+<td style="text-align:center">在附近，附近(prep./adv.)</td>
+</tr>
+<tr>
+<td style="text-align:center">rayon</td>
+<td style="text-align:center">柜台，货架(n.m.)</td>
+</tr>
+<tr>
+<td style="text-align:center">au fond de</td>
+<td style="text-align:center">在里面，在尽头</td>
+</tr>
+<tr>
+<td style="text-align:center">étage</td>
+<td style="text-align:center">楼层(n.m.)</td>
+</tr>
+<tr>
+<td style="text-align:center">gare</td>
+<td style="text-align:center">火车站(n.f.)</td>
+</tr>
+<tr>
+<td style="text-align:center">perdu,e</td>
+<td style="text-align:center">迷路的(adj.)</td>
+</tr>
+<tr>
+<td style="text-align:center">regratter</td>
+<td style="text-align:center">抱歉(v.)</td>
+</tr>
+</tbody>
+</table>
+<p>Je cherche …</p>
+<p>Où est-ce que je peux trouver …?</p>
+<p>Vous prenez …  (您走/取道)</p>
+<p>Vous tournez à gauche.  (左转)</p>
+<p>Vous tournez à droite.  (右转)</p>
+<p>C’est loin d’ici?</p>
+<p>Vous faites … kilomètres</p>
+<p>C’est tout près.  (很近)</p>
+<p>Ce n’est pas loin.</p>
+<p></p><h4>市内交通</h4><p></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">法语</th>
+<th style="text-align:center">中文释义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">désirer</td>
+<td style="text-align:center">想要(v.)</td>
+</tr>
+<tr>
+<td style="text-align:center">souhaiter</td>
+<td style="text-align:center">希望(v.)</td>
+</tr>
+<tr>
+<td style="text-align:center">intention</td>
+<td style="text-align:center">意愿，意向(n.f.)</td>
+</tr>
+<tr>
+<td style="text-align:center">caution</td>
+<td style="text-align:center">保证金(n.f.)</td>
+</tr>
+<tr>
+<td style="text-align:center">descendre</td>
+<td style="text-align:center">下车(v.)</td>
+</tr>
+<tr>
+<td style="text-align:center">carnet(=10 tickets)</td>
+<td style="text-align:center">一小本(=10张票)</td>
+</tr>
+<tr>
+<td style="text-align:center">direct,e</td>
+<td style="text-align:center">直达的(adj.)</td>
+</tr>
+<tr>
+<td style="text-align:center">si</td>
+<td style="text-align:center">对否定疑问表示肯定回答</td>
+</tr>
+<tr>
+<td style="text-align:center">prendre le bus</td>
+<td style="text-align:center">坐公交车</td>
+</tr>
+<tr>
+<td style="text-align:center">prendre le métro</td>
+<td style="text-align:center">坐地铁</td>
+</tr>
+<tr>
+<td style="text-align:center">prendre le tramway</td>
+<td style="text-align:center">坐有轨电车</td>
+</tr>
+<tr>
+<td style="text-align:center">station de métro</td>
+<td style="text-align:center">地铁站</td>
+</tr>
+<tr>
+<td style="text-align:center">arrêt de bus</td>
+<td style="text-align:center">公共汽车站</td>
+</tr>
+<tr>
+<td style="text-align:center">changer de bus</td>
+<td style="text-align:center">换公共汽车</td>
+</tr>
+<tr>
+<td style="text-align:center">changer de métro</td>
+<td style="text-align:center">换地铁</td>
+</tr>
+<tr>
+<td style="text-align:center">se garer</td>
+<td style="text-align:center">停车</td>
+</tr>
+<tr>
+<td style="text-align:center">parcmètre</td>
+<td style="text-align:center">停车计时器(n.m.)</td>
+</tr>
+<tr>
+<td style="text-align:center">parking</td>
+<td style="text-align:center">停车场(n.m.)</td>
+</tr>
+<tr>
+<td style="text-align:center">payant,e</td>
+<td style="text-align:center">需要付费的(adj.)</td>
+</tr>
+<tr>
+<td style="text-align:center">gratuit,e</td>
+<td style="text-align:center">免费的(adj.)</td>
+</tr>
+<tr>
+<td style="text-align:center">stationnement interdit</td>
+<td style="text-align:center">禁止停车</td>
+</tr>
+<tr>
+<td style="text-align:center">contravention</td>
+<td style="text-align:center">罚款(n.f.)</td>
+</tr>
+<tr>
+<td style="text-align:center">amende</td>
+<td style="text-align:center">罚款(n.f.)</td>
+</tr>
+</tbody>
+</table>
+<p>Nous avons l’intention de louer des vélos, s’il vous plaît.  (想要租自行车)</p>
+<p>Vous désirez garder les vélos combien de temps?</p>
+<p>Vous désirez …  (您想要…)</p>
+<p>Vous souhaitez …</p>
+<p>J’ai l’intention de … +infinitif</p>
+<p>Est-ce que je peux acheter un carnet (ticket) ici?</p>
+<p>Je dois descendre à quelle station?</p>
+<p>Le plein, s’il vous plaît.  (请加满油)</p>
+<p></p><h4>坐火车</h4><p></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">法语</th>
+<th style="text-align:center">中文释义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">TGV(train à grande vitesse)</td>
+<td style="text-align:center">高速火车</td>
+</tr>
+<tr>
+<td style="text-align:center">changer de train</td>
+<td style="text-align:center">换火车</td>
+</tr>
+<tr>
+<td style="text-align:center">départ</td>
+<td style="text-align:center">出发(n.m.)</td>
+</tr>
+<tr>
+<td style="text-align:center">arrivée</td>
+<td style="text-align:center">到达(n.f.)</td>
+</tr>
+<tr>
+<td style="text-align:center">les horaires de train</td>
+<td style="text-align:center">火车时刻表</td>
+</tr>
+<tr>
+<td style="text-align:center">aller simple</td>
+<td style="text-align:center">单程</td>
+</tr>
+<tr>
+<td style="text-align:center">aller-retour</td>
+<td style="text-align:center">往返</td>
+</tr>
+<tr>
+<td style="text-align:center">réduction</td>
+<td style="text-align:center">折扣(n.f.)</td>
+</tr>
+<tr>
+<td style="text-align:center">la première classe</td>
+<td style="text-align:center">头等车厢</td>
+</tr>
+<tr>
+<td style="text-align:center">la seconde classe</td>
+<td style="text-align:center">二等车厢</td>
+</tr>
+<tr>
+<td style="text-align:center">fumeurs</td>
+<td style="text-align:center">吸烟车厢</td>
+</tr>
+<tr>
+<td style="text-align:center">non-fumeurs</td>
+<td style="text-align:center">非吸烟车厢</td>
+</tr>
+</tbody>
+</table>
+<p>Je voudrais réserver …</p>
+<p>Je voudrais un aller simple à Paris.</p>
+<p>Quels sont les horaires?</p>
+<p>Première ou seconde? Fumeurs ou non-fumeurs?</p>
+<p>Seconde. Non-fumeurs.</p>
+<p>Vous avez une réduction?  (您享受折扣吗？)</p>
+<p></p><h4>坐飞机</h4><p></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">法语</th>
+<th style="text-align:center">中文释义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">billet d’avion</td>
+<td style="text-align:center">飞机票</td>
+</tr>
+<tr>
+<td style="text-align:center">première classe</td>
+<td style="text-align:center">一等舱</td>
+</tr>
+<tr>
+<td style="text-align:center">classe économique</td>
+<td style="text-align:center">经济舱</td>
+</tr>
+<tr>
+<td style="text-align:center">aller simple</td>
+<td style="text-align:center">单程</td>
+</tr>
+<tr>
+<td style="text-align:center">aller-retour</td>
+<td style="text-align:center">往返</td>
+</tr>
+<tr>
+<td style="text-align:center">promotion</td>
+<td style="text-align:center">促销，折扣(n.f.)</td>
+</tr>
+<tr>
+<td style="text-align:center">enregistrement</td>
+<td style="text-align:center">检票(n.m.)</td>
+</tr>
+<tr>
+<td style="text-align:center">embarquement</td>
+<td style="text-align:center">登记(n.m.)</td>
+</tr>
+<tr>
+<td style="text-align:center">déranger</td>
+<td style="text-align:center">打扰(v.)</td>
+</tr>
+<tr>
+<td style="text-align:center">échanger</td>
+<td style="text-align:center">互换，交换(v.)</td>
+</tr>
+<tr>
+<td style="text-align:center">boisson</td>
+<td style="text-align:center">饮料(n.f.)</td>
+</tr>
+<tr>
+<td style="text-align:center">repas</td>
+<td style="text-align:center">饭，餐(n.m.)</td>
+</tr>
+</tbody>
+</table>
+<p>Je voudrais réserver un billet d’avion.</p>
+<p>Voulez-vous voyager en première classe, ou en classe économique?</p>
+<p>Aller simple ou aller-retour?  (单程还是往返？)</p>
+<p>Y a-t-il des promotions?  (有促销吗？)</p>
+<p>C’est ici pour l’enregistrement?  (这里是检票的地方吗？)</p>
+<p>L’embarquement est à quelle heure?</p>
+<p>L’avion a été retardé.  (飞机晚点了)</p>
+<p>Est-ce que cela vous dérange d’échanger nos places?  (和您换个座位打扰您吗？)</p>
+
+            </div>
+
+            <!-- Post Comments -->
+            
+    <!-- 使用 DISQUS_CLICK -->
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
+
+<!-- add animation -->
+<style>
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #7EC0EE;
+            text-shadow: 0
+        }
+</style>
+	
+<div class="btn_click_load" id="disqus_bt"> 
+    <button class="disqus_click_btn">点击查看评论</button>
+</div>
+
+<!--
+<script type="text/javascript">
+$('.btn_click_load').click(function() {
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'http-miccall-tech'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    document.getElementById('disqus_bt').style.display = "none";
+});
+</script>
+-->
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'http://yoursite.com/2019/05/16/每天法语词汇/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://yoursite.com/2019/05/16/每天法语词汇/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+</script>
+
+<script type="text/javascript">
+    $('.btn_click_load').click(function() {  //click to load comments
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document;
+            var s = d.createElement('script');
+            s.src = '//http-miccall-tech.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+        $('.btn_click_load').css('display','none');
+    });
+</script>
+</div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+                <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+			
+        </div>
+    </div>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"scale":1,"hHeadPos":1.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/assets/tororo.model.json"},"display":{"superSample":2,"width":200,"height":200,"position":"right","hOffset":-25,"vOffset":-20},"mobile":{"show":false,"scale":0.05},"react":{"opacityDefault":1,"opacityOnHover":0.2}});</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"scale":1,"hHeadPos":1.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/assets/tororo.model.json"},"display":{"superSample":2,"width":200,"height":200,"position":"right","hOffset":-25,"vOffset":-20},"mobile":{"show":false,"scale":0.05},"react":{"opacityDefault":1,"opacityOnHover":0.2}});</script></body>
+
+
+
+ 	
+</html>
