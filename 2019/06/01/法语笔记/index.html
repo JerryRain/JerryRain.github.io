@@ -1,0 +1,962 @@
+<!DOCTYPE HTML>
+<html>
+
+<head><meta name="generator" content="Hexo 3.8.0">
+	<link rel="bookmark" type="image/x-icon" href="/img/logo.png">
+	<link rel="shortcut icon" href="/img/logo.png">
+
+	
+			    <title>
+    JerryRain
+    </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="/css/mic_main.css">
+    <link rel="stylesheet" href="/css/dropdownMenu.css">
+    <meta name="keywords" content="JR">
+
+    
+    	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	 
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css">
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/kobe.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/love.js"></script>
+    <script src="/js/main.js"></script>
+	
+<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+    
+		
+<!-- Layouts -->
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_coy.css">
+<link rel="stylesheet" href="/css/typo.css">
+<link rel="stylesheet" href="/css/mouse.css">
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    
+        <script src="https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js"></script>
+        <script>
+          if (window.mermaid) {
+            mermaid.initialize({theme: 'forest'});
+          }
+        </script>
+    
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">Go on</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special">
+            <ul class="menu links">
+			<!-- Homepage  主页  --> 
+			<li>
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="category-link" href="/categories/BLOG/">BLOG</a></li><li><a class="category-link" href="/categories/CODING/">CODING</a></li><li><a class="category-link" href="/categories/French/">French</a></li><li><a class="category-link" href="/categories/Linux/">Linux</a></li><li><a class="category-link" href="/categories/Markdown/">Markdown</a></li><li><a class="category-link" href="/categories/blog/">blog</a></li><li><a class="category-link" href="/categories/robert/">robert</a>
+	                    </li></ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">归档</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="archive-link" href="/archives/2019/06/">June 2019</a></li><li><a class="archive-link" href="/archives/2019/05/">May 2019</a></li><li><a class="archive-link" href="/archives/2019/04/">April 2019</a>
+	                    </li></ul>
+	        </li>
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/about/" title="简历">
+		                简历
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/group/" title="团队">
+		                团队
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/gallery/" title="图库">
+		                图库
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/tag/" title="标签">
+		                标签
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+                    
+                    <li>
+                        <a title="github" href="https://github.com/JerryRain?tab=repositories" target="_blank" rel="noopener">
+                            <i class="icon fa fa-github"></i>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a title="500px" href="https://v.qq.com/x/page/p0753p3sozo.html" target="_blank" rel="noopener">
+                            <i class="icon fa fa-500px"></i>
+                        </a>
+                    </li>
+                    
+			</ul>
+</nav>
+
+        <div id="main">
+            <div class="post_page_title_img" style="height: 25rem;background-image: url(http://www.masteredus.net/ueditor/php/upload/image/20181031/1540978073529730.png);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;">
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2>法语笔记总结</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <h1 style="text-align:center">法语笔记小结
+<p></p><h4>条件式现在时的用法</h4><p></p>
+<p>①表示希望(souhais)：</p>
+<blockquote>
+<p>j’aimerais</p>
+<p>je voudrais</p>
+<p>je souhaiterais</p>
+<p>je préfèrais</p>
+</blockquote>
+<p>条件式现在时的动词变位：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">souhaiter条件式现在时变位</th>
+<th style="text-align:center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">je souhaiterais</td>
+<td style="text-align:center">nous souhaiterions</td>
+</tr>
+<tr>
+<td style="text-align:center">tu souhaiterais</td>
+<td style="text-align:center">vous souhaiteriez</td>
+</tr>
+<tr>
+<td style="text-align:center">il/elle souhaiterait</td>
+<td style="text-align:center">ils/elles souhaiteraient</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">vouloir条件式现在时变位</th>
+<th style="text-align:center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">je voudrais</td>
+<td style="text-align:center">nous voudrions</td>
+</tr>
+<tr>
+<td style="text-align:center">tu voudrais</td>
+<td style="text-align:center">vous voudriez</td>
+</tr>
+<tr>
+<td style="text-align:center">il/elle voudrait</td>
+<td style="text-align:center">ils/elles voudraient</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">aimer条件式现在时变位</th>
+<th style="text-align:center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">j’aimerais</td>
+<td style="text-align:center">nous aimerions</td>
+</tr>
+<tr>
+<td style="text-align:center">tu aimerais</td>
+<td style="text-align:center">aimeriez</td>
+</tr>
+<tr>
+<td style="text-align:center">il/elle aimerait</td>
+<td style="text-align:center">ils/elles aimeraient</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">préférer条件式现在时变位</th>
+<th style="text-align:center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">je préférais</td>
+<td style="text-align:center">nous préférerions</td>
+</tr>
+<tr>
+<td style="text-align:center">tu préférais</td>
+<td style="text-align:center">vos préféreriez</td>
+</tr>
+<tr>
+<td style="text-align:center">il/elle préférait</td>
+<td style="text-align:center">ils/elles oréféreraient</td>
+</tr>
+</tbody>
+</table>
+<p>②表示建议(conseil)：</p>
+<blockquote>
+<p>tu pourrais + inf.</p>
+<p>tu devrais + inf.</p>
+<p>il faudrait que + subj.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">pouvoir条件式现在时变位</th>
+<th style="text-align:center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">je pourrais</td>
+<td style="text-align:center">nous pourrions</td>
+</tr>
+<tr>
+<td style="text-align:center">tu pourrais</td>
+<td style="text-align:center">vous pourriez</td>
+</tr>
+<tr>
+<td style="text-align:center">il/elle pourrait</td>
+<td style="text-align:center">ils/elles pourraient</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">devoir条件式现在时变位</th>
+<th style="text-align:center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">je devrais</td>
+<td style="text-align:center">nous devrions</td>
+</tr>
+<tr>
+<td style="text-align:center">tu devrais</td>
+<td style="text-align:center">vous devriez</td>
+</tr>
+<tr>
+<td style="text-align:center">il/elle devrait</td>
+<td style="text-align:center">ils/elles devraient</td>
+</tr>
+</tbody>
+</table>
+<p>③表示后悔(regret)：</p>
+<blockquote>
+<p>j’aurais souhaité</p>
+<p>j’aurais aimé</p>
+<p>j’aurais voulu</p>
+<p>j’aurais préféré</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">avoir条件式现在时变位</th>
+<th style="text-align:center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">j’aurais</td>
+<td style="text-align:center">nous aurions</td>
+</tr>
+<tr>
+<td style="text-align:center">tu aurais</td>
+<td style="text-align:center">vous auriez</td>
+</tr>
+<tr>
+<td style="text-align:center">il/elle aurait</td>
+<td style="text-align:center">ils/elles auraient</td>
+</tr>
+</tbody>
+</table>
+<p>④表示批评或者怨恨(critique/reproche)：</p>
+<blockquote>
+<p>tu aurais dû + inf.</p>
+<p>tu aurais pu + inf.</p>
+<p>il aurait fallu + subj.</p>
+</blockquote>
+<p></p><h4>转述中的时态变化</h4><p></p>
+<blockquote>
+<p>①Présent 现在时 → Imparfait 未完成过去时(词根-后缀)</p>
+<p>②Passé composé 复合过去时(être/avoir + p.p.) → PQP 愈过去时(être/avoir p.p. + p.p.)</p>
+<p>③Futur Simple 简单将来时(词根-后缀) → le conditionnel présent 条件式现在时</p>
+<p>④Futur Proche 最近将来时(aller + faire) → Imparfait 未完成过去时(词根-后缀)</p>
+<p>⑤其余情况不需要改变，比如le conditionnel条件式、l’imparfait未完成过去时等不用改变</p>
+</blockquote>
+<p></p><h4>未完成过去时(l’imparfait)</h4><p></p>
+<p><strong>未完成过去时(l’imparfait)的变位</strong>:<br>
+去掉现在式第一人称复数（nous）的词尾 -ons，加上-ais，-ais，-ait，-ions，iez，-aient</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">未完成过去时变位</th>
+<th style="text-align:center">parler</th>
+<th style="text-align:center">finir</th>
+<th style="text-align:center">rendre</th>
+<th style="text-align:center">aller</th>
+<th style="text-align:center">être</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">je</td>
+<td style="text-align:center">parlais</td>
+<td style="text-align:center">finissais</td>
+<td style="text-align:center">rendais</td>
+<td style="text-align:center">allais</td>
+<td style="text-align:center">étais</td>
+</tr>
+<tr>
+<td style="text-align:center">tu</td>
+<td style="text-align:center">parlais</td>
+<td style="text-align:center">finissais</td>
+<td style="text-align:center">rendais</td>
+<td style="text-align:center">allais</td>
+<td style="text-align:center">étais</td>
+</tr>
+<tr>
+<td style="text-align:center">il/elle</td>
+<td style="text-align:center">parlait</td>
+<td style="text-align:center">finissait</td>
+<td style="text-align:center">rendait</td>
+<td style="text-align:center">allait</td>
+<td style="text-align:center">était</td>
+</tr>
+<tr>
+<td style="text-align:center">nous</td>
+<td style="text-align:center">parlions</td>
+<td style="text-align:center">finissions</td>
+<td style="text-align:center">rendions</td>
+<td style="text-align:center">allions</td>
+<td style="text-align:center">étions</td>
+</tr>
+<tr>
+<td style="text-align:center">vous</td>
+<td style="text-align:center">parliez</td>
+<td style="text-align:center">finissiez</td>
+<td style="text-align:center">rendiez</td>
+<td style="text-align:center">alliez</td>
+<td style="text-align:center">étiez</td>
+</tr>
+<tr>
+<td style="text-align:center">ils/elles</td>
+<td style="text-align:center">parlaient</td>
+<td style="text-align:center">finissaient</td>
+<td style="text-align:center">rendaient</td>
+<td style="text-align:center">allaient</td>
+<td style="text-align:center">étaient</td>
+</tr>
+</tbody>
+</table>
+<p><strong>复合过去时(Passé Composé)</strong>：<font color="red" size="3">avoir/ être + 动词过去分词</font></p>
+<p>过去分词：</p>
+<p>第一组动词去掉词尾的-er加上-é，regarder – regardé<br>
+第二组动词去掉词尾的-ir加上-i，finir – fini<br>
+第三组动词是不规则的</p>
+<p>直陈式复合式的助动词：avoir与être</p>
+<p>1.一般部分动词过去时用avoir作助动词。</p>
+<p>2.但是，也有一些表示位置及状况变动的不及物动词在复合时态中用être作助动词。</p>
+<p>3.所有的代词式动词均用être作助动词。</p>
+<p><strong>注意</strong>：</p>
+<p>1.用être做助动词的动词：</p>
+<p>aller/sortir/partir/rentrer/retourner/revenir/venir/ arriver/entrer/rester/devenir/tomber/naître/monter/mourir/descendre + 所有代词式动词</p>
+<p>2.副词放在助动词与过去分词之间。</p>
+<p></p><h4>愈过去时(PQP)</h4><p></p>
+<p>愈过去时：<font color="red" size="3">用avoir或être的未完成过去时 + 过去分词 </font></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">avoir未完成过去时</th>
+<th style="text-align:center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">j’avais</td>
+<td style="text-align:center">nous avions</td>
+</tr>
+<tr>
+<td style="text-align:center">tu avais</td>
+<td style="text-align:center">vous aviez</td>
+</tr>
+<tr>
+<td style="text-align:center">il/elle avait</td>
+<td style="text-align:center">ils/elles avaient</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">être未完成过去时</th>
+<th style="text-align:center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">j’étais</td>
+<td style="text-align:center">nous étions</td>
+</tr>
+<tr>
+<td style="text-align:center">tu étais</td>
+<td style="text-align:center">vous étiez</td>
+</tr>
+<tr>
+<td style="text-align:center">il/elle était</td>
+<td style="text-align:center">ils/elles étaient</td>
+</tr>
+</tbody>
+</table>
+<p><strong>愈过去时的用法</strong>：</p>
+<p>1.<strong>愈过去时大多与复合过去时搭配使用，表示一个发生在另一个过去动作之前的动作，即<font color="red" size="3">过去的过去</font>。</strong><br>
+Quand je suis arrivé chez lui, il était déjà parti.<br>
+当我到他家时，他已经走了。（我到他家是过去发生的动作，而他离开是在我到他家之前发生，过去的过去，所以“他离开家”用愈过去时）</p>
+<p>Elle est sortie de la bibliothèque quand elle avait fini ses devoirs.<br>
+她做完作业就离开了图书馆。</p>
+<p><strong>2. 愈过去时与未完成过去时配合使用时，是可以<font color="red" size="3">表达过去习惯性的、重复发生的动作 </font>，不过，这一动作也仍然是过去某一时刻之前发生并已结束了的。</strong><br>
+Dès qu’il était sorti de l’école, il faisait du football avec ses amis.<br>
+那时他一放学就和小伙伴们一起踢足球。<br>
+（和小伙伴们一起踢球是过去的习惯，但是是发生在放学以后，所以“放学”用愈过去时）</p>
+<p><strong>3. 愈过去时与简单过去时配合使用，表示<font color="red" size="3">这一动作在某个过去动作之前发生</font>。</strong><br>
+Nous étions à peine partis quand il commença à pleurer.<br>
+我们刚要走他就开始哭。</p>
+<p><strong>4. 愈过去时还可以用在<font color="red" size="3">si </font>引导的条件从句中，主句用<font color="red" size="3">条件式过去时 </font>，表示<font color="red" size="3">与过去事实完全相反的假设 </font>。</strong><br>
+Si elle avait réservé un billet par avance, elle aurait pu aller au concert.<br>
+如果她提前订了票的话，她本可以去看演唱会的。（事实是她过去没能看成演唱会，因为她没有提前订票。）</p>
+<p><strong>5. 愈过去时还常用于时态的配合中。（<font color="red" size="3">直接引语转间接引语:PC→PQP </font>）</strong><br>
+Bernard a dit：« Je vous ai trouvé une belle maison.»<br>
+→ Bernard a dit qu’il m’avait trouvé une belle maison.<br>
+(直接引语转间接引语的变化中，在主句是过去时态的情况下，从句的复合过去时需要变成愈过去时。)</p>
+<p></p><h4>简单将来时(le futur simple)</h4><p></p>
+<p><strong>简单将来时动词变位</strong>：</p>
+<p>①大部分动词采取的变位方法是在动词不定式后加词尾-ai，-as，-a，-ons，-ez，-ont</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">retourner简单将来时</th>
+<th style="text-align:center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">je retournerai</td>
+<td style="text-align:center">nous retournerons</td>
+</tr>
+<tr>
+<td style="text-align:center">tu retourneras</td>
+<td style="text-align:center">vous retournez</td>
+</tr>
+<tr>
+<td style="text-align:center">il/elle retournera</td>
+<td style="text-align:center">ils/elles retourneront</td>
+</tr>
+</tbody>
+</table>
+<p>②以-re结尾的第三组动词的简单将来时，要将不定式结尾的e去掉，再加上词尾-ai，-as，-a，-ons，-ez，-ont</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">mettre简单将来时</th>
+<th style="text-align:center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">je mettrai</td>
+<td style="text-align:center">nous mettrons</td>
+</tr>
+<tr>
+<td style="text-align:center">tu mettras</td>
+<td style="text-align:center">vous mettrez</td>
+</tr>
+<tr>
+<td style="text-align:center">il/elle mettra</td>
+<td style="text-align:center">ils/elles mettront</td>
+</tr>
+</tbody>
+</table>
+<p>③不规则动词的简单将来时：动词词根+词尾-ai，-as，-a，-ons，-ez，-ont</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">不规则动词</th>
+<th style="text-align:center">词根</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">avoir</td>
+<td style="text-align:center">aur-</td>
+</tr>
+<tr>
+<td style="text-align:center">être</td>
+<td style="text-align:center">ser-</td>
+</tr>
+<tr>
+<td style="text-align:center">aller</td>
+<td style="text-align:center">ir-</td>
+</tr>
+<tr>
+<td style="text-align:center">faire</td>
+<td style="text-align:center">fer-</td>
+</tr>
+<tr>
+<td style="text-align:center">courir</td>
+<td style="text-align:center">courr-</td>
+</tr>
+<tr>
+<td style="text-align:center">venir</td>
+<td style="text-align:center">viendr-</td>
+</tr>
+<tr>
+<td style="text-align:center">voir</td>
+<td style="text-align:center">verr-</td>
+</tr>
+<tr>
+<td style="text-align:center">envoyer</td>
+<td style="text-align:center">enverr-</td>
+</tr>
+<tr>
+<td style="text-align:center">devoir</td>
+<td style="text-align:center">devr-</td>
+</tr>
+<tr>
+<td style="text-align:center">recevoir</td>
+<td style="text-align:center">recevr-</td>
+</tr>
+<tr>
+<td style="text-align:center">s’asseoir</td>
+<td style="text-align:center">se assoir-</td>
+</tr>
+<tr>
+<td style="text-align:center">savoir</td>
+<td style="text-align:center">saur-</td>
+</tr>
+<tr>
+<td style="text-align:center">pouvoir</td>
+<td style="text-align:center">pourr-</td>
+</tr>
+<tr>
+<td style="text-align:center">vouloir</td>
+<td style="text-align:center">voudr-</td>
+</tr>
+<tr>
+<td style="text-align:center">falloir</td>
+<td style="text-align:center">il faudra</td>
+</tr>
+<tr>
+<td style="text-align:center">pleuvoir</td>
+<td style="text-align:center">pleuvra</td>
+</tr>
+</tbody>
+</table>
+<p></p><h4>最近将来时(le futur proche)</h4><p></p>
+<p>最近将来时：由<font color="red" size="3">aller的现在时 + 不定式</font>构成。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">aller现在时</th>
+<th style="text-align:center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">je vais</td>
+<td style="text-align:center">nous avons</td>
+</tr>
+<tr>
+<td style="text-align:center">tu vas</td>
+<td style="text-align:center">vous allez</td>
+</tr>
+<tr>
+<td style="text-align:center">il/elle va</td>
+<td style="text-align:center">ils/elles vont</td>
+</tr>
+</tbody>
+</table>
+<p><strong>最近将来时时的用法</strong>：</p>
+<p><strong>最近将来时，把动作确定在最近的未来。</strong></p>
+<p>Le ciel est noir; il va pleuvoir.</p>
+<p>Le gouvernement va prendre des mesures d’urgence pour venir en aide aux populations sinistrees.</p>
+<p><strong>它也表示被确定在遥远的未来确实将发生的动作：</strong></p>
+<p>Dans trois ans, nour allons célébrer le millenaire de notre ville.</p>
+<p></p><h4>条件式(le conditionnel)</h4><p></p>
+<p><strong>Ⅰ.条件式现在时</strong></p>
+<p>条件式现在时的动词变位：</p>
+<p>简单将来时的词干+未完成过去时的词尾-ais, -ais, -ait, -ions,-iez, -aient</p>
+<p>如：</p>
+<p>savoir → je saur-ai：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">savoir条件式现在时</th>
+<th style="text-align:center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">je saurais</td>
+<td style="text-align:center">nous saurions</td>
+</tr>
+<tr>
+<td style="text-align:center">tu saurais</td>
+<td style="text-align:center">vous sauriez</td>
+</tr>
+<tr>
+<td style="text-align:center">il/elle surait</td>
+<td style="text-align:center">ils/elles sauraient</td>
+</tr>
+</tbody>
+</table>
+<p>finir → tu fini-as：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">finir条件式现在时</th>
+<th style="text-align:center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">je finirais</td>
+<td style="text-align:center">nous finirions</td>
+</tr>
+<tr>
+<td style="text-align:center">tu finirais</td>
+<td style="text-align:center">vous finiriez</td>
+</tr>
+<tr>
+<td style="text-align:center">il/elle finirait</td>
+<td style="text-align:center">ils/elles finiraient</td>
+</tr>
+</tbody>
+</table>
+<p>venir → il viendr-a：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">venir条件式现在时</th>
+<th style="text-align:center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">je viendrais</td>
+<td style="text-align:center">nous viendrions</td>
+</tr>
+<tr>
+<td style="text-align:center">tu viendrais</td>
+<td style="text-align:center">vous viendriez</td>
+</tr>
+<tr>
+<td style="text-align:center">il/elle viandrait</td>
+<td style="text-align:center">ils/elles viendraient</td>
+</tr>
+</tbody>
+</table>
+<p>manger → nous manger-ons：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">manger条件式现在时</th>
+<th style="text-align:center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">je mangerais</td>
+<td style="text-align:center">nous mangerions</td>
+</tr>
+<tr>
+<td style="text-align:center">tu mangerais</td>
+<td style="text-align:center">vous mangeriez</td>
+</tr>
+<tr>
+<td style="text-align:center">il/elle mangerait</td>
+<td style="text-align:center">ils/elles mangeraient</td>
+</tr>
+</tbody>
+</table>
+<p>pouvoir → vous pourr-ez：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">pouvoir条件式现在时</th>
+<th style="text-align:center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">je pourrais</td>
+<td style="text-align:center">nous pourrions</td>
+</tr>
+<tr>
+<td style="text-align:center">tu pourrais</td>
+<td style="text-align:center">vous pourriez</td>
+</tr>
+<tr>
+<td style="text-align:center">il/elle pourrait</td>
+<td style="text-align:center">ils/elles pourraient</td>
+</tr>
+</tbody>
+</table>
+<p><strong>条件式现在时的用法</strong>：</p>
+<p><strong>1. 条件式现在时用在独立句中表示委婉的建议、愿望等。</strong></p>
+<p>例：Je voudrais boire du vin. 我想喝红酒。</p>
+<p>Il aimerait se perfectionner en français. 他想在法语学习上有所进步。</p>
+<p><strong>2. 条件式现在时用在独立句中表示猜测、想象、不确定的语气等。</strong></p>
+<p>例：Marie viendrait chercher ses enfants demain. 玛丽也许明天会来接她的孩子。</p>
+<p>Il y aurait quatre livres dans le tiroir. 抽屉里可能有4本书。</p>
+<p><strong>3. 条件式现在时用在以si引导的复合句中，表明某个动作实现的可能性不大或与现实情况相反。从句时态用直陈式未完成过去时。</strong></p>
+<p>例：Si j’avais le temps demain, je t’accompagnerais à la bibliothèque. 如果我明天有空，我就陪你去图书馆。（事实上我明天很忙，不太可能有空）</p>
+<p>Si le directeur était présent à la réunion hier, la situation serait mieux. 如果主任昨天出席了会议，情况可能会好些。（事实上主任根本没有出席昨天的会议）</p>
+<p><strong>Ⅱ.条件式过去时</strong></p>
+<p>条件式过去时：<font color="red" size="3">用avoir或être的条件式现在时作助动词 + 过去分词 </font></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">avoir条件式现在时</th>
+<th style="text-align:center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">j’aurais</td>
+<td style="text-align:center">nous aurions</td>
+</tr>
+<tr>
+<td style="text-align:center">tu aurais</td>
+<td style="text-align:center">vous auriez</td>
+</tr>
+<tr>
+<td style="text-align:center">il/elle aurait</td>
+<td style="text-align:center">ils/elles auraient</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">être条件式现在时</th>
+<th style="text-align:center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">je serais</td>
+<td style="text-align:center">nous serions</td>
+</tr>
+<tr>
+<td style="text-align:center">tu serais</td>
+<td style="text-align:center">vous seriez</td>
+</tr>
+<tr>
+<td style="text-align:center">il/elle serait</td>
+<td style="text-align:center">ils/elles seraient</td>
+</tr>
+</tbody>
+</table>
+<p><strong>条件式过去时的用法</strong>：</p>
+<p><strong>1. 条件式过去时用在独立句中表示可能已经发生的事情,常见于新闻报道。</strong></p>
+<p>例：Le président de la République serait arrivé en Chine pour la visite amicale. 共和国总统可能已经到达中国进行友好访问。</p>
+<p>La conférence de presse aurait eu lieu dans la salle de réunion. 新闻发布会可能已经在会议室举行过了。</p>
+<p><strong>2. 条件式过去时用在以si引导的复合句中，表明过去的某个动作可以实现但实际未能实现。从句时态用直陈式愈过去时。</strong></p>
+<p>例：Si j’avais bien révisé avant l’examen, j’aurais obtenu une bonne note. 如果我在考试前认真复习，我现在可能会取得一个好成绩。（事实上我并没有认真复习）</p>
+<p>Si Pascal avait su que son ami était à Shanghai, il serait allé le voir. 如果帕斯卡知道他的朋友在上海，他可能会去看他的。（事实上帕斯卡根本不知道他的朋友在上海）</p>
+<p><strong>3. 条件式过去时用在从句中，表示在过去的时间里一个先完成的将来动作。</strong></p>
+<p>例：Le professeur lui a demandé s’il aurait fini ses devoirs avant la semaine prochaine. 老师问他下个礼拜之前能否完成作业。</p>
+<p>Son copain lui a promis de l’épouser dès qu’elle serait retournée en Chine. 她男朋友许诺等她一回到中国就娶她。</p>
+<p><strong>4.遗憾：</strong></p>
+<p>J’aurais bein voulu aller à Londres ce week-end mais il n’y avait plus de places dans l’Eurostar.</p>
+<p><strong>5.指责：</strong></p>
+<p>Tu n’es pas venu à notre rendez-vous. Tu aurais pu me prévenir!</p>
+<p>Il aurait mieux valu dire la vérité tout de suite.</p>
+</h1>
+            </div>
+
+            <!-- Post Comments -->
+            
+    <!-- 使用 DISQUS_CLICK -->
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
+
+<!-- add animation -->
+<style>
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #7EC0EE;
+            text-shadow: 0
+        }
+</style>
+	
+<div class="btn_click_load" id="disqus_bt"> 
+    <button class="disqus_click_btn">点击查看评论</button>
+</div>
+
+<!--
+<script type="text/javascript">
+$('.btn_click_load').click(function() {
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'http-miccall-tech'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    document.getElementById('disqus_bt').style.display = "none";
+});
+</script>
+-->
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'http://yoursite.com/2019/06/01/法语笔记/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://yoursite.com/2019/06/01/法语笔记/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+</script>
+
+<script type="text/javascript">
+    $('.btn_click_load').click(function() {  //click to load comments
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document;
+            var s = d.createElement('script');
+            s.src = '//http-miccall-tech.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+        $('.btn_click_load').css('display','none');
+    });
+</script>
+</div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+                <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+			
+        </div>
+    </div>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"scale":1,"hHeadPos":1.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/assets/tororo.model.json"},"display":{"superSample":2,"width":200,"height":200,"position":"right","hOffset":-25,"vOffset":-20},"mobile":{"show":false,"scale":0.05},"react":{"opacityDefault":1,"opacityOnHover":0.2}});</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"scale":1,"hHeadPos":1.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/assets/tororo.model.json"},"display":{"superSample":2,"width":200,"height":200,"position":"right","hOffset":-25,"vOffset":-20},"mobile":{"show":false,"scale":0.05},"react":{"opacityDefault":1,"opacityOnHover":0.2}});</script></body>
+
+
+
+ 	
+</html>
