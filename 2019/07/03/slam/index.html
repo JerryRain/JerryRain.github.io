@@ -253,12 +253,12 @@ g --> i[当前所在的环境是个什么样子?]</pre>
 $$<br>
 m = {m_{0},m_{1},…,m_{n}}\\<br>
 x = {x_{0},x_{1},…,x_{x}}\\<br>
-(R,t) \infty (x,m)预测：<br>
+(R,t) \infty (x,m)<br>
 $$</p>
 <p>预测：<br>
 $$<br>
 e_{ij}(x_{i},x_{j}) = z_{ij} - z_{ij}(x_{i},x_{j}) \\<br>
-F(x) = \sum_{(i,j) \in \zeta}\underbrace{e_{ij}^{T} \Omega_{ij} e_{ij}}<em>{F</em>{ij}}\\<br>
+F(x) = \sum_{(i,j) \in \zeta} \underbrace {e_{ij}^{T} \Omega_{ij} e_{ij}}<em>{F</em>{ij}}\\<br>
 x ^{*} = {argmin}F(x)<br>
 $$</p>
 <p>无限增加的状态 → 有限的图链接：<br>
@@ -331,7 +331,7 @@ $$<br>
 2.预测</p>
 <p>Kalman Gain：<br>
 $$<br>
-K_{k+1} =P_{k+1|k}H_{k+1}<sup>{T}(H_{k+1}P_{k+1|k}H_{k+1}</sup>{T}+R_{k+1})^{-1}<br>
+K_{k+1} =P_{k+1|k} H_{k+1}^{T} (H_{k+1} P_{k+1|k} H_{k+1}^{T} + R_{k+1}) ^{-1}<br>
 $$</p>
 <p>Update State：<br>
 $$<br>
@@ -448,7 +448,7 @@ $$</p>
 $$<br>
 X_{IMU} = \left[<br>
 \matrix{<br>
-^{W}<em>{B}P \ ^{W}</em>{B}V \ ^{W}<em>{B}a \  ^{B}</em>{W}q \ w_{B} \ b_{a} \ b_{g}<br>
+^{W}<em>{B}P &amp;\ ^{W}</em>{B}V &amp;\ ^{W}<em>{B}a &amp;\  ^{B}</em>{W}q &amp;\ w_{B} &amp;\ b_{a} &amp;\ b_{g}<br>
 }<br>
 \right]\\<br>
 P → position\\<br>
@@ -495,7 +495,7 @@ b_{gk+1} &amp;=&amp; b_{gk}\\<br>
 $$</p>
 <p><strong>估计</strong>：<br>
 $$<br>
-X_{k} = F \cdot X_{k-1} + G \cdot w\<br>
+X_{k} = F \cdot X_{k-1} + G \cdot w\\<br>
 \overline{bel}(x_{k}) = p(x_{k}|u_{k},x_{k-1})bel(x_{k-1})<br>
 $$</p>
 <p><strong>观测</strong>：<br>
@@ -505,7 +505,7 @@ P(z_{k}|x_{k})<br>
 $$</p>
 <p><strong>增益</strong>：<br>
 $$<br>
-K_{k+1} = P_{k+1|k}H_{k+1}<sup>{T}(H_{k+1}P_{k+1|k}H_{k+1|T}+R_{k+1})</sup>{-1}<br>
+K_{k+1} = P_{k+1|k} H_{k+1}^{T} (H_{k+1} P_{k+1|k} H_{k+1|T} + R_{k+1}) ^{-1}<br>
 $$</p>
 <p><strong>更新状态</strong>：<br>
 $$<br>
@@ -513,11 +513,11 @@ X_{K|real} = X_{k} + X_{k}(Z_{k}-H_{k}X_{k})<br>
 $$</p>
 <p>机器人的状态：<br>
 $$<br>
-x_{t} = (\underbrace{x,y,\theta}<em>{robot’s pose},\underbrace{m</em>{1,x},m_{1,y}}<em>{landmark1},…,\underbrace{m</em>{n,x},m_{n,y}}_{landmark \ n})^{T}<br>
+x_{t} = (\underbrace {x,y, \theta}<em>{robot’s pose},\underbrace {m</em>{1,x},m_{1,y}}<em>{landmark1},…, \underbrace {m</em>{n,x},m_{n,y}}_{landmark \ n})^{T}<br>
 $$</p>
 <p>位姿：位置、姿态<br>
 $$<br>
-P = (x,y,z)\<br>
+P = (x,y,z)\\<br>
 R = (\alpha, \beta, \gamma)<br>
 $$</p>
 <p>转化为四元数：<br>
@@ -530,7 +530,7 @@ $$</p>
 $$</p>
 <p>初始化：<br>
 $$<br>
-x_{k} 状态\<br>
+x_{k} 状态\\<br>
 u_{k} 传感器<br>
 $$</p>
 <p>帧到帧估计：<br>
@@ -539,17 +539,17 @@ $$<br>
 $$</p>
 <p>局部捆绑约束(Bundle Adjustment)：<br>
 $$<br>
-min \sum_{e_{ij}} \Vert x_{k} - T_{eik}x_{i} \Vert^{2}\<br>
+min \sum_{e_{ij}} \Vert x_{k} - T_{eik}x_{i} \Vert^{2}\\<br>
 x_{k|real} = x_{k} + \delta x<br>
 $$</p>
 <p><strong>滤波器类</strong><br>
 $$<br>
-P(x|u) = \int P(x|u,x’)P(x’)dx’\<br>
+P(x|u) = \int P(x|u,x’)P(x’)dx’\\<br>
 Bel(x_{t}) = \eta P(z_{t}|x_{t}) \int P(x_{t}|u_{t},x_{t-1})Bel(x_{t-1})d_{x_{t-1}}<br>
 $$</p>
 <p><strong>回归优化类</strong><br>
 $$<br>
-min \sum_{e_{ij}} \Vert x_{k} - T_{eik}x_{i} \Vert ^{2}\<br>
+min \sum_{e_{ij}} \Vert x_{k} - T_{eik}x_{i} \Vert ^{2}\\<br>
 x_{k|real} = x_{k} + \delta x<br>
 $$</p>
 <h3 id="坐标系">坐标系</h3>
@@ -709,8 +709,8 @@ R = Rot(y, \phi) I_{3} Rot(w,\theta) Rot(u,\alpha) = \\<br>
 \right]<br>
 $$<br>
 欧式坐标系刚体的旋转、平移表示：(本体坐标系→世界坐标系)</p>
-<p><img src="D:%5Cfun%5Cphotos%5Cwork%5C%E4%BD%8D%E5%A7%BF.JPG" alt><br>
-$$<br>
+<p><img src="D:%5Cfun%5Cphotos%5Cwork%5C%E4%BD%8D%E5%A7%BF.JPG" alt></p>
+<p>$$<br>
 <sup>{O}r</sup>{P} = ^{O}R_{O’} \ <sup>{’}r</sup>{P} + <sup>{O}r</sup>{o’}\\<br>
 <sup>{O}r</sup>{P} → P在世界坐标系下的位置\\<br>
 ^{O}R_{O’} → 本体坐标系在世界坐标系下的旋转\\<br>
@@ -813,7 +813,7 @@ $$</p>
 $$<br>
 X_{IMU} = \left[<br>
 \matrix{<br>
-^{W}<em>{B}P &amp;\ ^{W}</em>{B}V *\ ^{W}<em>{B}a &amp;\  ^{B}</em>{W}q &amp;\ w_{B} &amp;\ b_{a} &amp;\ b_{g}<br>
+^{W}<em>{B}P &amp;\ ^{W}</em>{B}V &amp;\ ^{W}<em>{B}a &amp;\  ^{B}</em>{W}q &amp;\ w_{B} &amp;\ b_{a} &amp;\ b_{g}<br>
 }<br>
 \right]<br>
 $$</p>
@@ -892,7 +892,7 @@ a_{2}’\\<br>
 a_{3}’<br>
 }<br>
 \right]\\<br>
-\rightarrow\\<br>
+\downarrow\\<br>
 [a_{1},a_{2},a_{3}] =<br>
 \left[<br>
 \matrix{<br>
@@ -925,8 +925,8 @@ $$<br>
 SE(3)={<br>
 T=\left[<br>
 \matrix{<br>
-R &amp;\ t\<br>
-o^{T} &amp;\ 1\<br>
+R &amp;\ t\\<br>
+o^{T} &amp;\ 1<br>
 }<br>
 \right] \in R^{4 \times 4}|R \in SO(3),t \in R^{3}<br>
 }<br>
