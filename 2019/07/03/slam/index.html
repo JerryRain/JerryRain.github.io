@@ -190,10 +190,10 @@ a[传感器] --> b[地图];
 b --> c[执行器]</pre>
 <p>数学原理：<br>
 $$<br>
-P(x_{k},m|Z_{k:0},U_{k:0},x_{0})\<br>
-x_{k} → 状态\<br>
-m → 地图\<br>
-Z_{k:0} → 规划\<br>
+P(x_{k},m|Z_{k:0},U_{k:0},x_{0})\\<br>
+x_{k} → 状态\\<br>
+m → 地图\\<br>
+Z_{k:0} → 规划\\<br>
 U_{k:0} → 控制量<br>
 $$</p>
 <p>SLAM架构：</p>
@@ -253,15 +253,15 @@ g --> i[当前所在的环境是个什么样子?]</pre>
 $$<br>
 m = {m_{0},m_{1},…,m_{n}}\\<br>
 x = {x_{0},x_{1},…,x_{x}}\\<br>
-(R,t) \infty (x,m)<br>
-$$<br>
-预测：<br>
+(R,t) \infty (x,m)预测：<br>
+$$</p>
+<p>预测：<br>
 $$<br>
 e_{ij}(x_{i},x_{j}) = z_{ij} - z_{ij}(x_{i},x_{j}) \\<br>
 F(x) = \sum_{(i,j) \in \zeta}\underbrace{e_{ij}^{T} \Omega_{ij} e_{ij}}<em>{F</em>{ij}}\\<br>
 x ^{*} = {argmin}F(x)<br>
-$$<br>
-无限增加的状态 → 有限的图链接：<br>
+$$</p>
+<p>无限增加的状态 → 有限的图链接：<br>
 $$<br>
 p(x_{i},m|z_{1:t},u_{1:t})=\iint \cdots \int p(x_{1:t} \cdot m|z_{1:t},u_{1:t})d_{x_{1}}d_{x_{2}} \cdots d_{x_{t-1}}<br>
 $$<br>
