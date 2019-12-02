@@ -1016,6 +1016,140 @@ R &amp;\ r\<br>
 $$</p>
 <p>SO(3),so(3),SE(3),se(3)初始化以及相互转换关系：</p>
 <p><img src="https://img-blog.csdn.net/20170904090310463?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTA5MjE4OA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt></p>
+<h3 id="滤波器-v2">滤波器</h3>
+<p>$$<br>
+f_{v} =<br>
+\left(<br>
+\begin{array}{cc}<br>
+r_{C_{k+1}}^{W} \\<br>
+q_{C_{k+1}}^{W} \\<br>
+v_{C_{k+1}}^{W} \\<br>
+w_{C_{k+1}}^{C}<br>
+\end{array}<br>
+\right)<br>
+=<br>
+\left(<br>
+	\begin{array}{cc}<br>
+	r_{C_{k}}^{W} + (v_{C_{k}}<sup>{W}+V</sup>{W}) \Delta t → 位置=位置+速度<em>时间 \\<br>
+	q_{C_{k}}^{W} \times q((w_{C_{k}}^{C}+ \Omega ^{C}) \Delta t) → 方向=方向+角速度</em>时间\\<br>
+	v_{C_{k}}^{W} + V^{W} → 速度=速度+噪声\\<br>
+	w_{C_{k}}^{C} + \Omega ^{C} → 角速度=角速度+噪声<br>
+	\end{array}<br>
+\right)<br>
+$$</p>
+<p><strong>随机状态和估计</strong>：</p>
+<p><strong>随机过程</strong>(stochastic process)：</p>
+<p>随机过程 = 时间 + 不确定性(方差、标准差)<br>
+$$<br>
+从时间T到时间T+ \Delta T的过程当中：\\<br>
+\dot{a} = \Delta a(期望) + \delta (a) → 加速度a随着时间变化，即为随机过程<br>
+$$</p>
+<p>随机变量 → 随机状态(多维)：<br>
+$$<br>
+F(a’) = P({a:A(a) \leqslant a’}) = P(A \leqslant a’)<br>
+$$<br>
+如，正态分布函数</p>
+<p><img src="data:image/png;base64,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" alt="正太分布"><br>
+$$<br>
+F(+ \infty) = \int^{+ \infty} p(t)dt = 1<br>
+$$<br>
+性质：</p>
+<ul>
+<li>面积积分等于1</li>
+<li>单调递增</li>
+</ul>
+<p>相关函数：<br>
+$$<br>
+均值函数：m_{X}(t) = EX(t), t \in T \\<br>
+方差函数：D_{X}(t) = DX(t) \\<br>
+协方差函数：R_{X}(s,t) = R_{X}(s,t) - m_{X}(s)m_{X}(t) \\<br>
+相互系数函数：\rho (s,t) = \frac{Cou_{X}(X_{s},X_{t})}{\sqrt{D_{X}(s)D_{X}(t)}} \\<br>
+互协方差函数：C_{X,Y}(s,t) = E(X(s)-EX(s))(Y(t)-EY(t))<br>
+$$</p>
+<h3 id="贝叶斯">贝叶斯</h3>
+<p>滤波器研究的问题核心：<br>
+$$<br>
+P(X|Z,B) = \frac{P(Z|X,B)P(X|B)}{P(Z|B)} \\<br>
+P(X|Z,B) → P(当前状态|观测，控制) \\<br>
+P（X） → 我们的目的：估计状态 \\<br>
+P(X) = P(X|B)P(B) → 控制量 \\<br>
+P(Z|X,B) → 预测<br>
+$$<br>
+假设测量的噪声是高斯白噪声，即<br>
+$$<br>
+噪声 \Rightarrow N(0, \delta) \\<br>
+P(X) = P(X|B)P(B) \\<br>
+\Downarrow \\<br>
+X = 期望 + 不确定性 (Probability density functions)\\<br>
+y_{p}(x,X_{p},\delta_{p}) = \frac{1}{\sqrt{2 \pi \delta_{p}^{2}}} e^{- \frac{(x-x_{p}^{2})}{2 \delta_{p}^{2}}} \\<br>
+P(Z|X,B)\\<br>
+\Downarrow \\<br>
+Z = 期望 + 不确定性 → Z=HX \\<br>
+y_{m}(x,x_{m},\delta_{m}) = \frac{1}{\sqrt{2 \pi \delta_{m}<sup>{2}}}e</sup>{- \frac{(x-x_{m}^{2})}{2 \delta_{m}^{2}}}\\<br>
+估计与观测融合：\\<br>
+y(x,x_{p},\delta_{p},x_{m},\delta_{m}) =<br>
+\frac{1}{\sqrt{2 \pi \delta_{p}^{2}}} e^{- \frac{(x-x_{p}^{2})}{2 \delta_{p}^{2}}} \frac{1}{\sqrt{2 \pi \delta_{m}<sup>{2}}}e</sup>{- \frac{(x-x_{m}^{2})}{2 \delta_{m}^{2}}}<br>
+= \frac{1}{2 \pi \sqrt{\delta_{m}^{2} \delta_{p}<sup>{2}}}e</sup>{- \frac{(x-x_{m}^{2})}{2 \delta_{m}^{2}}- \frac{(x-x_{m}^{2})}{2 \delta_{m}^{2}}} → 卡尔曼滤波\\<br>
+假设融合之后的概率分布为：y_{f}(x,x_{f},\delta_{f})=\frac{1}{2 \pi \delta_{f}<sup>{2}}e</sup>{\frac{(x-x_{f}^{2})}{2 \delta_{f}^{2}}}\\<br>
+展开前一项：\\<br>
+x_{f}=x_{p}+\frac{\delta_{p}<sup>{2}(x_{m}-x_{p})}{\delta_{p}</sup>{2}+\delta_{m}^{2}}\\<br>
+\delta_{f}<sup>{2}=\delta_{p}</sup>{2}-\frac{\delta_{p}<sup>{4}}{\delta_{p}</sup>{2}+\delta_{m}^{2}}\\<br>
+而观测值是从观测来的：<br>
+Z=HX → \delta_{z}=H \delta_{m}\\<br>
+所以卡尔曼增益为：<br>
+K = \frac{H \delta_{p}<sup>{2}}{H</sup>{2}\delta_{p}<sup>{2}+\delta_{z}</sup>{2}}<br>
+$$</p>
+<p><strong>卡尔曼滤波器融合</strong>：<br>
+$$<br>
+K = H\delta_{p}<sup>{2}/(H</sup>{2}\delta_{p}<sup>{2}+\delta_{Z}</sup>{2})\\<br>
+x_{f}=x_{p}+K(x_{m}-Hx_{p})\\<br>
+\delta_{f}<sup>{2}=\delta_{p}</sup>{2}-KH\delta_{p}^{2}<br>
+$$</p>
+<p><strong>拓展卡尔曼滤波器</strong>：</p>
+<p>KF：线性</p>
+<p>EKF：非线性或者部分非线性</p>
+<p>预测：<br>
+$$<br>
+\left(<br>
+	\begin{array}{cc}<br>
+	r_{C_{k+1}^{W}}\\<br>
+	q_{C_{k+1}^{W}}\\<br>
+	v_{C_{k+1}^{W}}\\<br>
+	\omega_{C_{k+1}^{C}}<br>
+	\end{array}<br>
+\right)<br>
+=<br>
+\left(<br>
+	\begin{array}{cc}<br>
+	r_{C_{k}}<sup>{W}+(v_{C_{k}}+V</sup>{W})\Delta t\\<br>
+	q_{C_{k}}^{W} \times q((\omega_{C_{k}}<sup>{C}+\Omega</sup>{C})\Delta t)\\<br>
+	v_{C_{k}}<sup>{W}+V</sup>{W}\\<br>
+	\omega_{C_{k}}<sup>{C}+\Omega</sup>{C}<br>
+	\end{array}<br>
+\right)<br>
+$$</p>
+<p>观测预测：<br>
+$$<br>
+h_{i}=<br>
+\left(<br>
+	\begin{array}{cc}<br>
+	u\\<br>
+	v<br>
+	\end{array}<br>
+\right)<br>
+=<br>
+\left(<br>
+	\begin{array}{cc}<br>
+	u_{0}-fk_{u}\frac{h_{L_{x}}<sup>{R}}{h_{L_{z}}</sup>{R}}\\<br>
+	v_{0}-fk_{v}\frac{h_{L_{y}}<sup>{R}}{h_{L_{z}}</sup>{R}}<br>
+	\end{array}<br>
+\right)<br>
+$$</p>
+<p><strong>粒子滤波器</strong>： (激光雷达)</p>
+<p>1.初始化阶段–提取跟踪目标特征</p>
+<p>2.搜索阶段–放狗</p>
+<p>3.决策阶段</p>
+<p>4.重采样阶段Resampling</p>
 
             </div>
 
