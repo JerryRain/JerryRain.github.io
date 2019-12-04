@@ -260,7 +260,7 @@ $$<br>
 e_{ij}(x_{i},x_{j}) = z_{ij} - z_{ij}(x_{i},x_{j})<br>
 $$</p>
 <p>$$<br>
-F(x) = \sum_{(i,j) \in \zeta} \underbrace {e_{ij}^{T} \Omega_{ij} e_{ij}}<em>{F</em>{ij}}<br>
+F(x) = \sum_{(i,j) \in \zeta} \underbrace{e_{ij}^{T} \Omega_{ij} e_{ij} }<em>{F</em>{ij} }<br>
 $$</p>
 <p>$$<br>
 x ^{*} = {argmin}F(x)<br>
@@ -452,28 +452,28 @@ $$</p>
 $$<br>
 X_{IMU} = \left[<br>
 \matrix{<br>
-^{W}<em>{B}P &amp;\ ^{W}</em>{B}V &amp;\ ^{W}<em>{B}a &amp;\  ^{B}</em>{W}q &amp;\ w_{B} &amp;\ b_{a} &amp;\ b_{g}<br>
+^{W}<em>{B} P &amp;\ ^{W}</em>{B} V &amp;\ ^{W}<em>{B} a &amp;\ ^{B}</em>{W} q &amp;\ w_{B} &amp;\ b_{a} &amp;\ b_{g}<br>
 }<br>
-\right]\\<br>
-P → position\\<br>
-B → body \ frame\\<br>
-W → world \ frame\\<br>
-V → 速度\\<br>
-a → 加速度\\<br>
-q → quaternion(方向)\\<br>
-w → 角速度\\<br>
+\right]<br>
 $$</p>
+<p>P → position<br>
+B → body  frame<br>
+W → world  frame<br>
+V → 速度<br>
+a → 加速度<br>
+q → quaternion(方向)<br>
+w → 角速度</p>
 <p><strong>Simplified</strong><br>
 $$<br>
 X_{IMU} = \left[<br>
 \matrix{<br>
-^{W}<em>{B}P &amp;\ ^{W}</em>{B}V &amp;\ b_{a} &amp;\ ^{B}<em>{W}q &amp;\ b</em>{g}<br>
+^{W}<em>{B} P &amp;\ ^{W}</em>{B} V &amp;\ b_{a} &amp;\ ^{B}<em>{W} q &amp;\ b</em>{g}<br>
 }<br>
 \right]<br>
 $$</p>
 <p>即<br>
 $$<br>
-\left{<br>
+\left {<br>
 \begin{array}{rcl}<br>
 P &amp;=&amp; v\\<br>
 V &amp;=&amp; R(a_{m}-b_{a})+g\\<br>
@@ -485,7 +485,7 @@ b_{g} &amp;=&amp; 0\\<br>
 \end{array}<br>
 \right.<br>
 \rightarrow<br>
-\left{<br>
+\left {<br>
 \begin{array}{rcl}<br>
 P_{k+1} &amp;=&amp; P_{k}+ \Delta T \cdot v_{k} + \frac{1}{2} \cdot \Delta T^{2} \cdot a_{k}\\<br>
 V_{k+1} &amp;=&amp; V_{k} + \Delta T \cdot a_{k}\\<br>
@@ -517,7 +517,7 @@ X_{K|real} = X_{k} + X_{k}(Z_{k}-H_{k}X_{k})<br>
 $$</p>
 <p>机器人的状态：<br>
 $$<br>
-x_{t} = (\underbrace {x,y, \theta}<em>{robot’s pose},\underbrace {m</em>{1,x},m_{1,y}}<em>{landmark1},…, \underbrace {m</em>{n,x},m_{n,y}}_{landmark \ n})^{T}<br>
+x_{t} = ( \underbrace {x,y, \theta }<em>{robot’s pose},\underbrace {m</em>{1,x},m_{1,y}}<em>{landmark1},…, \underbrace {m</em>{n,x},m_{n,y} }_{landmark \ n} ) ^{T}<br>
 $$</p>
 <p>位姿：位置、姿态<br>
 $$<br>
@@ -716,52 +716,58 @@ $$<br>
 <p><img src="D:%5Cfun%5Cphotos%5Cwork%5C%E4%BD%8D%E5%A7%BF.JPG" alt></p>
 <p>$$<br>
 <sup>{O}r</sup>{P} = ^{O}R_{O’} \ <sup>{’}r</sup>{P} + <sup>{O}r</sup>{o’}\\<br>
+$$</p>
+<p>$$<br>
 <sup>{O}r</sup>{P} → P在世界坐标系下的位置\\<br>
 ^{O}R_{O’} → 本体坐标系在世界坐标系下的旋转\\<br>
 <sup>{O}r</sup>{o’} → 本体坐标系在世界坐标系下的位置\\<br>
 <sup>{’}r</sup>{P} → P在本体坐标系下的位置\\<br>
-矩阵表示\rightarrow<br>
+$$</p>
+<p>矩阵表示：<br>
+$$<br>
 \left[<br>
 	\matrix{<br>
-<sup>{O}r</sup>{P}\\<br>
+<sup>{O}r</sup>{P} \\<br>
 1<br>
 	}<br>
 \right]<br>
 =<br>
 \left[<br>
 \matrix{<br>
-^{O}R_{O’} \ <sup>{O}r</sup>{o’}\\<br>
+^{O}R_{O’} \ <sup>{O}r</sup>{o’} \\<br>
 0_{1 \times 3} \ 1<br>
 }<br>
-\right]<br>
-\left[<br>
+\right]</p>
+<p>\left[<br>
 \matrix{<br>
-<sup>{O’}r</sup>{P}\\<br>
+<sup>{O’}r</sup>{P} \\<br>
 1<br>
 }<br>
 \right]<br>
-$$</p>
-<p>齐次转换矩阵表达：<br>
+$$<br>
+齐次转换矩阵表达：<br>
 $$<br>
 ^{O}T_{O’} =<br>
 \left[<br>
 \matrix{<br>
-^{O}R_{O’} &amp;\ <sup>{O}r</sup>{o’}\\<br>
+^{O}R_{O’} &amp;\ <sup>{O}r</sup>{o’}     \\<br>
 0_{1 \times 3} &amp;\ 1<br>
 }<br>
 \right]<br>
 =<br>
 \left[<br>
 \matrix{<br>
-R_{3 \times 3} &amp;\ P_{3 \times 1}\\<br>
+R_{3 \times 3} &amp;\ P_{3 \times 1}    \\<br>
 0 &amp;\ 1<br>
 }<br>
-\right]\\<br>
+\right]     \\<br>
+$$<br>
+$$<br>
 R_{3 \times 3} → 旋转矩阵\\<br>
 P_{3 \times 1} → 位置向量\\<br>
 1 → 尺度<br>
-$$<br>
-特殊情况：</p>
+$$</p>
+<p>特殊情况：</p>
 <p>1)只有旋转<br>
 $$<br>
 ^{O}T_{O’} =<br>
@@ -787,10 +793,10 @@ $$<br>
 {T|T=<br>
 \left[<br>
 \matrix{<br>
-R &amp;\ r\\<br>
+R &amp;\ r   \\<br>
 0_{1 \times 3} &amp;\ 1<br>
 }<br>
-\right],R \in R^{3 \times 3},r\in R<sup>{3},R</sup>{T}R=RR^{T}=I,\vert R \vert =1 } = SE(3)<br>
+\right ],R \in R ^ {3 \times 3},r\in R ^ {3},R^{T} R=R R^{T}= I , \vert R \vert =1 } = SE(3)<br>
 $$</p>
 <p><strong>Gimbal Lock</strong>：</p>
 <p>由于两个坐标轴旋转到重合，导致3个自由度退化成2个自由度</p>
@@ -817,7 +823,7 @@ $$</p>
 $$<br>
 X_{IMU} = \left[<br>
 \matrix{<br>
-^{W}<em>{B}P &amp;\ ^{W}</em>{B}V &amp;\ ^{W}<em>{B}a &amp;\  ^{B}</em>{W}q &amp;\ w_{B} &amp;\ b_{a} &amp;\ b_{g}<br>
+^{W} _{B} P &amp;\ ^{W} <em>{B} V &amp;\ ^{W} <em>{B}a &amp;\  ^{B} <em>{W} q &amp;\ w</em>{B} &amp;\ b</em>{a} &amp;\ b</em>{g}<br>
 }<br>
 \right]<br>
 $$</p>
@@ -843,11 +849,11 @@ q_{k+1} = exp(w \frac{\Delta t}{2}) \bigotimes q_{k}<br>
 $$</p>
 <p>四元数旋转：<br>
 $$<br>
-p’ = Rp\\<br>
+p’ = Rp \\<br>
 R =<br>
 \left[<br>
 \matrix{<br>
-1-2s(q_{j}<sup>{2}+q_{k}</sup>{2}) &amp;\ 2s(q_{i}q_{j}-q_{k}q_{r}) &amp;\ 2s(q_{i}q_{k}+q_{j}q_{r})\\<br>
+1-2s(q_{j} ^{2}+q_{k} ^{2}) &amp;\ 2s(q_{i}q_{j}-q_{k}q_{r}) &amp;\ 2s(q_{i}q_{k}+q_{j}q_{r})\\<br>
 2s(q_{i}q_{j}+q_{k}q_{r}) &amp;\ 1-2s(q_{i}<sup>{2}+q_{k}</sup>{2}) &amp;\ 2s(q_{j}q_{k}-q_{i}q_{r})\\<br>
 2s(q_{i}q_{k}-q_{j}q_{r}) &amp;\ 2s(q_{j}q_{k}+q_{i}q_{r}) &amp;\ 1-2s(q_{i}<sup>{2}+q_{j}</sup>{2})<br>
 }<br>
@@ -869,17 +875,17 @@ $$</p>
 $$<br>
 \left[<br>
 \matrix{<br>
-\phi \\<br>
-\theta \\<br>
+\phi      \\<br>
+\theta     \\<br>
 \Psi<br>
 }<br>
 \right]<br>
 =<br>
 \left[<br>
 \matrix{<br>
-\arctan2(2(q_{0}q_{1+q_{2}q_{3}}),1-2(q_{1}<sup>{2}+q_{2}</sup>{2}))\\<br>
-\arcsin(2(q_{0}q_{2}-q_{3}q_{1}))\\<br>
-\arctan2(2(q_{0}q_{3}+q_{1}q_{2}),1-2(q_{2}<sup>{2}+q_{3}</sup>{2}))<br>
+\arctan2(2(q_{0}q_{1+q_{2}q_{3}}),1-2(q_{1}<sup>{2}+q_{2}</sup>{2}) )   \\<br>
+\arcsin(2(q_{0}q_{2}-q_{3}q_{1}) )   \\<br>
+\arctan2(2(q_{0}q_{3}+q_{1}q_{2}),1-2(q_{2}<sup>{2}+q_{3}</sup>{2}) )<br>
 }<br>
 \right]<br>
 $$</p>
@@ -940,23 +946,29 @@ $$</p>
 \dot{R}= R \bigotimes<br>
 \left[<br>
 \matrix{<br>
-0 &amp;\ -w_{2} &amp;\ w_{y}\\<br>
-w_{2} &amp;\ 0 &amp;\ w_{x}\\<br>
+0 &amp;\ -w_{2} &amp;\ w_{y}   \\<br>
+w_{2} &amp;\ 0 &amp;\ w_{x}    \\<br>
 w_{y} &amp;\ w_{x} &amp;\ 0<br>
 }<br>
-\right]\\<br>
-令[w]<em>{x}=\left<a href="%E6%96%9C%E5%AF%B9%E7%A7%B0%E7%9F%A9%E9%98%B5"><br>
-\matrix{<br>
-0 &amp;\ -w_{2} &amp;\ w_{y}\\<br>
-w_{2} &amp;\ 0 &amp;\ w_{x}\\<br>
-w_{y} &amp;\ w_{x} &amp;\ 0<br>
-}<br>
-\right</a>\\<br>
-则\dot{R}=R[w]</em>{x} \rightarrow R = exp([w]<em>{x}t)R\\<br>
-R(w)=exp([w]</em>{x})\\<br>
-=1+[w]<em>{x}+\frac {1}{2!}[w]</em>{x}^{2}+\frac {1}{3!}[w]_{x}^{3}+…<br>
+\right]<br>
 $$</p>
-<p>通过这种方式，找寻增量累计的关系，在<strong>滤波器、单步估计</strong>上都需要</p>
+<p>令<br>
+$$<br>
+[w]<em>{x}=\left[<br>
+\matrix{<br>
+0 &amp;\ -w</em>{2} &amp;\ w_{y}   \\<br>
+w_{2} &amp;\ 0 &amp;\ w_{x}   \\<br>
+w_{y} &amp;\ w_{x} &amp;\ 0<br>
+}<br>
+\right]     (斜对称矩阵)<br>
+$$<br>
+则<br>
+$$<br>
+\dot {R}=R[w]<em>{x} \rightarrow R = exp( [w]</em>{x}t)R   \\<br>
+R(w)=exp([w]<em>{x})   \\<br>
+=1+[w]</em>{x}+ \frac {1}{2! } [w]<em>{x}^{2}+ \frac {1}{3! } [w]</em>{x}^{3} + …<br>
+$$<br>
+通过这种方式，找寻增量累计的关系，在<strong>滤波器、单步估计</strong>上都需要</p>
 <p><strong>李群G的性质</strong>：</p>
 <ul>
 <li>
@@ -1009,12 +1021,12 @@ $$</p>
 </ul>
 <p>$$<br>
 {<br>
-T|T=\left[<br>
+T | T = \left[<br>
 \matrix{<br>
-R &amp;\ r\<br>
+R &amp;\ r  \<br>
 0_{1 \times 3} &amp;\ 1<br>
 }<br>
-\right], R \in R^{3 \times 3},r \in R<sup>{3},R</sup>{T}R=RR^{T}=I,\vert R \vert = 1<br>
+\right], R \in R^{3 \times 3},r \in R<sup>{3},R</sup>{T}R=RR^{T}=I, \vert R \vert = 1<br>
 }<br>
 = SE(3)<br>
 $$</p>
@@ -1025,19 +1037,19 @@ $$</p>
 f_{v} =<br>
 \left(<br>
 \begin{array}{cc}<br>
-r_{C_{k+1}}^{W} \\<br>
-q_{C_{k+1}}^{W} \\<br>
-v_{C_{k+1}}^{W} \\<br>
-w_{C_{k+1}}^{C}<br>
+r_{C_{k+1} }^{W} \\<br>
+q_{C_{k+1} }^{W} \\<br>
+v_{C_{k+1} }^{W} \\<br>
+w_{C_{k+1} }^{C}<br>
 \end{array}<br>
 \right)<br>
 =<br>
 \left(<br>
 	\begin{array}{cc}<br>
-	r_{C_{k}}^{W} + (v_{C_{k}}<sup>{W}+V</sup>{W}) \Delta t → 位置=位置+速度<em>时间 \\<br>
-	q_{C_{k}}^{W} \times q((w_{C_{k}}^{C}+ \Omega ^{C}) \Delta t) → 方向=方向+角速度</em>时间\\<br>
-	v_{C_{k}}^{W} + V^{W} → 速度=速度+噪声\\<br>
-	w_{C_{k}}^{C} + \Omega ^{C} → 角速度=角速度+噪声<br>
+	r_{C_{k} }^{W} + ( v_{C_{k} }<sup>{W}+V</sup>{W} ) \Delta t → 位置=位置+速度<em>时间 \\<br>
+	q_{C_{k} }^{W} \times q( (w_{C_{k} }^{C}+ \Omega ^{C} ) \Delta t) → 方向=方向+角速度</em>时间\\<br>
+	v_{C_{k} }^{W} + V^{W} → 速度=速度+噪声\\<br>
+	w_{C_{k} }^{C} + \Omega ^{C} → 角速度=角速度+噪声<br>
 	\end{array}<br>
 \right)<br>
 $$</p>
@@ -1084,30 +1096,47 @@ $$<br>
 噪声 \Rightarrow N(0, \delta) \\<br>
 P(X) = P(X|B)P(B) \\<br>
 \Downarrow \\<br>
-X = 期望 + 不确定性 (Probability density functions)\\<br>
-y_{p}(x,X_{p},\delta_{p}) = \frac{1}{\sqrt{2 \pi \delta_{p}^{2}}} e^{- \frac{(x-x_{p}^{2})}{2 \delta_{p}^{2}}} \\<br>
-P(Z|X,B)\\<br>
-\Downarrow \\<br>
+X = 期望 + 不确定性 (Probability \ density \ functions)\\<br>
+y_{p}(x,X_{p},\delta_{p}) = \frac{1}{\sqrt{2 \pi \delta_{p}^{2} } } e^{- \frac{(x-x_{p}^{2})} {2 \delta_{p}^{2} } } \\<br>
+P(Z|X,B) \\<br>
+\Downarrow<br>
+$$</p>
+<p>$$<br>
 Z = 期望 + 不确定性 → Z=HX \\<br>
-y_{m}(x,x_{m},\delta_{m}) = \frac{1}{\sqrt{2 \pi \delta_{m}<sup>{2}}}e</sup>{- \frac{(x-x_{m}^{2})}{2 \delta_{m}^{2}}}\\<br>
-估计与观测融合：\\<br>
+y_{m}(x,x_{m},\delta_{m}) = \frac{1}{\sqrt{2 \pi \delta_{m}<sup>{2}}}e</sup>{- \frac{(x-x_{m}^{2})}{2 \delta_{m}^{2}}}<br>
+$$</p>
+<p>估计与观测融合：<br>
+$$<br>
 y(x,x_{p},\delta_{p},x_{m},\delta_{m}) =<br>
 \frac{1}{\sqrt{2 \pi \delta_{p}^{2}}} e^{- \frac{(x-x_{p}^{2})}{2 \delta_{p}^{2}}} \frac{1}{\sqrt{2 \pi \delta_{m}<sup>{2}}}e</sup>{- \frac{(x-x_{m}^{2})}{2 \delta_{m}^{2}}}<br>
-= \frac{1}{2 \pi \sqrt{\delta_{m}^{2} \delta_{p}<sup>{2}}}e</sup>{- \frac{(x-x_{m}^{2})}{2 \delta_{m}^{2}}- \frac{(x-x_{m}^{2})}{2 \delta_{m}^{2}}} → 卡尔曼滤波\\<br>
-假设融合之后的概率分布为：y_{f}(x,x_{f},\delta_{f})=\frac{1}{2 \pi \delta_{f}<sup>{2}}e</sup>{\frac{(x-x_{f}^{2})}{2 \delta_{f}^{2}}}\\<br>
-展开前一项：\\<br>
-x_{f}=x_{p}+\frac{\delta_{p}<sup>{2}(x_{m}-x_{p})}{\delta_{p}</sup>{2}+\delta_{m}^{2}}\\<br>
-\delta_{f}<sup>{2}=\delta_{p}</sup>{2}-\frac{\delta_{p}<sup>{4}}{\delta_{p}</sup>{2}+\delta_{m}^{2}}\\<br>
+= \frac{1}{2 \pi \sqrt{\delta_{m}^{2} \delta_{p}<sup>{2}}}e</sup>{- \frac{(x-x_{m}^{2})}{2 \delta_{m}^{2}}- \frac{(x-x_{m}^{2})}{2 \delta_{m}^{2}}} → 卡尔曼滤波<br>
+$$<br>
+假设融合之后的概率分布为：<br>
+$$<br>
+y_{f}(x,x_{f},\delta_{f})=\frac{1}{2 \pi \delta_{f}<sup>{2}}e</sup>{\frac{(x-x_{f}^{2})}{2 \delta_{f}^{2}}}<br>
+$$<br>
+展开前一项：<br>
+$$<br>
+x_{f}=x_{p}+\frac{\delta_{p}<sup>{2}(x_{m}-x_{p})}{\delta_{p}</sup>{2}+\delta_{m}^{2}} \\<br>
+\delta_{f}<sup>{2}=\delta_{p}</sup>{2}-\frac{\delta_{p}<sup>{4}}{\delta_{p}</sup>{2}+\delta_{m}^{2}}<br>
+$$<br>
 而观测值是从观测来的：<br>
-Z=HX → \delta_{z}=H \delta_{m}\\<br>
+$$<br>
+Z=HX → \delta_{z}=H \delta_{m}<br>
+$$<br>
 所以卡尔曼增益为：<br>
+$$<br>
 K = \frac{H \delta_{p}<sup>{2}}{H</sup>{2}\delta_{p}<sup>{2}+\delta_{z}</sup>{2}}<br>
 $$</p>
 <p><strong>卡尔曼滤波器融合</strong>：<br>
 $$<br>
-K = H\delta_{p}<sup>{2}/(H</sup>{2}\delta_{p}<sup>{2}+\delta_{Z}</sup>{2})\\<br>
-x_{f}=x_{p}+K(x_{m}-Hx_{p})\\<br>
-\delta_{f}<sup>{2}=\delta_{p}</sup>{2}-KH\delta_{p}^{2}<br>
+K = H \delta_{p}^{2} / (H^{2} \delta_{p}^{2} + \delta_{Z}^{2})\\<br>
+$$</p>
+<p>$$<br>
+x_{f}=x_{p}+K(x_{m}-Hx_{p})<br>
+$$</p>
+<p>$$<br>
+\delta <em>{f}^{2} = \delta</em>{p}^{2}- KH \delta_{p}^{2}<br>
 $$</p>
 <p><strong>拓展卡尔曼滤波器</strong>：</p>
 <p>KF：线性</p>
@@ -1116,19 +1145,19 @@ $$</p>
 $$<br>
 \left(<br>
 	\begin{array}{cc}<br>
-	r_{C_{k+1}^{W}}\\<br>
-	q_{C_{k+1}^{W}}\\<br>
-	v_{C_{k+1}^{W}}\\<br>
-	\omega_{C_{k+1}^{C}}<br>
+	r_{C_{k+1}^{W} } \\<br>
+	q_{C_{k+1}^{W} } \\<br>
+	v_{C_{k+1}^{W} } \\<br>
+	\omega_{C_{k+1}^{C} }<br>
 	\end{array}<br>
 \right)<br>
 =<br>
 \left(<br>
 	\begin{array}{cc}<br>
-	r_{C_{k}}<sup>{W}+(v_{C_{k}}+V</sup>{W})\Delta t\\<br>
-	q_{C_{k}}^{W} \times q((\omega_{C_{k}}<sup>{C}+\Omega</sup>{C})\Delta t)\\<br>
-	v_{C_{k}}<sup>{W}+V</sup>{W}\\<br>
-	\omega_{C_{k}}<sup>{C}+\Omega</sup>{C}<br>
+	r_{C_{k} }^{W}+(v_{C_{k} }+V^{W})\Delta t\\<br>
+	q_{C_{k} }^{W} \times q( ( \omega_{C_{k} }^{C}+\Omega ^{C} )\Delta t)  \\<br>
+	v_{C_{k} }^{W}+ V^{W}\\<br>
+	\omega_{C_{k} } ^{C}+\Omega ^{C}<br>
 	\end{array}<br>
 \right)<br>
 $$</p>
@@ -1137,15 +1166,15 @@ $$<br>
 h_{i}=<br>
 \left(<br>
 	\begin{array}{cc}<br>
-	u\\<br>
+	u \\<br>
 	v<br>
 	\end{array}<br>
 \right)<br>
 =<br>
 \left(<br>
 	\begin{array}{cc}<br>
-	u_{0}-fk_{u}\frac{h_{L_{x}}<sup>{R}}{h_{L_{z}}</sup>{R}}\\<br>
-	v_{0}-fk_{v}\frac{h_{L_{y}}<sup>{R}}{h_{L_{z}}</sup>{R}}<br>
+	u_{0}-fk_{u} \frac {h_{L_{x} }^{R} } {h_{L_{z} }^{R} }  \\<br>
+	v_{0}-fk_{v} \frac {h_{L_{y} }^{R} } {h_{L_{z} }^{R} }<br>
 	\end{array}<br>
 \right)<br>
 $$</p>
@@ -1212,20 +1241,21 @@ K [R|t]<br>
 	\end{array}<br>
 \right] \rightarrow 位姿<br>
 $$</p>
-<p>SLAM图优化：<br>
+<p>SLAM图优化：</p>
+<p>状态 → x</p>
+<p>预测：<br>
 $$<br>
-状态 \rightarrow x \\<br>
-预测：<br>
 \left{<br>
 \begin{array}{rcl}<br>
 h_{1}(x) = \hat{x_{1}} \\<br>
 h_{2}(x) = \hat{x_{2}} \\<br>
 h_{n}(x) = \hat{x_{n}}<br>
 \end{array}<br>
-\right. \\<br>
-观测：<br>
-[z_{1}, z_{2},…,z_{n}]\\<br>
-\Downarrow \\<br>
+\right.<br>
+$$<br>
+观测：[z_{1}, z_{2},…,z_{n}]</p>
+<p>则<br>
+$$<br>
 e_{i}(x) = z_{i} - h(x_{i})\\<br>
 e_{i}(x) = e_{i}(x)^{T}\Omega e_{i}(x)<br>
 $$</p>
@@ -1245,8 +1275,8 @@ $$</p>
 <p>定义：</p>
 <p>由一系列的可以相互可见的标志点和状态组成的无向链接<br>
 $$<br>
-F(x) = \sum_{(i,j)\in \zeta}\underbrace{e(x_{i},x_{j},z_{ij})^{T}\Omega_{ij}e(x_{i},x_{j},z_{ij})}<em>{F</em>{i j}}\\<br>
-x^{*} = arg\min_{x} F(x)<br>
+F(x) = \sum_{ (i,j) \in \zeta } \underbrace {e(x_{i},x_{j},z_{ij} )^{T} \Omega <em>{ij}e(x</em>{i},x_{j},z_{ij} ) } <em>{F</em>{i j} } \\<br>
+x ^ { * } = arg \min_{x} F(x)<br>
 $$<br>
 Metric Loop Closure : 只和当前帧相关</p>
 <p>Large-scale Loop Closure : 全局矫正</p>
