@@ -176,7 +176,7 @@
             <!-- Post -->
             <div class="typo" style="padding: 3rem;">
                 <h1 style="text-align:center">SLAM学习笔记</h1>
-<h2 id="第一章-slam概论与架构">第一章  SLAM概论与架构</h2>
+## 第一章  SLAM概论与架构
 <h3 id="ⅰ-slam的提出与发展">Ⅰ. SLAM的提出与发展</h3>
 <p>机器人架构：</p>
 <p>执行器层及其数学模型→控制层(PID、MPC、LQR)→感知、定位以及构图层→任务规划、决策层</p>
@@ -224,11 +224,11 @@ g --> i[当前所在的环境是个什么样子?]</pre>
 <p>基于概率估计所做的定位</p>
 <p>滤波器思想：</p>
 <p>①预测：自身</p>
-<p>$ \overline{bel}(x_{k+1}) = p(x_{k+1}|u_{k+1},x_k)bel(x_k)​$</p>
+<p>$ \overline{bel}(x_{k+1}) = p(x_{k+1}|u_{k+1},x_k)bel(x_k)$</p>
 <p>②观测：外在</p>
-<p>$ P(z_{k+1}|x_{k+1})​$</p>
+<p>$ P(z_{k+1}|x_{k+1})$</p>
 <p>③融合：双打</p>
-<p>$ bel(x_{k+1}) = \eta p(z_{k+1}|x_{k+1}) \overline{bel}(x_{k+1})​$</p>
+<p>$ bel(x_{k+1}) = \eta p(z_{k+1}|x_{k+1}) \overline{bel}(x_{k+1})$</p>
 <p>数学模型分析：</p>
 <p>给定：</p>
 <p>①机器人的控制量 U<sub>k</sub></p>
@@ -237,9 +237,9 @@ g --> i[当前所在的环境是个什么样子?]</pre>
 <p>①特征图（构图）m</p>
 <p>②机器人的位置 x<sub>k</sub></p>
 <p>预测模型：</p>
-<p>$P(x_k,m|Z_{0:k-1},U_{0:k},x_0) =  \int P(x_k|x_{k-1},u_k) \times P(x_{k-1},m|Z_{0:k-1},x_0)d_{k-1}​$</p>
+<p>$P(x_k,m|Z_{0:k-1},U_{0:k},x_0) =  \int P(x_k|x_{k-1},u_k) \times P(x_{k-1},m|Z_{0:k-1},x_0)d_{k-1}$</p>
 <p>观测模型：</p>
-<p>$P(x_k,m|Z_{0:k},U_{0:k},x_0) =  \frac {P(z_k|x_k,m)P(x_k,m|Z_{0:k-1},U_{0:k},x_0)}{P(z_k|Z_{0:k-1},U_{0:k})}​$</p>
+<p>$P(x_k,m|Z_{0:k},U_{0:k},x_0) =  \frac {P(z_k|x_k,m)P(x_k,m|Z_{0:k-1},U_{0:k},x_0)}{P(z_k|Z_{0:k-1},U_{0:k})}$</p>
 <h3 id="iii-图优化">III. 图优化</h3>
 <p>1.贝叶斯网络</p>
 <p>控制：里程计 → 状态 → 观测 → 特征地图</p>
@@ -1150,6 +1150,166 @@ $$</p>
 <p>2.搜索阶段–放狗</p>
 <p>3.决策阶段</p>
 <p>4.重采样阶段Resampling</p>
+<h3 id="图优化-v2">图优化</h3>
+<p>基于视觉的单步定位：</p>
+<ul>
+<li>Extract Local Features</li>
+<li>Establish 2D-3D Matches</li>
+<li>Camera Pose Estimation : RANSAC + n-Point-Pose Algorithm</li>
+</ul>
+<p>图：（用于做回环检测）<br>
+$$<br>
+\left[<br>
+	\begin{array}{rcl}<br>
+	u \\<br>
+	v \\<br>
+	1<br>
+	\end{array}<br>
+\right]<br>
+=<br>
+\left[<br>
+	\begin{array}{rcl}<br>
+	f_{x} &amp;\ 0 &amp;\ c_{x} \\<br>
+	0 &amp;\ f_{y} &amp;\ c_{y} \\<br>
+	0 &amp;\ 0 &amp;\ 1<br>
+	\end{array}<br>
+\right]<br>
+\left[<br>
+	\begin{array}{rcl}<br>
+	r_{11} &amp;\ r_{12} &amp;\ r_{13} &amp;\ t_{1}\\<br>
+	r_{21} &amp;\ r_{22} &amp;\ r_{23} &amp;\ t_{2}\\<br>
+	r_{31} &amp;\ r_{32} &amp;\ r_{33} &amp;\ t_{3}\\<br>
+	\end{array}<br>
+\right]<br>
+\left[<br>
+	\begin{array}{rcl}<br>
+	X\\<br>
+	Y\\<br>
+	Z\\<br>
+	1<br>
+	\end{array}<br>
+\right]\\<br>
+PnP \leftarrow<br>
+\left[<br>
+	\begin{array}{rcl}<br>
+	u\\<br>
+	v\\<br>
+	1<br>
+	\end{array}<br>
+\right]<br>
+=<br>
+K [R|t]<br>
+\left[<br>
+	\begin{array}{rcl}<br>
+	X\\<br>
+	Y\\<br>
+	Z\\<br>
+	1<br>
+	\end{array}<br>
+\right] \rightarrow 位姿<br>
+$$</p>
+<p>SLAM图优化：<br>
+$$<br>
+状态 \rightarrow x \\<br>
+预测：<br>
+\left{<br>
+\begin{array}{rcl}<br>
+h_{1}(x) = \hat{x_{1}} \\<br>
+h_{2}(x) = \hat{x_{2}} \\<br>
+h_{n}(x) = \hat{x_{n}}<br>
+\end{array}<br>
+\right. \\<br>
+观测：<br>
+[z_{1}, z_{2},…,z_{n}]\\<br>
+\Downarrow \\<br>
+e_{i}(x) = z_{i} - h(x_{i})\\<br>
+e_{i}(x) = e_{i}(x)^{T}\Omega e_{i}(x)<br>
+$$</p>
+<p>其他表达方式：</p>
+<p><img src="D:%5Cfun%5Cphotos%5Cwork%5C%E5%9B%BE.JPG" alt></p>
+<p><img src="D:%5Cfun%5Cphotos%5Cwork%5Cslam%E5%9B%BE%E4%BC%98%E5%8C%96--%E8%A1%A8%E8%BE%BE.JPG" alt></p>
+<p>图的概念：</p>
+<ul>
+<li>状态、特征点作为顶点</li>
+<li>可见链接作为边</li>
+<li>边的权重 → 不确定性、共同可见特征点数</li>
+</ul>
+<p><img src="http://static.oschina.net/uploads/img/201502/16103325_sMcS.jpg" alt></p>
+<p>如何确定有没有链接：</p>
+<p>有相同的特征点，并且特征点数目足够多</p>
+<p><strong>Covisibility Graph</strong></p>
+<p>定义：</p>
+<p>由一系列的可以相互可见的标志点和状态组成的无向链接<br>
+$$<br>
+F(x) = \sum_{(i,j)\in \zeta}\underbrace{e(x_{i},x_{j},z_{ij})^{T}\Omega_{ij}e(x_{i},x_{j},z_{ij})}<em>{F</em>{i j}}\\<br>
+x^{*} = arg\min_{x} F(x)<br>
+$$<br>
+Metric Loop Closure : 只和当前帧相关</p>
+<p>Large-scale Loop Closure : 全局矫正</p>
+<p><strong>Marginlization</strong> → 让矩阵维度下降，同时也更加Dense</p>
+<p>Schur complement：<br>
+$$<br>
+\left[<br>
+	\begin{array}{rcl}<br>
+	A &amp;\ B \\<br>
+	C &amp;\ D<br>
+	\end{array}<br>
+\right]<br>
+\Rightarrow<br>
+M/A = D-CA^{-1}B \\<br>
+\left[<br>
+	\begin{array}{rcl}<br>
+	A &amp;\ B \\<br>
+	C &amp;\ D<br>
+	\end{array}<br>
+\right]<br>
+=<br>
+\left[<br>
+	\begin{array}{rcl}<br>
+	I &amp;\ 0 \\<br>
+	CA^{-1} &amp;\ I<br>
+	\end{array}<br>
+\right]<br>
+\left[<br>
+	\begin{array}{rcl}<br>
+	A &amp;\ 0 \\<br>
+	0 &amp;\ \Delta A<br>
+	\end{array}<br>
+\right]<br>
+\left[<br>
+	\begin{array}{rcl}<br>
+	I &amp;\ A^{-1}B \\<br>
+	0 &amp;\ I<br>
+	\end{array}<br>
+\right]\\<br>
+\Delta A = D-CA^{-1}B<br>
+$$</p>
+<p>状态a和状态b：<br>
+$$<br>
+x =<br>
+\left[<br>
+	\begin{array}{rcl}<br>
+	a \\<br>
+	b<br>
+	\end{array}<br>
+\right]<br>
+$$</p>
+<p>协方差矩阵：<br>
+$$<br>
+K =<br>
+\left[<br>
+	\begin{array}{rcl}<br>
+	A &amp;\ C^{T}\\<br>
+	C &amp;\ D<br>
+	\end{array}<br>
+\right]<br>
+$$<br>
+SLAM实战 :</p>
+<ul>
+<li>特征提取部分</li>
+<li>地图的表达 – point cloud(map)</li>
+<li>解算方法</li>
+</ul>
 
             </div>
 
