@@ -962,7 +962,6 @@ w_{y} &amp;\ w_{x} &amp;\ 0<br>
 }<br>
 \right]     (斜对称矩阵)<br>
 $$<br>
-则<br>
 $$<br>
 \dot {R}=R[w]<em>{x} \rightarrow R = exp( [w]</em>{x}t)R   \\<br>
 R(w)=exp([w]<em>{x})   \\<br>
@@ -1105,27 +1104,27 @@ $$</p>
 Z = 期望 + 不确定性 → Z=HX \\<br>
 y_{m}(x,x_{m},\delta_{m}) = \frac{1}{\sqrt{2 \pi \delta_{m}<sup>{2}}}e</sup>{- \frac{(x-x_{m}^{2})}{2 \delta_{m}^{2}}}<br>
 $$</p>
-<p>估计与观测融合：<br>
-$$<br>
+<p>$$<br>
+估计与观测融合得到→ 卡尔曼滤波：\\<br>
 y(x,x_{p},\delta_{p},x_{m},\delta_{m}) =<br>
 \frac{1}{\sqrt{2 \pi \delta_{p}^{2}}} e^{- \frac{(x-x_{p}^{2})}{2 \delta_{p}^{2}}} \frac{1}{\sqrt{2 \pi \delta_{m}<sup>{2}}}e</sup>{- \frac{(x-x_{m}^{2})}{2 \delta_{m}^{2}}}<br>
-= \frac{1}{2 \pi \sqrt{\delta_{m}^{2} \delta_{p}<sup>{2}}}e</sup>{- \frac{(x-x_{m}^{2})}{2 \delta_{m}^{2}}- \frac{(x-x_{m}^{2})}{2 \delta_{m}^{2}}} → 卡尔曼滤波<br>
+= \frac{1}{2 \pi \sqrt{\delta_{m}^{2} \delta_{p}<sup>{2}}}e</sup>{- \frac{(x-x_{m}^{2})}{2 \delta_{m}^{2}}- \frac{(x-x_{m}^{2})}{2 \delta_{m}^{2}}}<br>
 $$</p>
-<p>假设融合之后的概率分布为：<br>
-$$<br>
+<p>$$<br>
+假设融合之后的概率分布为：\\<br>
 y_{f}(x,x_{f},\delta_{f})=\frac{1}{2 \pi \delta_{f}<sup>{2}}e</sup>{\frac{(x-x_{f}^{2})}{2 \delta_{f}^{2}}}<br>
 $$</p>
-<p>展开前一项：<br>
-$$<br>
+<p>$$<br>
+展开前一项：\\<br>
 x_{f}=x_{p}+\frac{\delta_{p}<sup>{2}(x_{m}-x_{p})}{\delta_{p}</sup>{2}+\delta_{m}^{2}} \\<br>
 \delta_{f}<sup>{2}=\delta_{p}</sup>{2}-\frac{\delta_{p}<sup>{4}}{\delta_{p}</sup>{2}+\delta_{m}^{2}}<br>
 $$</p>
-<p>而观测值是从观测来的：<br>
-$$<br>
+<p>$$<br>
+而观测值是从观测来的：\\<br>
 Z=HX → \delta_{z}=H \delta_{m}<br>
 $$</p>
-<p>所以卡尔曼增益为：<br>
-$$<br>
+<p>$$<br>
+所以卡尔曼增益为：\\<br>
 K = \frac{H \delta_{p}<sup>{2}}{H</sup>{2}\delta_{p}<sup>{2}+\delta_{z}</sup>{2}}<br>
 $$</p>
 <p><strong>卡尔曼滤波器融合</strong>：<br>
@@ -1136,7 +1135,7 @@ $$</p>
 x_{f}=x_{p}+K(x_{m}-Hx_{p})<br>
 $$</p>
 <p>$$<br>
-\delta <em>{f}^{2} = \delta</em>{p}^{2}- KH \delta_{p}^{2}<br>
+\delta_{f}^{2} = \delta_{p}^{2}- KH \delta_{p}^{2}<br>
 $$</p>
 <p><strong>拓展卡尔曼滤波器</strong>：</p>
 <p>KF：线性</p>
