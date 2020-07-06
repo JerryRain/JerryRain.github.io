@@ -137,7 +137,7 @@
 		        </li>
 		        
 		        <li>
-		            <a href="/gallery/" title="公众号">
+		            <a href="https://github.com/JerryRain/JerryRain.github.io/blob/master/img/%E5%85%AC%E4%BC%97%E5%8F%B7%E4%BA%8C%E7%BB%B4%E7%A0%81.jpg" title="公众号">
 		                公众号
 		            </a>
 		        </li>
@@ -164,7 +164,7 @@
 </nav>
 
         <div id="main">
-            <div class="post_page_title_img" style="height: 25rem;background-image: url(https://www.robotnik.es/web/wp-content/uploads/2015/11/ROS_INDUSTRIAL.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;">
+            <div class="post_page_title_img" style="height: 25rem;background-image: url(https://pic3.zhimg.com/v2-cbde763a010601bf616e4d54d8e169ea_1440w.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;">
                 <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2>ROS</h2></a>
             </div>
             <!-- Post -->
@@ -324,8 +324,8 @@ b --> d[package2]
 b --> e[folder]
 e --> f[package3]
 e --> g[package4]</pre>
-<p></p><h4>2.package</h4><p></p>
-<p>package，即功能包，是ROS软件系统的基本组织形式，是catkin编译的基本单元，一个package可以包含多个可执行文件（节点）。</p>
+<p></p><h4>2.package</h4><br>
+package，即功能包，是ROS软件系统的基本组织形式，是catkin编译的基本单元，一个package可以包含多个可执行文件（节点）。<p></p>
 <p>package的最精简结构：</p>
 <pre class="mermaid">graph TD;
 a[package] --> b[CMakelists.txt]
@@ -425,8 +425,8 @@ e --> i[*.h]
 a --> f[src]
 f --> j[*.cpp]
 f --> k[*.py:import]</pre>
-<p></p><h4>3.常用指令</h4><p></p>
-<p><strong>①rospack</strong></p>
+<p></p><h4>3.常用指令</h4><br>
+<strong>①rospack</strong><p></p>
 <p>查找某个package的地址：</p>
 <pre><code>rospack find package_name
 </code></pre>
@@ -496,8 +496,8 @@ f --> k[*.py:import]</pre>
 </tr>
 </tbody>
 </table>
-<p></p><h4>四.ROS通信</h4><p></p>
-<p><strong><em>通信架构</em></strong>：</p>
+<p></p><h4>四.ROS通信</h4><br>
+<strong><em>通信架构</em></strong>：<p></p>
 <p><strong>Ⅰ.master节点</strong>：</p>
 <p>每个node启动时都要向master注册</p>
 <p>管理node之间的通信</p>
@@ -969,8 +969,8 @@ a --> g(...)</pre>
 <p>Duration + Duration = Duration</p>
 <p>Duration - Duration = Duration</p>
 <p>没有Time + Time</p>
-<p></p><h4>六.Example</h4><p></p>
-<p><strong>Ⅰ.topic_demo</strong></p>
+<p></p><h4>六.Example</h4><br>
+<strong>Ⅰ.topic_demo</strong><p></p>
 <p>功能描述：两个node，一个发布模拟的GPS消息（格式为自定义，包括坐标和工作状态），另一个接收并处理该信息（计算到原点的距离）。</p>
 <p><strong>C++</strong>:</p>
 <p>步骤：</p>
@@ -1265,8 +1265,8 @@ int main(int argc, char** argv)
     return 0;
 }
 </ros></code></pre>
-<p></p><h4><a href="http://xn--7gq.TF" target="_blank" rel="noopener">七.TF</a> 与 URDF</h4><p></p>
-<p>TF(TransForm):坐标变换（位置+姿态），坐标系数据维护工具</p>
+<p></p><h4><a href="http://xn--7gq.TF" target="_blank" rel="noopener">七.TF</a> 与 URDF</h4><br>
+TF(TransForm):坐标变换（位置+姿态），坐标系数据维护工具<p></p>
 <p>ROS中的tf：坐标转换的标准、话题、工具、接口</p>
 <p><strong>tf in C++</strong>:</p>
 <p>TF相关数据类型：</p>

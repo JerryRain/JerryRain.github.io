@@ -137,7 +137,7 @@
 		        </li>
 		        
 		        <li>
-		            <a href="/gallery/" title="公众号">
+		            <a href="https://github.com/JerryRain/JerryRain.github.io/blob/master/img/%E5%85%AC%E4%BC%97%E5%8F%B7%E4%BA%8C%E7%BB%B4%E7%A0%81.jpg" title="公众号">
 		                公众号
 		            </a>
 		        </li>
@@ -164,22 +164,22 @@
 </nav>
 
         <div id="main">
-            <div class="post_page_title_img" style="height: 25rem;background-image: url(http://www.teamzoom.cn/wp-content/uploads/2018/08/Read-only-Linux.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;">
+            <div class="post_page_title_img" style="height: 25rem;background-image: url(http://5b0988e595225.cdn.sohucs.com/images/20180916/b4ccdc6b88ab43fca605caf3155d2dd0.jpeg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;">
                 <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2>Linux</h2></a>
             </div>
             <!-- Post -->
             <div class="typo" style="padding: 3rem;">
                 <p></p><h2 style="text-align:center">Linux学习笔记</h2><p></p>
 <h3 id="linux基础知识">Linux基础知识</h3>
-<p></p><h4>一.虚拟机网络连接的三种形式说明</h4><p></p>
-<p>1.桥连接模式</p>
+<p></p><h4>一.虚拟机网络连接的三种形式说明</h4><br>
+1.桥连接模式<p></p>
 <p>Linux可以和其他的系统通信，但可能会造成ip冲突</p>
 <p>2.NAT模式</p>
 <p>网络地址转换方式：Linux可以访问外网，不会造成ip冲突</p>
 <p>3.主机模式</p>
 <p>Linux是一个独立的主机，不能访问外网</p>
-<p></p><h4>二.Linux的目录结构</h4><p></p>
-<p>Linux的文件系统是采用==级层式的树状目录结构==，在此结构中的最上层是<strong>根目录</strong>“ / ”（有且只有一个根目录），然后在此目录下再创建其他的目录。</p>
+<p></p><h4>二.Linux的目录结构</h4><br>
+Linux的文件系统是采用==级层式的树状目录结构==，在此结构中的最上层是<strong>根目录</strong>“ / ”（有且只有一个根目录），然后在此目录下再创建其他的目录。<p></p>
 <p>Linux的各个目录村发放的内容是规划好的，不要乱放其他文件。</p>
 <p>Linux是以文件的形式管理我们的设备，因此在Linux系统中，一切皆为文件。</p>
 <pre class="mermaid">graph TD;
@@ -295,8 +295,8 @@ a --> l[......]</pre>
 </tr>
 </tbody>
 </table>
-<p></p><h4>三.远程登陆</h4><p></p>
-<p>远程登陆到Linux系统的软件： XShell</p>
+<p></p><h4>三.远程登陆</h4><br>
+远程登陆到Linux系统的软件： XShell<p></p>
 <p>前提：Linux需要启用sshd服务端口（22号端口）</p>
 <p>XShell远程链接内容编辑：</p>
 <table>
@@ -358,8 +358,8 @@ a --> l[......]</pre>
 </tr>
 </tbody>
 </table>
-<p></p><h4>四.vi语法和vim编辑器</h4><p></p>
-<p>所有的Linux系统都会内建vi文本编辑器。</p>
+<p></p><h4>四.vi语法和vim编辑器</h4><br>
+所有的Linux系统都会内建vi文本编辑器。<p></p>
 <p>Vim具有程序编程的能力，可以看作是Vi的增强版本，可以主动的以字体颜色辨别语法的丰富性，方便程序设计。代码补全、编译以及错误跳转等方便编程的功能特别丰富，被广泛使用。</p>
 <p>vi和vim的三种常见模式：</p>
 <p><strong><em>1.正常模式</em></strong></p>
@@ -503,8 +503,8 @@ mesg：允许vi显示其他用户用write写到自己终端上的信息</p>
 ndd：将当前行及其下共n行文本删除，并将所删内容放到1号删除寄存器中。</p>
 <p>想了解更多关于vi的快捷键 用法，可以参考<a href="https://www.jianshu.com/p/afcf3ae8b015" target="_blank" rel="noopener">VI快捷键</a>和<a href="https://www.jianshu.com/p/dde77e3b299f" target="_blank" rel="noopener">vim常用快捷键及使用技巧</a>这两篇文章。</p>
 <p><img src="https://www.runoob.com/wp-content/uploads/2015/10/vi-vim-cheat-sheet-sch.gif" alt="vi键盘图"></p>
-<p></p><h4>五.关机、重启、用户登录与注销</h4><p></p>
-<p><strong>关机、重启指令</strong>：</p>
+<p></p><h4>五.关机、重启、用户登录与注销</h4><br>
+<strong>关机、重启指令</strong>：<p></p>
 <p>①shutdown指令:</p>
 <p>shutdown -h now : 立刻进行关机</p>
 <p>shutdown -h 1 : 分钟之后关机</p>
@@ -517,8 +517,8 @@ ndd：将当前行及其下共n行文本删除，并将所删内容放到1号删
 <p>①登录时尽量少用root账号登陆，因为它是系统管理员，最大的权限，避免操作失误。可以用普通用户登录，登录后早用“==su -用户名==”命令来切换成系统管理员身份</p>
 <p>②在提示符下输入==logout==即可注销用户</p>
 <p>使用细节：logout注销指令在图形运行级别无效，在运行级别3下有效</p>
-<p></p><h4>六.用户管理</h4><p></p>
-<p>Linux系统是一个多用户多任务的操作系统，任何一个要使用系统资源的用户，都必须首先向系统管理员申请一个账号，然后以这个账号的身份进入系统。</p>
+<p></p><h4>六.用户管理</h4><br>
+Linux系统是一个多用户多任务的操作系统，任何一个要使用系统资源的用户，都必须首先向系统管理员申请一个账号，然后以这个账号的身份进入系统。<p></p>
 <p>Linux的用户至少需要属于一个组。</p>
 <p><strong><em>添加用户</em></strong></p>
 <p>基本语法：</p>
@@ -567,8 +567,8 @@ ndd：将当前行及其下共n行文本删除，并将所删内容放到1号删
 <p>/etc/group文件：</p>
 <p>组(group)的配置文件，记录Linux包含的信息</p>
 <p>每行含义：==组名：口令：组标识号：组内用户：组内用户列表==</p>
-<p></p><h4>七.指定运行级别</h4><p></p>
-<p>运行级别说明：</p>
+<p></p><h4>七.指定运行级别</h4><br>
+运行级别说明：<p></p>
 <p>0：关机</p>
 <p>1：单用户【找回丢失密码】</p>
 <p>2：多用户状态没有网络服务</p>
@@ -581,16 +581,16 @@ ndd：将当前行及其下共n行文本删除，并将所删内容放到1号删
 <p>如何找回root密码：</p>
 <p>（进入到单用户模式，然后修改root密码。因为进入单用户模式，root不需要密码就可以登录）</p>
 <p>开机→在引导时输入回车键→看到一个界面输入e→看到一个新的界面，选中第二行（编辑内核）再输入e→在这行最后输入1→回车→再次输入b，这时就会进入到单用户模式，使用passwd指令来修改root密码。</p>
-<p></p><h4>八.帮助指令</h4><p></p>
-<p>介绍：当我们对某个指令不熟悉时，我们可以使用Linux提供的帮助指令来了解这个指令的使用方法。</p>
+<p></p><h4>八.帮助指令</h4><br>
+介绍：当我们对某个指令不熟悉时，我们可以使用Linux提供的帮助指令来了解这个指令的使用方法。<p></p>
 <p><strong><em>man获得帮助信息</em></strong></p>
 <p>基本语法：</p>
 <p>==man [命令或配置文件]（功能描述：获得帮助信息）==</p>
 <p><strong><em>help指令</em></strong></p>
 <p>基本语法：</p>
 <p>==help 命令（功能描述：获得shell内置命令的帮助信息）==</p>
-<p></p><h4>九.文件目录类指令</h4><p></p>
-<p><strong><em>1.pwd指令</em></strong></p>
+<p></p><h4>九.文件目录类指令</h4><br>
+<strong><em>1.pwd指令</em></strong><p></p>
 <p>基本语法：</p>
 <p>==pwd==（功能描述：显示当前工作目录的绝对路径）</p>
 <p><strong><em>2.ls指令</em></strong></p>
@@ -770,8 +770,8 @@ ndd：将当前行及其下共n行文本删除，并将所删内容放到1号删
 <p>==history==（功能描述：查看已经执行过的历史指令）</p>
 <p>==history 10==（功能描述：显示最近执行过的10个历史指令）</p>
 <p>==!历史指令编号==（功能描述：执行对应历史编号的指令）</p>
-<p></p><h4>十.时间日期类指令</h4><p></p>
-<p><strong><em>date指令</em></strong></p>
+<p></p><h4>十.时间日期类指令</h4><br>
+<strong><em>date指令</em></strong><p></p>
 <p>date指令用于显示当前日期</p>
 <p>基本语法：</p>
 <p>==date==（功能描述：显示当前时间0</p>
@@ -784,8 +784,8 @@ ndd：将当前行及其下共n行文本删除，并将所删内容放到1号删
 <p>cal指令用于查看日历</p>
 <p>基本语法：</p>
 <p>==cal [选项（年份）]==（功能描述：不加选项，显示本月日历）</p>
-<p></p><h4>十一.搜索查找类</h4><p></p>
-<p><strong><em>find指令</em></strong></p>
+<p></p><h4>十一.搜索查找类</h4><br>
+<strong><em>find指令</em></strong><p></p>
 <p>find指令将从指定目录向下递归地遍历其各个子目录，将满足条件的文件或目录显示在终端。</p>
 <p>基本语法：</p>
 <p>==find [搜索范围] [选项]==</p>
@@ -848,8 +848,8 @@ ndd：将当前行及其下共n行文本删除，并将所删内容放到1号删
 </tr>
 </tbody>
 </table>
-<p></p><h4>十二.压缩和解压缩类</h4><p></p>
-<p><strong><em>1.gzip和gunzip指令</em></strong></p>
+<p></p><h4>十二.压缩和解压缩类</h4><br>
+<strong><em>1.gzip和gunzip指令</em></strong><p></p>
 <p>gzip用于压缩文件，gunzip用于解压文件。</p>
 <p>基本用法：</p>
 <p>==gzip 文件==（功能描述：压缩文件，只能将文件压缩为*.gz文件）</p>
@@ -902,8 +902,8 @@ ndd：将当前行及其下共n行文本删除，并将所删内容放到1号删
 </tr>
 </tbody>
 </table>
-<p></p><h4>十三.组管理和权限管理</h4><p></p>
-<p><strong>Ⅰ.Linux组基本介绍</strong></p>
+<p></p><h4>十三.组管理和权限管理</h4><br>
+<strong>Ⅰ.Linux组基本介绍</strong><p></p>
 <p>在Linux中的每个用户都必须属于一个组，不能独立于组外。在Linux中每个文件有所有者、所在组、其他组的概念。</p>
 <p>文件：</p>
 <p>（1）所有者</p>
@@ -998,8 +998,8 @@ ndd：将当前行及其下共n行文本删除，并将所删内容放到1号删
 <p><strong>Ⅳ.修改文件所在组</strong></p>
 <p>基本介绍：</p>
 <p>==chgrp newgroup file 改变文件的所有组==</p>
-<p></p><h4>十四.任务调度</h4><p></p>
-<p><strong>Ⅰ.crond任务调度</strong></p>
+<p></p><h4>十四.任务调度</h4><br>
+<strong>Ⅰ.crond任务调度</strong><p></p>
 <p>crontab进行定时任务的设置。</p>
 <p>任务调度：是指系统在某个时间执行的特定的命令或程序</p>
 <p>任务调度分类：</p>
@@ -1106,8 +1106,8 @@ ndd：将当前行及其下共n行文本删除，并将所删内容放到1号删
 <p>(1)crontab -r：终止任务调度</p>
 <p>(2)crontab -l：列出当前有哪些任务任务调度</p>
 <p>(3)service crond restart [重启任务调度]</p>
-<p></p><h4>十四.Linux磁盘分区、挂载</h4><p></p>
-<p><strong>分区的方式</strong>：</p>
+<p></p><h4>十四.Linux磁盘分区、挂载</h4><br>
+<strong>分区的方式</strong>：<p></p>
 <p>(1)mbr分区</p>
 <p>1.最多支持四个主分区</p>
 <p>2.系统只能安装在主分区</p>
@@ -1183,8 +1183,8 @@ ndd：将当前行及其下共n行文本删除，并将所删内容放到1号删
 <blockquote>
 <p>tree</p>
 </blockquote>
-<p></p><h4>十五.网络配置</h4><p></p>
-<p>目前的网络环境为NAT模式</p>
+<p></p><h4>十五.网络配置</h4><br>
+目前的网络环境为NAT模式<p></p>
 <p>查看网络IP指令：==ifconfig==</p>
 <p>测试主机之间网络连通性：==ping 目的主机==（功能描述：测试当前服务器是否可以连接主机）</p>
 <p>比如：<code>ping www.baidu.com</code></p>
@@ -1224,8 +1224,8 @@ ndd：将当前行及其下共n行文本删除，并将所删内容放到1号删
 <blockquote>
 <p>reboot</p>
 </blockquote>
-<p></p><h4>十六.进程管理</h4><p></p>
-<p><strong>Ⅰ.基本介绍</strong></p>
+<p></p><h4>十六.进程管理</h4><br>
+<strong>Ⅰ.基本介绍</strong><p></p>
 <p>1.在Linux中，每一个执行的程序（代码）都称为一个==进程==，每一个进程都分配有一个ID号</p>
 <p>2.每一个进程，都会对应一个父进程，而这个父进程可以复制多个子进程，例如www服务器</p>
 <p>3.每个进程都可能以两种方式存在的：==前台与后台==。所谓前台进程就是用户目前的屏幕上可以进行操作的；后台进程则是实际在操作，但由于屏幕上无法看到的进程，通常使用后台方式执行</p>
@@ -1394,8 +1394,8 @@ ndd：将当前行及其下共n行文本删除，并将所删内容放到1号删
 <p>常用选项：</p>
 <p>-p：显示进程的PID</p>
 <p>-u：显示进程的所属用户</p>
-<p></p><h4>十七.服务管理</h4><p></p>
-<p>介绍：</p>
+<p></p><h4>十七.服务管理</h4><br>
+介绍：<p></p>
 <p>服务service本质就是进程，但是是在后台运行的，通常都会监听某个端口，等待其他程序的请求，比如mysql、sshd防火墙等等，因此又称为==守护进程==。</p>
 <p><strong>Ⅰ.service指令</strong>：</p>
 <p>==service 服务名 [start | stop | restart | reload | status]==</p>
@@ -1507,8 +1507,8 @@ ndd：将当前行及其下共n行文本删除，并将所删内容放到1号删
 <p>-p：显示哪个进程在调用</p>
 <p>检测主机连接命令==ping==：</p>
 <p>是一种网络连接检测工具，它主要是用检测玉成主机是否正常，或是两部主机之间的介质是否为断、网线是否脱落或网卡故障，如：ping 对方ip地址</p>
-<p></p><h4>十八.RPM与YUM</h4><p></p>
-<p><strong>Ⅰ.RPM包的管理</strong></p>
+<p></p><h4>十八.RPM与YUM</h4><br>
+<strong>Ⅰ.RPM包的管理</strong><p></p>
 <p>介绍：</p>
 <p>一种具有互联网下载包的打包及安装工具，它包含在某些Linux分发版中。它生成具有.RPM扩展名的文件。RPM是Redhat Package Manager（RedHat软件包管理工具）的缩写，类似windows的setup.exe，这一文件格式名称虽然打上了RedHat的标志，但理念是相同的。</p>
 <p>Linux的分发版本都有采用rpm包(susu,redhat,centos等等)</p>
@@ -1548,8 +1548,8 @@ ndd：将当前行及其下共n行文本删除，并将所删内容放到1号删
 <p>==yum list | grep xxx软件列表==</p>
 <p>安装指定的yum包：</p>
 <p>==yum install xxx==(下载安装)</p>
-<p></p><h4>十九.Ubuntu系统</h4><p></p>
-<p><strong>Ⅰ.介绍</strong></p>
+<p></p><h4>十九.Ubuntu系统</h4><br>
+<strong>Ⅰ.介绍</strong><p></p>
 <p>Ubuntu（乌班图）是一个以桌面应用为主的开源GNU/Linux操作系统，Ubuntu是基于GNU/Linux，支持x86、amd64和ppc架构。</p>
 <p>Ubuntu和Centos都是基于GNU/Linux内核的，因此基本使用和Centos是几乎一样的，各种指令时可以通用的，只是界面和预安装的软件有所差别。</p>
 <p><a href="http://cn.ubuntu.com/download/" target="_blank" rel="noopener">Ubuntu下载地址</a></p>
