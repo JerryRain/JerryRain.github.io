@@ -618,7 +618,7 @@ My Name is ThinkWon
 3、如果数据库响应慢，考虑可以加一个数据库缓存，如 Redis 等等。然后也可以搭建MySQL 主从，一台 MySQL 服务器负责写，其他几台从数据库负责读。<br>
 4、申请购买 CDN 服务，加载用户的访问。<br>
 5、如果访问还比较慢，那就需要从整体架构上进行优化咯。做到专角色专用，多台服务器提供同一个服务。</p>
-<p>31.文件管理命令</p>
+<h4 id="文件管理命令">文件管理命令</h4>
 <p><strong>(1)cat命令</strong></p>
 <p>cat命令用于连接文件并打印到标准输出设备上。</p>
 <p>cat主要三大功能：</p>
@@ -1172,6 +1172,730 @@ find        实际搜寻硬盘查询文件名称。
 <pre><code>echo $PATH
 </code></pre>
 </li>
+</ul>
+<h4 id="文档编辑命令">文档编辑命令</h4>
+<p>(1) grep命令</p>
+<p>强大的文本搜索命令，grep(Global Regular Expression Print)全局正则表达式搜索。</p>
+<p>grep的工作方式：它在一个或多个文件中搜索字符串模板。如果模板包括空格，则必须被引用，模板后的所有字符串都被看作文件名。搜索的结果被送到标准输出，不影响原文件内容。</p>
+<p>命令格式：</p>
+<pre><code>grep [option] pattern file|dir
+</code></pre>
+<p>常用参数：</p>
+<blockquote>
+<p>-A n --after-context显示匹配字符后n行<br>
+-B n --before-context显示匹配字符前n行<br>
+-C n --context 显示匹配字符前后n行<br>
+-c --count 计算符合样式的列数<br>
+-i 忽略大小写<br>
+-l 只列出文件内容符合指定的样式的文件名称<br>
+-f 从文件中读取关键词<br>
+-n 显示匹配内容的所在文件中行数<br>
+-R 递归查找文件夹</p>
+</blockquote>
+<p>grep的规则表达式：</p>
+<blockquote>
+<p>^  #锚定行的开始 如：’^grep’匹配所有以grep开头的行。<br>
+$  #锚定行的结束 如：'grep$'匹配所有以grep结尾的行。<br>
+.  #匹配一个非换行符的字符 如：'gr.p’匹配gr后接一个任意字符，然后是p。</p>
+<ul>
+<li>#匹配零个或多个先前字符 如：‘<em>grep’匹配所有一个或多个空格后紧跟grep的行。<br>
+.</em>   #一起用代表任意字符。<br>
+[]   #匹配一个指定范围内的字符，如’[Gg]rep’匹配Grep和grep。<br>
+[^]  #匹配一个不在指定范围内的字符，如：’[^A-FH-Z]rep’匹配不包含A-R和T-Z的一个字母开头，紧跟rep的行。<br>
+(…)  #标记匹配字符，如’(love)’，love被标记为1。<br>
+&lt;      #锚定单词的开始，如:’&lt;grep’匹配包含以grep开头的单词的行。<br>
+&gt;      #锚定单词的结束，如’grep&gt;'匹配包含以grep结尾的单词的行。<br>
+x{m}  #重复字符x，m次，如：'0{5}'匹配包含5个o的行。<br>
+x{m,}  #重复字符x,至少m次，如：'o{5,}'匹配至少有5个o的行。<br>
+x{m,n}  #重复字符x，至少m次，不多于n次，如：'o{5,10}'匹配5–10个o的行。<br>
+\w    #匹配文字和数字字符，也就是[A-Za-z0-9]，如：'G\w*p’匹配以G后跟零个或多个文字或数字字符，然后是p。<br>
+\W    #\w的反置形式，匹配一个或多个非单词字符，如点号句号等。<br>
+\b    #单词锁定符，如: '\bgrep\b’只匹配grep。</li>
+</ul>
+</blockquote>
+<p>实例：</p>
+<ul>
+<li>
+<p>查找指定进程</p>
+<pre><code>ps -ef | grep svn
+</code></pre>
+</li>
+<li>
+<p>查找指定进程个数</p>
+<pre><code>ps -ef | grep svn -c
+</code></pre>
+</li>
+<li>
+<p>从文件中读取关键词</p>
+<pre><code>cat test1.txt | grep -f key.log
+</code></pre>
+</li>
+<li>
+<p>从文件夹中递归查找以grep开头的行，并只列出文件</p>
+<pre><code>grep -lR '^grep' /tmp
+</code></pre>
+</li>
+<li>
+<p>查找非x开关的行内容</p>
+<pre><code>grep '^[^x]' test.txt
+</code></pre>
+</li>
+<li>
+<p>显示包含 ed 或者 at 字符的内容行</p>
+<pre><code>grep -E 'ed|at' test.txt
+</code></pre>
+</li>
+</ul>
+<p>(2) wc命令</p>
+<p>wc(word count)功能为统计指定的文件中字节数、字数、行数，并将统计结果输出。</p>
+<p>命令格式：</p>
+<pre><code>wc [option] file
+</code></pre>
+<p>命令参数：</p>
+<blockquote>
+<p>-c 统计字节数</p>
+<p>-l 统计行数</p>
+<p>-m 统计字符数</p>
+<p>-w 统计词数，一个字被定义为由空白、跳格或换行字符分隔的字符串</p>
+</blockquote>
+<p>实例：</p>
+<ul>
+<li>
+<p>查找文件的行数、单词数、字节数、文件名</p>
+<pre><code>wc test.txt
+</code></pre>
+<p>结果：</p>
+<pre><code>7     8     70     test.txt
+</code></pre>
+</li>
+<li>
+<p>统计输出结果的行数</p>
+<pre><code>cat test.txt | wc -l
+</code></pre>
+</li>
+</ul>
+<h4 id="磁盘管理命令">磁盘管理命令</h4>
+<p>(1) cd命令</p>
+<p>命令语法：</p>
+<pre><code>cd [目录名]
+</code></pre>
+<p>说明：切换当前目录至dirName</p>
+<p>实例：</p>
+<ul>
+<li>
+<p>进入要目录</p>
+<pre><code>cd /
+</code></pre>
+</li>
+<li>
+<p>进入 “home” 目录</p>
+<pre><code>cd ~
+</code></pre>
+</li>
+<li>
+<p>进入上一次工作路径</p>
+<pre><code>cd -
+</code></pre>
+</li>
+<li>
+<p>把上个命令的参数作为cd参数使用</p>
+<pre><code>cd !$
+</code></pre>
+</li>
+</ul>
+<p>(2) df命令</p>
+<p>显示磁盘空间使用情况，获取硬盘被占用多少空间，目前还剩下多少空间等信息，如果没有文件名被指定，则所有当前被挂载的文件系统的可用空间将被显示。默认情况下，磁盘空间将以1KB为单位进行显示，除非环境变量POSIXLY_CORRECT被指定，那样将以512字节为单位进行显示。</p>
+<p>常用参数：</p>
+<blockquote>
+<p>-a 全部文件系统列表</p>
+<p>-h 以方便阅读的方式显示信息</p>
+<p>-i 显示inode信息</p>
+<p>-k 区块为1024字节</p>
+<p>-l 只显示本地磁盘</p>
+<p>-T 列出文件系统类型</p>
+</blockquote>
+<p>实例：</p>
+<ul>
+<li>
+<p>显示磁盘使用情况</p>
+<pre><code>df -l
+</code></pre>
+</li>
+<li>
+<p>以易读方式列出所有文件系统及其类型</p>
+<pre><code>df -haT
+</code></pre>
+</li>
+</ul>
+<p>(3) du命令</p>
+<p>du命令是查看使用空间，但是与du命令不同的是linux du 命令是对文件和目录磁盘使用的空间的查看。</p>
+<p>命令格式：</p>
+<pre><code>du [选项] [文件]
+</code></pre>
+<p>常用参数：</p>
+<blockquote>
+<p>-a 显示目录中所有文件大小</p>
+<p>-k 以KB为单位显示文件大小</p>
+<p>-m 以MB为单位显示文件大小</p>
+<p>-g 以GB为单位显示文件大小</p>
+<p>-h 以易读方式显示文件大小</p>
+<p>-s 仅显示总计</p>
+<p>-c或–total  除了显示个别目录或文件的大小外，同时也显示所有目录或文件的总和</p>
+</blockquote>
+<p>实例：</p>
+<ul>
+<li>
+<p>以易读方式显示文件夹内及子文件夹大小</p>
+<pre><code>du -h scf/
+</code></pre>
+</li>
+<li>
+<p>以易读方式显示文件夹内所有文件大小</p>
+<pre><code>du -ah scf/
+</code></pre>
+</li>
+<li>
+<p>显示几个文件或目录各自占用磁盘空间的大小，还统计它们的总和</p>
+<pre><code>du -hc test/ scf/
+</code></pre>
+</li>
+<li>
+<p>输出当前目录下各个子目录所使用的空间</p>
+<pre><code>du -hc --max-depth=1 scf/
+</code></pre>
+</li>
+</ul>
+<p>(4) ls命令</p>
+<p>ls命令是list的缩写，通过ls命令不仅可以查看linux文件夹中包含的文件，而且可以查看文件权限（包括目录、文件夹、文件权限）以及查看目录信息等等。</p>
+<p>常用参数搭配：</p>
+<blockquote>
+<p>ls -a 列出目录所有文件，包含以.开始的隐藏文件</p>
+<p>ls -A 列出除.及…的其它文件</p>
+<p>ls -r 反序排列</p>
+<p>ls -t 以文件修改时间排序</p>
+<p>ls -S 以文件大小排序</p>
+<p>ls -h 以易读大小显示</p>
+<p>ls -l 除了文件名之外，还将文件的权限、所有者、文件大小等信息详细列出来</p>
+</blockquote>
+<p>实例：</p>
+<ul>
+<li>
+<p>按易读方式按时间反序排序，并显示文件详细信息</p>
+<pre><code>ls -lhrt
+</code></pre>
+</li>
+<li>
+<p>按大小反序显示文件详细信息</p>
+<pre><code>ls -lrS
+</code></pre>
+</li>
+<li>
+<p>列出当前目录中所有以&quot;t&quot;开头的目录的详细内容</p>
+<pre><code>ls -l t*
+</code></pre>
+</li>
+<li>
+<p>列出文件绝对路径（不包含隐藏文件）</p>
+<pre><code>ls | sed &quot;s:^:'pwd'/:&quot;
+</code></pre>
+</li>
+<li>
+<p>列出文件绝对路径（包含隐藏文件）</p>
+<pre><code>find $pwd -maxdepth 1 | xargs ls -ld
+</code></pre>
+</li>
+</ul>
+<p>(5) mkdir命令</p>
+<p>mkdir命令用于创建文件夹，可用于选项：</p>
+<ul>
+<li>-m：对新建目录设置存取权限，也可以用chmod命令设置</li>
+<li>-p：可以是一个路径名称，若路径中的某些目录尚不存在，加上此选项后，，系统将自动建立好那些尚不存在的目录，即一次可以建立多个目录</li>
+</ul>
+<p>实例：</p>
+<ul>
+<li>
+<p>当前工作目录下创建名为t的文件夹</p>
+<pre><code>mkdir t
+</code></pre>
+</li>
+<li>
+<p>在 tmp 目录下创建路径为 test/t1/t 的目录，若不存在，则创建</p>
+<pre><code>mkdir -p /tmp/test/t1/t
+</code></pre>
+</li>
+</ul>
+<p>(6) pwd命令</p>
+<p>pwd命令用于查看当前工作目录路径。</p>
+<p>实例：</p>
+<ul>
+<li>
+<p>查看当前路径</p>
+<pre><code>pwd
+</code></pre>
+</li>
+<li>
+<p>查看软链接的实际路径</p>
+<pre><code>pwd -d
+</code></pre>
+</li>
+</ul>
+<p>(7) rmdir命令</p>
+<p>从一个目录中删除一个或多个子目录项，删除某目录时也必须具有对其父目录的写权限。</p>
+<p>注意：不能删除非空目录</p>
+<p>实例：</p>
+<ul>
+<li>
+<p>当 parent 子目录被删除后使它也成为空目录的话，则顺便一并删除</p>
+<pre><code>rmdir -p parent/child/child1
+</code></pre>
+</li>
+</ul>
+<h4 id="网络通讯命令">网络通讯命令</h4>
+<p>(1) ifconfig命令</p>
+<ul>
+<li>ifconfig用于查看和配置Linux系统的网络接口</li>
+<li>查看所有网络接口及其状态：<code>ifconfig -a</code></li>
+<li>使用up和down命令启动或停止某个接口：<code>ifconfig eth0 up</code>和<code>ifconfig eth0 down</code></li>
+</ul>
+<p>(2) iptables命令</p>
+<p>iptables，是一个配置Linux内核防火墙的命令行工具，功能非常强大，应当掌握如何开放端口。</p>
+<ul>
+<li>
+<p>把来源IP为192.168.1.101访问本机80端口的包直接拒绝：<code>iptables -I INPUT -s 192.168.1.101 -p tcp --dport 80 -j REJECT</code></p>
+</li>
+<li>
+<p>开启80端口，因为web对外都是这个端口</p>
+<pre><code>iptables -A INPUT -p tcp --dport 80 -j ACCEP
+</code></pre>
+</li>
+<li>
+<p>另外，要注意使用<code>iptables save</code>命令，进行保存，否则，服务器重启后，配置的规则将丢失</p>
+</li>
+</ul>
+<p>(3) netstat命令</p>
+<p>Linux netstat命令用于显示网络状态。</p>
+<p>利用netstat指令可得知整个Linux系统的网络情况</p>
+<p>语法：</p>
+<pre><code>netstat [-acCeFghilMnNoprstuvVwx][-A&lt;网络类型&gt;][--ip]
+</code></pre>
+<p>参数说明：</p>
+<blockquote>
+<p>-a或–all 显示所有连线中的Socket。<br>
+-A&lt;网络类型&gt;或–&lt;网络类型&gt; 列出该网络类型连线中的相关地址。<br>
+-c或–continuous 持续列出网络状态。<br>
+-C或–cache 显示路由器配置的快取信息。<br>
+-e或–extend 显示网络其他相关信息。<br>
+-F或–fib 显示FIB。<br>
+-g或–groups 显示多重广播功能群组组员名单。<br>
+-h或–help 在线帮助。<br>
+-i或–interfaces 显示网络界面信息表单。<br>
+-l或–listening 显示监控中的服务器的Socket。<br>
+-M或–masquerade 显示伪装的网络连线。<br>
+-n或–numeric 直接使用IP地址，而不通过域名服务器。<br>
+-N或–netlink或–symbolic 显示网络硬件外围设备的符号连接名称。<br>
+-o或–timers 显示计时器。<br>
+-p或–programs 显示正在使用Socket的程序识别码和程序名称。<br>
+-r或–route 显示Routing Table。<br>
+-s或–statistice 显示网络工作信息统计表。<br>
+-t或–tcp 显示TCP传输协议的连线状况。<br>
+-u或–udp 显示UDP传输协议的连线状况。<br>
+-v或–verbose 显示指令执行过程。<br>
+-V或–version 显示版本信息。<br>
+-w或–raw 显示RAW传输协议的连线状况。<br>
+-x或–unix 此参数的效果和指定&quot;-A unix&quot;参数相同。<br>
+–ip或–inet 此参数的效果和指定&quot;-A inet&quot;参数相同。</p>
+</blockquote>
+<p>实例：</p>
+<ul>
+<li>
+<p>如何查看系统都开启了哪些端口</p>
+<pre><code>[root@centos6 ~ 13:20 #55]# netstat -lnp
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address               Foreign Address             State       PID/Program name
+tcp        0      0 0.0.0.0:22                  0.0.0.0:*                   LISTEN      1035/sshd
+tcp        0      0 :::22                       :::*                        LISTEN      1035/sshd
+udp        0      0 0.0.0.0:68                  0.0.0.0:*                               931/dhclient
+Active UNIX domain sockets (only servers)
+Proto RefCnt Flags       Type       State         I-Node PID/Program name    Path
+unix  2      [ ACC ]     STREAM     LISTENING     6825   1/init              @/com/ubuntu/upstart
+unix  2      [ ACC ]     STREAM     LISTENING     8429   1003/dbus-daemon
+</code></pre>
+</li>
+<li>
+<p>如何查看网络连接状况</p>
+<pre><code>[root@centos6 ~ 13:22 #58]# netstat -an
+Active Internet connections (servers and established)
+Proto Recv-Q Send-Q Local Address               Foreign Address             State
+tcp        0      0 0.0.0.0:22                  0.0.0.0:*                   LISTEN
+tcp        0      0 192.168.147.130:22          192.168.147.1:23893         ESTABLISHED
+tcp        0      0 :::22                       :::*                        LISTEN
+udp        0      0 0.0.0.0:68                  0.0.0.0:*
+</code></pre>
+</li>
+<li>
+<p>如何统计系统当前进程连接数</p>
+<ul>
+<li>输入命令<code>netstat -an | grep ESTABLISHED | WC -L</code></li>
+<li>输出结果<code>177</code>，一共有177连接数</li>
+</ul>
+</li>
+</ul>
+<p>(4) ping命令</p>
+<p>Linux ping 命令用于检测主机。</p>
+<p>执行ping指令会使用ICMP传输协议，发出要求回应的信息，若远端主机的网络功能没有问题，就会回应这条信息，因而得知该主机运作正常。</p>
+<p>实例：</p>
+<ul>
+<li>
+<p>指定接收包的次数</p>
+<pre><code>ping -c 2 www.baidu.com
+</code></pre>
+</li>
+</ul>
+<p>(5) telnet命令</p>
+<p>Linux telnet命令用于远端登入。</p>
+<p>执行telnet指令开启终端机阶段作业，并登入远端主机。</p>
+<p>语法：</p>
+<pre><code>telnet [-8acdEfFKLrx][-b&lt;主机别名&gt;][-e&lt;脱离字符&gt;][-k&lt;域名&gt;][-l&lt;用户名称&gt;][-n&lt;记录文件&gt;][-S&lt;服务类型&gt;][-X&lt;认证形态&gt;][主机名称或IP地址&lt;通信端口&gt;]
+</code></pre>
+<p>参数说明：</p>
+<blockquote>
+<p>-8 允许使用8位字符资料，包括输入与输出。<br>
+-a 尝试自动登入远端系统。<br>
+-b&lt;主机别名&gt; 使用别名指定远端主机名称。<br>
+-c 不读取用户专属目录里的.telnetrc文件。<br>
+-d 启动排错模式。<br>
+-e&lt;脱离字符&gt; 设置脱离字符。<br>
+-E 滤除脱离字符。<br>
+-f 此参数的效果和指定&quot;-F&quot;参数相同。<br>
+-F 使用Kerberos V5认证时，加上此参数可把本地主机的认证数据上传到远端主机。<br>
+-k&lt;域名&gt; 使用Kerberos认证时，加上此参数让远端主机采用指定的领域名，而非该主机的域名。<br>
+-K 不自动登入远端主机。<br>
+-l&lt;用户名称&gt; 指定要登入远端主机的用户名称。<br>
+-L 允许输出8位字符资料。<br>
+-n&lt;记录文件&gt; 指定文件记录相关信息。<br>
+-r 使用类似rlogin指令的用户界面。<br>
+-S&lt;服务类型&gt; 设置telnet连线所需的IP TOS信息。<br>
+-x 假设主机有支持数据加密的功能，就使用它。<br>
+-X&lt;认证形态&gt; 关闭指定的认证形态。</p>
+</blockquote>
+<p>实例：</p>
+<ul>
+<li>
+<p>登录远程主机</p>
+<pre><code># 登录IP为 192.168.0.5 的远程主机
+telnet 192.168.0.5
+</code></pre>
+</li>
+</ul>
+<h4 id="系统管理命令">系统管理命令</h4>
+<p>(1) date命令</p>
+<p>显示或设定系统的日期与时间。</p>
+<p>命令参数：</p>
+<blockquote>
+<p>-d&lt;字符串&gt; 　显示字符串所指的日期与时间。字符串前后必须加上双引号。<br>
+-s&lt;字符串&gt; 　根据字符串来设置日期与时间。字符串前后必须加上双引号。<br>
+-u 　显示GMT。<br>
+%H 小时(00-23)<br>
+%I 小时(00-12)<br>
+%M 分钟(以00-59来表示)<br>
+%s 总秒数。起算时间为1970-01-01 00:00:00 UTC。<br>
+%S 秒(以本地的惯用法来表示)<br>
+%a 星期的缩写。<br>
+%A 星期的完整名称。<br>
+%d 日期(以01-31来表示)。<br>
+%D 日期(含年月日)。<br>
+%m 月份(以01-12来表示)。<br>
+%y 年份(以00-99来表示)。<br>
+%Y 年份(以四位数来表示)。</p>
+</blockquote>
+<p>实例：</p>
+<ul>
+<li>
+<p>显示下一天</p>
+<pre><code>date +%Y%m%d --date=&quot;+1 day&quot;  //显示下一天的日期
+</code></pre>
+</li>
+<li>
+<p>-d参数使用</p>
+<pre><code>date -d &quot;nov 22&quot;  今年的 11 月 22 日是星期三
+date -d '2 weeks' 2周后的日期
+date -d 'next monday' (下周一的日期)
+date -d next-day +%Y%m%d（明天的日期）或者：date -d tomorrow +%Y%m%d
+date -d last-day +%Y%m%d(昨天的日期) 或者：date -d yesterday +%Y%m%d
+date -d last-month +%Y%m(上个月是几月)
+date -d next-month +%Y%m(下个月是几月)
+</code></pre>
+</li>
+</ul>
+<p>(2) free命令</p>
+<p>显示系统内存使用情况，包括物理内存、交互区内存(swap)和内核区缓存。</p>
+<p>命令参数：</p>
+<blockquote>
+<p>-b 以Byte显示内存使用情况</p>
+<p>-k 以kb为单位显示内存使用情况</p>
+<p>-m 以mb为单位显示内存使用情况</p>
+<p>-g 以gb为单位显示内存使用情况</p>
+<p>-s&lt;间隔秒数&gt; 持续显示内存 -t 显示内存使用总合</p>
+</blockquote>
+<p>实例：</p>
+<ul>
+<li>
+<p>显示内存使用情况</p>
+<pre><code>free
+free -k
+free -m
+</code></pre>
+</li>
+<li>
+<p>以总和的形式显示内存的使用信息</p>
+<pre><code>free -t
+</code></pre>
+</li>
+<li>
+<p>周期性查询内存使用情况</p>
+<pre><code>free -s 10
+</code></pre>
+</li>
+</ul>
+<p>(3) kill命令</p>
+<p>发送指定的信号到相应进程。不指定型号将发送SIGTERM（15）终止指定进程。如果任无法终止该程序可用&quot;-KILL&quot; 参数，其发送的信号为SIGKILL(9) ，将强制结束进程，使用ps命令或者jobs 命令可以查看进程号。root用户将影响用户的进程，非root用户只能影响自己的进程。</p>
+<p>常用参数：</p>
+<blockquote>
+<p>-l  信号，若果不加信号的编号参数，则使用“-l”参数会列出全部的信号名称</p>
+<p>-a  当处理当前进程时，不限制命令名和进程号的对应关系</p>
+<p>-p  指定kill 命令只打印相关进程的进程号，而不发送任何信号</p>
+<p>-s  指定发送信号 -u  指定用户</p>
+</blockquote>
+<p>实例：</p>
+<ul>
+<li>
+<p>先使用ps查找进程pro1，然后用kill杀掉</p>
+<pre><code>kill -9 $(ps -ef | grep pro1)
+</code></pre>
+</li>
+</ul>
+<p>(4) ps命令</p>
+<p>ps(process status)，用来查看当前运行的进程状态，一次性查看，如果需要动态连续结果使用top linux上进程有5种状态：</p>
+<ul>
+<li>运行(正在运行或在运行队列中等待)</li>
+<li>中断(休眠中，受阻，在等待某个条件的形成或接收到信号)</li>
+<li>不可中断(收到信号不唤醒和不可运行，进程必须等待直到有中断发生)</li>
+<li>僵死(进程已终止，但进程描述符存在，直到父进程调用wait4()系统调用后释放)</li>
+<li>停止(进程收到SIGSTOP、SIGSTP、SIGTIN、SIGTOU信号后停止运行)</li>
+</ul>
+<p>ps工具标识进程的5种状态码：</p>
+<blockquote>
+<p>D 不可中断 uninterruptible sleep (usually IO)<br>
+R 运行 runnable (on run queue)<br>
+S 中断 sleeping<br>
+T 停止 traced or stopped<br>
+Z 僵死 a defunct (”zombie”) process</p>
+</blockquote>
+<p>命令参数：</p>
+<blockquote>
+<p>-A 显示所有进程</p>
+<p>a 显示所有进程</p>
+<p>-a 显示同一终端下所有进程</p>
+<p>c 显示进程真实名称</p>
+<p>e 显示环境变量</p>
+<p>f 显示进程间的关系</p>
+<p>r 显示当前终端运行的进程</p>
+<p>-aux 显示所有包含其它使用的进程</p>
+</blockquote>
+<p>实例：</p>
+<ul>
+<li>
+<p>显示当前所有进程环境变量及进程间关系</p>
+<pre><code>ps -ef
+</code></pre>
+</li>
+<li>
+<p>显示当前所有进程</p>
+<pre><code>ps -A
+</code></pre>
+</li>
+<li>
+<p>与grep联用查找某进程</p>
+<pre><code>ps -aux | grep apache
+</code></pre>
+</li>
+<li>
+<p>找出与 cron 与 syslog 这两个服务有关的 PID 号码</p>
+<pre><code>ps aux | grep '(cron|syslog)'
+</code></pre>
+</li>
+</ul>
+<p>(5) rpm命令</p>
+<p>Linux rpm命令用于管理套件。</p>
+<p>rpm(redhat package manager)原本是Red Hat Linux发行版专门用来管理Linux各项套件的程序，由于它遵循GPL规则且功能强大方便，因而广受欢迎，逐渐受到其他发行版的采用。RPM套件管理方式的出现，让Linux易于安装、升级，间接提升了Linux的适用度。</p>
+<p>使用语法：</p>
+<pre><code># 查看系统自带jdk
+rpm -qa | grep jdk
+# 删除系统自带jdk
+rpm -e --nodeps 查看jdk显示的数据
+# 安装jdk
+rpm -ivh jdk-7u80-linux-x64.rpm
+</code></pre>
+<p>(6) top命令</p>
+<p>显示当前系统正在执行的进程的相关信息，包括进程ID、内存占用率、CPU占用率等。</p>
+<p>常用参数：</p>
+<blockquote>
+<p>-c 显示完整的进程命令</p>
+<p>-s 保密模式</p>
+<p>-p &lt;进程号&gt; 指定进程显示</p>
+<p>-n &lt;次数&gt;循环显示次数</p>
+</blockquote>
+<p>实例：</p>
+<pre><code>top - 14:06:23 up 70 days, 16:44,  2 users,  load average: 1.25, 1.32, 1.35
+Tasks: 206 total,   1 running, 205 sleeping,   0 stopped,   0 zombie
+Cpu(s):  5.9%us,  3.4%sy,  0.0%ni, 90.4%id,  0.0%wa,  0.0%hi,  0.2%si,  0.0%st
+Mem:  32949016k total, 14411180k used, 18537836k free,   169884k buffers
+Swap: 32764556k total,        0k used, 32764556k free,  3612636k cached
+PID USER      PR  NI  VIRT  RES  SHR S %CPU %MEM    TIME+  COMMAND  
+28894 root      22   0 1501m 405m  10m S 52.2  1.3   2534:16 java
+</code></pre>
+<p><strong>第一行，任务队列信息，同 uptime 命令的执行结果，具体参数说明情况如下：</strong></p>
+<p>14:06:23 — 当前系统时间</p>
+<p>up 70 days, 16:44 — 系统已经运行了70天16小时44分钟（在这期间系统没有重启过的吆！）</p>
+<p>2 users — 当前有2个用户登录系统</p>
+<p>load average: 1.15, 1.42, 1.44 — load average后面的三个数分别是1分钟、5分钟、15分钟的负载情况。</p>
+<p>load average数据是每隔5秒钟检查一次活跃的进程数，然后按特定算法计算出的数值。如果这个数除以逻辑CPU的数量，结果高于5的时候就表明系统在超负荷运转了。</p>
+<p><strong>第二行，Tasks — 任务（进程），具体信息说明如下：</strong></p>
+<p>系统现在共有206个进程，其中处于运行中的有1个，205个在休眠（sleep），stoped状态的有0个，zombie状态（僵尸）的有0个。</p>
+<p><strong>第三行，cpu状态信息，具体属性说明如下</strong>：</p>
+<p>5.9%us — 用户空间占用CPU的百分比。<br>
+3.4% sy — 内核空间占用CPU的百分比。<br>
+0.0% ni — 改变过优先级的进程占用CPU的百分比<br>
+90.4% id — 空闲CPU百分比<br>
+0.0% wa — IO等待占用CPU的百分比<br>
+0.0% hi — 硬中断（Hardware IRQ）占用CPU的百分比<br>
+0.2% si — 软中断（Software Interrupts）占用CPU的百分比</p>
+<p><strong>第四行，内存状态，具体信息如下：</strong></p>
+<p>32949016k total — 物理内存总量（32GB）</p>
+<p>14411180k used — 使用中的内存总量（14GB）</p>
+<p>18537836k free — 空闲内存总量（18GB）</p>
+<p>169884k buffers — 缓存的内存量 （169M）</p>
+<p><strong>第五行，swap交换分区信息，具体信息说明如下</strong>：</p>
+<p>32764556k total — 交换区总量（32GB）</p>
+<p>0k used — 使用的交换区总量（0K）</p>
+<p>32764556k free — 空闲交换区总量（32GB）</p>
+<p>3612636k cached — 缓冲的交换区总量（3.6GB）</p>
+<p><strong>第六行，空行。</strong></p>
+<p><strong>第七行以下：各进程（任务）的状态监控，项目列信息说明如下</strong>：</p>
+<p>PID — 进程id<br>
+USER — 进程所有者<br>
+PR — 进程优先级<br>
+NI — nice值。负值表示高优先级，正值表示低优先级<br>
+VIRT — 进程使用的虚拟内存总量，单位kb。VIRT=SWAP+RES<br>
+RES — 进程使用的、未被换出的物理内存大小，单位kb。RES=CODE+DATA<br>
+SHR — 共享内存大小，单位kb<br>
+S — 进程状态。D=不可中断的睡眠状态 R=运行 S=睡眠 T=跟踪/停止 Z=僵尸进程<br>
+%CPU — 上次更新到现在的CPU时间占用百分比<br>
+%MEM — 进程使用的物理内存百分比<br>
+TIME+ — 进程使用的CPU时间总计，单位1/100秒<br>
+COMMAND — 进程名称（命令名/命令行）</p>
+<p>top交互命令：</p>
+<blockquote>
+<p>h 显示top交互命令帮助信息</p>
+<p>c 切换显示命令名称和完整命令行</p>
+<p>m 以内存使用率排序</p>
+<p>P 根据CPU使用百分比大小进行排序</p>
+<p>T 根据时间/累计时间进行排序</p>
+<p>W 将当前设置写入~/.toprc文件中</p>
+<p>o或者O 改变显示项目的顺序</p>
+</blockquote>
+<p>(7) yum命令</p>
+<p>yum（Yellow dog Updater, Modified）是一个在Fedora和RedHat以及SUSE中的Shell前端软件包管理器。</p>
+<p>基于RPM包管理，能够从指定的服务器自动下载RPM包并且安装，可以自动处理依赖性关系，并且一次安装所有依赖的软体包，无须繁琐地一次次下载、安装。</p>
+<p>yum提供了查找、安装、删除某一个、一组甚至全部软件包的命令：</p>
+<ul>
+<li>列出所有可更新的软件清单命令：yum check-update</li>
+<li>更新所有软件命令：yum update</li>
+<li>仅安装指定的软件命令：yum install &lt;package_name&gt;</li>
+<li>仅更新指定的软件命令：yum update &lt;package_name&gt;</li>
+<li>列出所有可安裝的软件清单命令：yum list</li>
+<li>删除软件包命令：yum remove &lt;package_name&gt;</li>
+<li>查找软件包 命令：yum search</li>
+<li>清除缓存命令:
+<ul>
+<li>yum clean packages: 清除缓存目录下的软件包</li>
+<li>yum clean headers: 清除缓存目录下的 headers</li>
+<li>yum clean oldheaders: 清除缓存目录下旧的 headers</li>
+<li>yum clean, yum clean all (= yum clean packages; yum clean oldheaders) :清除缓存目录下的软件包及旧的headers</li>
+</ul>
+</li>
+</ul>
+<p>实例：</p>
+<ul>
+<li>
+<p>安装pam-devel</p>
+<pre><code>[root@www ~]# yum install pam-devel
+</code></pre>
+</li>
+</ul>
+<h4 id="备份压缩命令">备份压缩命令</h4>
+<p>(1) bzip2命令</p>
+<ul>
+<li>创建<code>*.bz2</code>压缩文件：<code>bzip2 test.txt</code></li>
+<li>解压<code>*.bz2</code>文件：<code>bzip2 -d test.txt.bz2</code></li>
+</ul>
+<p>(2) gzip命令</p>
+<ul>
+<li>创建一个<code>*.gz</code>的压缩文件：<code>gzip test.txt</code></li>
+<li>解压<code>*.gz</code>文件：<code>gzip -d test.txt.gz</code></li>
+<li>显示压缩的比例：<code>gzip -l *.gz</code></li>
+</ul>
+<p>(3) tar命令</p>
+<p>用来压缩和解压文件，tar本身不具有压缩功能，只具有打包功能，有关压缩及解压是调用其它的功能来完成。</p>
+<p>打包是指将一大堆文件或目录变成一个总的文件；压缩则是将一个大的文件通过一些压缩算法变成一个小文件。</p>
+<p>常用参数：</p>
+<blockquote>
+<p>-c 建立新的压缩文件</p>
+<p>-f 指定压缩文件</p>
+<p>-r 添加文件到已经压缩文件包中</p>
+<p>-u 添加改了和现有的文件到压缩包中</p>
+<p>-x 从压缩包中抽取文件</p>
+<p>-t 显示压缩文件中的内容</p>
+<p>-z 支持gzip压缩</p>
+<p>-j 支持bzip2压缩</p>
+<p>-Z 支持compress解压文件</p>
+<p>-v 显示操作过程</p>
+</blockquote>
+<p>有关gzip和bzip2压缩：</p>
+<pre><code>gzip 实例：压缩 gzip fileName .tar.gz 和.tgz  解压：gunzip filename.gz 或 gzip -d filename.gz
+          对应：tar zcvf filename.tar.gz     tar zxvf filename.tar.gz
+
+bz2实例：压缩 bzip2 -z filename .tar.bz2 解压：bunzip filename.bz2或bzip -d filename.bz2
+       对应：tar jcvf filename.tar.gz         解压：tar jxvf filename.tar.bz2
+</code></pre>
+<p>实例：</p>
+<ul>
+<li>
+<p>将文件全部打包成 tar 包</p>
+<pre><code>tar -cvf log.tar 1.log,2.log
+tar -cvf log.*
+</code></pre>
+</li>
+<li>
+<p>将 /etc 下的所有文件及目录打包到指定目录，并使用 gz 压缩</p>
+<pre><code>tar -zcvf /tem/etc.tar.gz /etc
+</code></pre>
+</li>
+<li>
+<p>查看刚打包的文件内容（一定加z，因为是使用 gzip 压缩的）</p>
+<pre><code>tar -ztvf /tmp/etc/tar/gz
+</code></pre>
+</li>
+<li>
+<p>要压缩打包 /home, /etc ，但不要 /home/dmtsai</p>
+<pre><code>tar --exclude /home/dmtsai -zcvf myfile.tar.gz /home/* /etc
+</code></pre>
+</li>
+</ul>
+<p>(4) unzip命令</p>
+<ul>
+<li>解压<code>*.zip</code>文件：<code>unzip test.zip</code></li>
+<li>查看<code>*.zip</code>文件的内容：<code>unzip -l jasper.zip</code></li>
 </ul>
 
             </div>
