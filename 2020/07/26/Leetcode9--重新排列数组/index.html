@@ -164,8 +164,8 @@
 </nav>
 
         <div id="main">
-            <div class="post_page_title_img" style="height: 25rem;background-image: url();background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;">
-                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2></h2></a>
+            <div class="post_page_title_img" style="height: 25rem;background-image: url(https://www.lxx1.com/wp-content/uploads/2018/01/taras-shypka-424924-648x432.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;">
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2>Leetcode--重排数组</h2></a>
             </div>
             <!-- Post -->
             <div class="typo" style="padding: 3rem;">
@@ -187,6 +187,33 @@
 <p>1 &lt;= n &lt;= 500<br>
 nums.length == 2n<br>
 1 &lt;= nums[i] &lt;= 10^3</p>
+<p>解题思路：</p>
+<p>每次遍历数组，逐次往新数组中添加遍历的第一个元素和相差的第n个元素，直到遍历完n/2个元素长度的数组。</p>
+<p>代买实现：</p>
+<pre class=" language-language-python"><code class="language-language-python">class Solution(object):
+    def shuffle(self, nums, n):
+        """
+        :type nums: List[int]
+        :type n: int
+        :rtype: List[int]
+        """
+        res = []
+        for i in range(n):
+            res.append(nums[i])
+            res.append(nums[i+n])
+        return res
+</code></pre>
+<p>其他方法：</p>
+<ul>
+<li>双指针</li>
+</ul>
+<p>左右指针分别指向索引为0和n的位置，然后依次把左指针所指的元素和右指针所指的元素添加到新列表中，然后指针依次往后移一格，最后当左指针指向n停止，返回新列表。</p>
+<p>代码实现：</p>
+<pre class=" language-language-python"><code class="language-language-python">class Solution:
+    def shuffle(self, nums: List[int], n: int) -> List[int]:
+        i,j=0,n
+        c=[]
+        while i<n: c.append(nums[i]) c.append(nums[j]) i+="1" j+="1" return c < code></n:></code></pre>
 
             </div>
 
