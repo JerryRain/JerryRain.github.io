@@ -68,25 +68,32 @@
 	
 <link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
     
-		<body class="is-loading">
+		
+<!-- Layouts -->
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_coy.css">
+<link rel="stylesheet" href="/css/typo.css">
+<link rel="stylesheet" href="/css/mouse.css">
+<!-- 文章页 -->
+<body class="is-loading">
     <!-- Wrapper 外包 s-->
-    <div id="wrapper" class="fade-in overlay">
+    
+        <script src="https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js"></script>
+        <script>
+          if (window.mermaid) {
+            mermaid.initialize({theme: 'forest'});
+          }
+        </script>
+    
+    <div id="wrapper" class="fade-in">
         <!-- Intro 头部显示 s -->
-                <div id="intro">
-            <h1>This is<br>
-                        ME </h1>
-            <p> Whatever is worth doing is worth doing well <br> I'll think of you every step of the way
-            </p>
-            <ul class="actions">
-                <li><a href="#header" class="button icon solo fa-arrow-down scrolly">Continue</a></li>
-            </ul>
-        </div>
         <!-- Intro 头部显示 e -->
         <!-- Header 头部logo start -->
         <header id="header">
     <a href="/" class="logo">Go on</a>
 </header>
-        <!-- Header 头部logo end -->
         <!-- Nav 导航条 start -->
         <nav id="nav" class="special">
             <ul class="menu links">
@@ -155,115 +162,149 @@
                     
 			</ul>
 </nav>
-        <!-- Nav 导航条 end -->
-        <!-- Main 主要部分 start -->
-        
-        <!-- 文章列表   s -->
-        <div id="main" style="background-color: transparent; padding:0;">
-        <section class="link_container" style="margin-top: 0; background-color: transparent; ">
-            <div class="link_row">
-                <!-- 文章sample  s-->
 
-                
-                <div class="6u 12u(narrower)">
-                    <section class="link_box special">
-                       <a href="/2020/07/17/git基础/">
-                        <div class="page_title" style="background-image: url(https://www.linuxprobe.com/wp-content/uploads/2018/04/13-skills-git-01.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;">
-                            <!--标题-->
-                            <h2 class="page_title_text"> Git基础 </h2>
-                            <!--段落-->
-                        </div>
-                        </a>
-                        <div class="home-post-info">
-                            <!-- Author Avatar -->
-                            <div class="home-post-info-author-avatar">
-                                <h6><span class="home-post-info-data">2020-07-17</span></h6>
-                                <div class="home-post-info-Category">
-                                    <!-- Category -->
-                                    <span>
-                            <h6>
-                            <a class="post_category-link" href="http://localhost:4000/categories/Algorithm/">
-                                <a class="post_category-link" href="/categories/git/">git</a></a>
-                            </h6>
-                        </span>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                </div>
-                <!-- 文章sample  e-->
-            
-                <div class="6u 12u(narrower)">
-                    <section class="link_box special">
-                       <a href="/2020/07/16/python面试基础题/">
-                        <div class="page_title" style="background-image: url(https://www.linuxprobe.com/wp-content/uploads/2019/12/4-4.png);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;">
-                            <!--标题-->
-                            <h2 class="page_title_text"> Python 基础 </h2>
-                            <!--段落-->
-                        </div>
-                        </a>
-                        <div class="home-post-info">
-                            <!-- Author Avatar -->
-                            <div class="home-post-info-author-avatar">
-                                <h6><span class="home-post-info-data">2020-07-16</span></h6>
-                                <div class="home-post-info-Category">
-                                    <!-- Category -->
-                                    <span>
-                            <h6>
-                            <a class="post_category-link" href="http://localhost:4000/categories/Algorithm/">
-                                <a class="post_category-link" href="/categories/python/">python</a></a>
-                            </h6>
-                        </span>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                </div>
-                <!-- 文章sample  e-->
-            
-                <div class="6u 12u(narrower)">
-                    <section class="link_box special">
-                       <a href="/2020/07/16/python 排序算法/">
-                        <div class="page_title" style="background-image: url(https://pic1.zhimg.com/v2-b1845a6be4a2f4de6edbf92682d1c190_1440w.jpg?source=172ae18b);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;">
-                            <!--标题-->
-                            <h2 class="page_title_text"> 排序算法 </h2>
-                            <!--段落-->
-                        </div>
-                        </a>
-                        <div class="home-post-info">
-                            <!-- Author Avatar -->
-                            <div class="home-post-info-author-avatar">
-                                <h6><span class="home-post-info-data">2020-07-16</span></h6>
-                                <div class="home-post-info-Category">
-                                    <!-- Category -->
-                                    <span>
-                            <h6>
-                            <a class="post_category-link" href="http://localhost:4000/categories/Algorithm/">
-                                <a class="post_category-link" href="/categories/algorithm/">algorithm</a></a>
-                            </h6>
-                        </span>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                </div>
-                <!-- 文章sample  e-->
-            
+        <div id="main">
+            <div class="post_page_title_img" style="height: 25rem;background-image: url(http://pic1.win4000.com/wallpaper/9/57a0448f2904e.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;">
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2>Leetcode--魔术索引</h2></a>
             </div>
-        </section>
-        </div>
-        <!-- 文章列表   end -->
-        <!-- Main 主要部分 end -->
-        <!-- footer  页码 start-->
-        <footer style="text-align: center; padding-top: 2em;">
-  
-    <div class="pagination">
-        <a class="extend prev" rel="prev" href="/archives/2020/07/page/2/">pre</a><a class="page-number" href="/archives/2020/07/">1</a><a class="page-number" href="/archives/2020/07/page/2/">2</a><span class="page-number current">3</span>
-    </div>  
-    
-</footer>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <p></p><h3 style="text-align:center">Leetcode – 魔术索引</h3><p></p>
+<p>题目描述：</p>
+<p>在数组A[0…n-1]中，有所谓的魔术索引，满足条件A[i] = i。给定一个有序整数数组，编写一种方法找出魔术索引，若有的话，在数组A中找出一个魔术索引，如果没有，则返回-1。若有多个魔术索引，返回索引值最小的一个。</p>
+<p>示例1:</p>
+<p>输入：nums = [0, 2, 3, 4, 5]<br>
+输出：0<br>
+说明: 0下标的元素为0<br>
+示例2:</p>
+<p>输入：nums = [1, 1, 1]<br>
+输出：1<br>
+提示:</p>
+<p>nums长度在[1, 1000000]之间</p>
+<p>解题思路：</p>
+<p>遍历数组元素，当元素索引值与元素值相等是，返回数组元素值，跳出循环，不再遍历；如果遍历完所有数组元素都没有，就返回-1。</p>
+<p>代码实现：</p>
+<pre class=" language-language-python"><code class="language-language-python">class Solution(object):
+    def findMagicIndex(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        for i in range(len(nums)):
+            while nums[i] == i:
+                return i
+                break
+        return -1
+</code></pre>
+<p>复杂度分析：</p>
+<ul>
+<li>时间复杂度：O(N)</li>
+<li>空间复杂度：O(1)</li>
+</ul>
+<p>其他方法：</p>
+<p><strong>二分查找</strong></p>
+<p>算法思路：根据位置元素的特点对下标进行切换</p>
+<p>代码实现：</p>
+<pre class=" language-language-python"><code class="language-language-python">class Solution:
+    def findMagicIndex(self, nums: List[int]) -> int:
+        if not nums: return -1
+        if nums[0]==0:return 0
+        p, n = 0, len(nums)
+        while p < n:
+            if nums[p] > p: p = nums[p]
+            elif nums[p] == p: return p
+            else: p += 1
+        return -1
+</code></pre>
 
-        <!-- footer  页码 end-->
+            </div>
+
+            <!-- Post Comments -->
+            
+    <!-- 使用 DISQUS_CLICK -->
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
+
+<!-- add animation -->
+<style>
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #7EC0EE;
+            text-shadow: 0
+        }
+</style>
+	
+<div class="btn_click_load" id="disqus_bt"> 
+    <button class="disqus_click_btn">点击查看评论</button>
+</div>
+
+<!--
+<script type="text/javascript">
+$('.btn_click_load').click(function() {
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'http-miccall-tech'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    document.getElementById('disqus_bt').style.display = "none";
+});
+</script>
+-->
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'http://yoursite.com/2020/07/31/Leetcode15--魔术索引/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://yoursite.com/2020/07/31/Leetcode15--魔术索引/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+</script>
+
+<script type="text/javascript">
+    $('.btn_click_load').click(function() {  //click to load comments
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document;
+            var s = d.createElement('script');
+            s.src = '//http-miccall-tech.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+        $('.btn_click_load').css('display','none');
+    });
+</script>
+</div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+
+        </div>
         <!-- Copyright 版权 start -->
                 <div id="copyright">
             <ul>
@@ -274,11 +315,10 @@
                 <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
 			
         </div>
-        <!-- Copyright 版权 end -->
     </div>
-    <!-- Wrapper 外包 e-->
-    <!-- Scripts -->
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"scale":1,"hHeadPos":1.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/assets/tororo.model.json"},"display":{"superSample":2,"width":200,"height":200,"position":"right","hOffset":-25,"vOffset":-20},"mobile":{"show":false,"scale":0.05},"react":{"opacityDefault":1,"opacityOnHover":0.2}});</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"scale":1,"hHeadPos":1.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/assets/tororo.model.json"},"display":{"superSample":2,"width":200,"height":200,"position":"right","hOffset":-25,"vOffset":-20},"mobile":{"show":false,"scale":0.05},"react":{"opacityDefault":1,"opacityOnHover":0.2}});</script></body>
+
+
 
  	
 </html>
