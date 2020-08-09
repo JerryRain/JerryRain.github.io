@@ -164,78 +164,26 @@
 </nav>
 
         <div id="main">
-            <div class="post_page_title_img" style="height: 25rem;background-image: url(http://www.linuxidc.com/upload/2007_12/07122213405839.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;">
-                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2>Ubuntu18.04 双系统</h2></a>
+            <div class="post_page_title_img" style="height: 25rem;background-image: url(https://www.17qq.com/img_biaoqing/85505655.jpeg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;">
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2>删除EFI分区</h2></a>
             </div>
             <!-- Post -->
             <div class="typo" style="padding: 3rem;">
-                <p></p><h3 style="text-align:center">搭建Ubuntu18.04双系统</h3><p></p>
-<h3 id="一-下载镜像文件">一、下载镜像文件</h3>
-<p>打开<a href="https://ubuntu.com/download/desktop" target="_blank" rel="noopener">ubuntu18.04镜像下载地址</a>，进入页面后点击Download按钮进行下载。</p>
-<p><img src="https://img-blog.csdnimg.cn/20190119034530519.png?" alt></p>
-<h3 id="二-制作u盘启动工具">二、制作U盘启动工具</h3>
-<p>1.安装制作工具：<a href="https://cn.ultraiso.net/xiazai.html" target="_blank" rel="noopener">UltralSO</a>，下载后安装</p>
-<p>2.插入用来做启动盘的U盘，格式化该U盘</p>
-<p>3.打开安装好的UltralSO，点击继续使用按钮</p>
-<p>4.点击“文件 → 打开 → 选择下载的ubuntu18.04镜像文件”</p>
-<p><img src="https://img-blog.csdnimg.cn/20190118234618717.PNG" alt></p>
-<p>5.点击“启动 → 写入磁盘映像”</p>
-<p><img src="https://img-blog.csdnimg.cn/20190118234907819.jpg" alt></p>
-<p>6.在弹出的新窗口中：</p>
-<p>硬盘驱动器：选择<strong>刚刚插入的U盘</strong><br>
-写入方式：设置为<strong>USB-HDD+</strong><br>
-其余需要勾选的不管，采用默认的设置就行<br>
-最后点击最下面一栏的<strong>写入</strong>按钮</p>
-<p><img src="https://img-blog.csdnimg.cn/20190119034941989.PNG" alt></p>
-<p>7.写入过程大概会持续4～5分钟，完成后界面如下图所示，接着点击<strong>返回</strong>按钮。</p>
-<p><img src="https://img-blog.csdnimg.cn/20190119001114283.PNG" alt></p>
-<p>U盘启动盘制作完成~~</p>
-<h3 id="三-分配硬盘空间">三、分配硬盘空间</h3>
-<p>1.鼠标右键<strong>计算机</strong>，在弹出来选项卡中选择<strong>管理</strong>，接着在弹出来的窗口左侧点击 <strong>存储/磁盘管理</strong>，进入磁盘管理界面，如下图所示：<br>
-<img src="https://img-blog.csdnimg.cn/20190119001857899.PNG" alt></p>
-<p>2.在你要安装的目标磁盘中，通过<strong>删除卷</strong>和<strong>删除分区</strong>操作腾出一块未分配的磁盘空间作为安装区，我在D盘中通过右键压缩卷分配出100G来安装Ubuntu18.04系统，压缩完成之后会显示有100GB未分配（用来装ubuntu系统）：</p>
-<p><img src="https://img-blog.csdnimg.cn/20190119001910389.PNG" alt></p>
-<h3 id="四-bios设置">四、BIOS设置</h3>
-<h4 id="1-关闭电源快速启动">1.关闭电源快速启动</h4>
-<p>（1）右键单击开始菜单选择“系统”</p>
-<p>（2）打开系统后选择“电源和睡眠”，选择“其他电源设置”</p>
-<p>（3）打开“电源选项”中在左侧找到“选择电源按钮的功能”</p>
-<p>（4）进入后，点击上方“更改当前不可用的设置”</p>
-<p>（5）接着在窗口下方“关机设置”中取消勾选第一项“启用快速启动（推荐）”，点击“保存修改”即可</p>
-<h4 id="2-修改启动项">2.修改启动项</h4>
-<p>（1）开机狂按<code>F12</code>，进入电脑的Boot Menu模式</p>
-<p>（2）点击方向箭头→ 移动到Security，再按↓移动到Secure Boot上，点击<code>回车键</code>，选择<code>Disable</code></p>
-<p>（3）点击方向箭头→ 移动到Boot，再按↓移动到USB Boot上，点击<code>回车键</code>，选择<code>Enable</code></p>
-<h3 id="五-安装ubuntu系统">五、安装Ubuntu系统</h3>
-<p>1.进入安装界面</p>
-<p>开机狂按F12进入Boot Menu模式，选择刚刚制作的U盘启动盘，点击Enter键进入，选择<code>Install Ubuntu</code>，进入安装界面</p>
-<p>2.选择安装语言为中文简体，点击继续</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/11037888-5409a708aafec5c1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/976/format/webp" alt="img"></p>
-<p>3.键盘布局最好选择英语(英国)，也可以选择中文键盘布局，点击继续</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/11037888-8b18a51afbc2cb64.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/874/format/webp" alt="img"></p>
-<p>4.进入无线选项，选择<code>我现在不想连接wifi无线网络</code>，点击继续</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/11037888-145d0377872e561f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/878/format/webp" alt="img"></p>
-<p>5.在更新和其他软件中，选择<code>正常安装</code>和<code>为图形或无线硬件，以及其他媒体格式安装第三方软件</code>，点击继续</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/11037888-c62b428b60bfcc29.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/877/format/webp" alt="img"></p>
-<p>6.在安装类型中，选择<code>其他选项</code>，点击继续</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/11037888-1896e2bb631233c5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/879/format/webp" alt="img"></p>
-<p>7.创建分区</p>
-<p>在出现的页面中找到并点击之前分的空闲盘，可以根据大小寻找，我之前分了100G，所以我找到大小100G左右的盘，双击该分区或者选中该分区后，点击左下角的<code>+</code></p>
-<p>具体分区如下：</p>
-<ul>
-<li><strong>EFI分区：主分区，空间起始位置，EFI系统分区文件，大小512M</strong></li>
-<li><strong>/</strong> ： <strong>主分区，空间起始位置，Ext4日志文件系统，大小35G</strong></li>
-<li><strong>/swap</strong> : <strong>逻辑分区，空间起始位置，交换空间，大小8G</strong></li>
-<li><strong>/boot</strong> : <strong>逻辑分区，空间起始位置，Ext4日志文件系统，大小1G</strong></li>
-<li><strong>/home</strong> ： <strong>逻辑分区，空间起始位置，Ext4日志文件系统，大小55G</strong></li>
-</ul>
-<p>分区完成以后，选择安装引导启动器的设备为刚刚创建的EFI分区，点击<code>现在安装</code>，点击<code>继续</code></p>
-<p>8.选择地点为上海，点击继续</p>
-<p><img src="https://img2018.cnblogs.com/blog/1628751/201905/1628751-20190510160009567-761733002.png" alt="img"></p>
-<p>9.创建用户名和密码，用于以后登录ubuntu系统，点击继续</p>
-<p><img src="https://img2018.cnblogs.com/blog/1628751/201905/1628751-20190510160026715-1634480995.png" alt="img"></p>
-<p>等待安装过程完成，重启之后就可以登录ubuntu系统使用了 ，ubuntu系统安装完成~~</p>
-<p><img src="https://img2018.cnblogs.com/blog/1628751/201905/1628751-20190510160049624-207765391.png" alt="img"></p>
+                <p></p><h3 style="text-align:center">Windows系统删除EFI分区</h3><br>
+使用过双系统的盆友们当想要重新安装新系统时，想要删除原来分配的内存卷重新使用，但是发现在EFI分区的那个卷一般右键无法直接删除卷，下面介绍一种方法来安全地删除Windows系统下的EFI分区内存卷：<p></p>
+<p>1.xin+r，输入cmd，打开命令提示窗口</p>
+<p>2.输入<code>diskpart</code>命令</p>
+<p>3.在打开的新窗口，输入<code>list disk</code>命令，可以看到输出了两个磁盘</p>
+<p><img src="https://img-blog.csdnimg.cn/20190321215318694.png" alt="img"></p>
+<p>4.根据磁盘的编号选中相应的磁盘（0或1），一般选择可用磁盘大小为99G的那个磁盘，即使用<code>sel disk 0</code>选中相应的磁盘</p>
+<p><img src="https://img-blog.csdnimg.cn/2019032121582652.png" alt="img"></p>
+<p>5.输入<code>list partition</code>命令查看该磁盘下的分区</p>
+<p><img src="https://img-blog.csdnimg.cn/20190321215907486.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly94aXVsaWFuLmJsb2cuY3Nkbi5uZXQ=,size_16,color_FFFFFF,t_70" alt="img"></p>
+<p>6.找出与EFI分区内存大小差不多的磁盘分区，并选中该对应的系统分区，可使用命令<code>sel partition 5</code></p>
+<p><img src="https://img-blog.csdnimg.cn/20190321220033192.png" alt="img"></p>
+<p>7.最后执行下面的命令</p>
+<p><img src="https://img-blog.csdnimg.cn/20190321220126601.png" alt="img"></p>
+<p>8.通过上述操作，就可以通过右键删除卷的方式把EFI分区的内存卷删除</p>
 
             </div>
 
@@ -298,8 +246,8 @@ $('.btn_click_load').click(function() {
 -->
 <script type="text/javascript">
     var disqus_config = function () {
-        this.page.url = 'http://yoursite.com/2020/08/08/制作双系统/';  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = 'http://yoursite.com/2020/08/08/制作双系统/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        this.page.url = 'http://yoursite.com/2020/08/09/删除EFI分区/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://yoursite.com/2020/08/09/删除EFI分区/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
 </script>
 

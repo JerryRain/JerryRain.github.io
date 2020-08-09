@@ -169,12 +169,12 @@
             </div>
             <!-- Post -->
             <div class="typo" style="padding: 3rem;">
-                <p></p><h3 style="text-align:center">Ubuntu18.04 安装ROS</h3><p></p>
-<p>1.设置安装源</p>
+                <p></p><h3 style="text-align:center">Ubuntu18.04 安装ROS</h3><br>
+1.设置安装源<p></p>
 <pre><code>sudo sh -c 'echo &quot;deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main&quot; &gt; /etc/apt/sources.list.d/ros-latest.list'
 </code></pre>
 <p>2.设置公钥</p>
-<pre><code>sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key 421C365BD9FF1F717815A3895523BAEEB01FA116
+<pre><code>sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
 </code></pre>
 <p>ps：如果公钥无法验证签名，会导致下一步的<code>sudo apt-get update</code>无法更新软件源，需要重新新的有效公钥重新导入。</p>
 <p>3.更新软件源</p>
