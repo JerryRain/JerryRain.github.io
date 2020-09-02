@@ -164,146 +164,103 @@
 </nav>
 
         <div id="main">
-            <div class="post_page_title_img" style="height: 25rem;background-image: url(http://qimg.hxnews.com/2017/1113/1510541605703.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;">
-                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2>Leetcode--宝石与石头</h2></a>
+            <div class="post_page_title_img" style="height: 25rem;background-image: url(http://img17.3lian.com/d/file/201702/24/ea0af795e551445953ca4dea8feb3683.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;">
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2>Leetcode--返回链表元素</h2></a>
             </div>
             <!-- Post -->
             <div class="typo" style="padding: 3rem;">
-                <p></p><h3 style="text-align:center">Leetcode – 宝石与石头</h3><br>
-题目描述：<p></p>
-<p>给定字符串J 代表石头中宝石的类型，和字符串 S代表你拥有的石头。 S 中每个字符代表了一种你拥有的石头的类型，你想知道你拥有的石头中有多少是宝石。</p>
-<p>J 中的字母不重复，J 和 S中的所有字符都是字母。字母区分大小写，因此&quot;a&quot;和&quot;A&quot;是不同类型的石头。</p>
-<p>示例 1:</p>
-<p>输入: J = “aA”, S = &quot;aAAbbbb&quot;<br>
-输出: 3<br>
-示例 2:</p>
-<p>输入: J = “z”, S = &quot;ZZ&quot;<br>
-输出: 0</p>
-<p>注意:</p>
-<ul>
-<li>S 和 J 最多含有50个字母。</li>
-<li>J 中的字符不重复。</li>
-</ul>
+                <p></p><h3 style="text-align:center">Leetcode – 返回链表第k个节点</h3><p></p>
+<p>题目描述：</p>
+<p>实现一种算法，找出单向链表中倒数第 k 个节点。返回该节点的值。</p>
+<p>示例：</p>
+<p>输入： 1-&gt;2-&gt;3-&gt;4-&gt;5 和 k = 2<br>
+输出： 4<br>
+说明：</p>
+<p>给定的 k 保证是有效的。</p>
 <p>解题思路：</p>
-<p>遍历S字符串中的每一个元素，如果S的子元素存在在J字符串中，统计结果+1，遍历完所有元素，将统计结果返回。</p>
+<p>由于是利用链表来返回第k个元素，所以开始先遍历循环完前k-1个元素，当遍历到第k个元素再返回第k个位置的元素。</p>
 <p>代码实现：</p>
-<pre class=" language-language-python"><code class="language-language-python">class Solution(object):
-    def numJewelsInStones(self, J, S):
+<pre class=" language-language-python"><code class="language-language-python"># Definition for singly-linked list.
+# class ListNode(object):
+#     def __init__(self, x):
+#         self.val = x
+#         self.next = None
+
+class Solution(object):
+    def kthToLast(self, head, k):
         """
-        :type J: str
-        :type S: str
+        :type head: ListNode
+        :type k: int
         :rtype: int
         """
-        res = 0
-        for i in range(len(S)):
-            if S[i] in J:
-                res += 1
-        return res
+        a = head
+        b = head
+        for i in range(k):
+            b = b.next
+        while b:
+            a = a.next
+            b = b.next
+        return a.val
 </code></pre>
-<p>复杂度分析：</p>
+<p>其他解法：</p>
 <ul>
-<li>时间复杂度：O(n*m)</li>
-<li>空间复杂度：O(1)</li>
-</ul>
-<p>其他方法：</p>
-<p>（1）哈希表</p>
-<p>算法思路：</p>
-<p>记录 <code>S</code> 中每个字母出现的次数，再把 <code>J</code> 中存在的字母次数都相加。</p>
-<p>代码实现：</p>
-<pre class=" language-language-python"><code class="language-language-python">class Solution:
-    def numJewelsInStones(self, J: str, S: str) -> int:
-        s_count = dict()
-        for s in S:
-            s_count[s] = s_count.get(s, 0) + 1
-        res = 0
-        for j in J:
-            res += s_count.get(j, 0)
-        return res
-</code></pre>
-<p>补充 —— get()函数：</p>
-<p>语法：</p>
-<pre><code>dict.get(key, default=None)
-</code></pre>
-<p>参数：</p>
-<p>key – 字典中要查找的键</p>
-<p>default – 如果指定键值不存在时，返回默认值</p>
-<p>返回值：</p>
-<p>返回指定键的值，如果值不存在字典中就返回默认值None</p>
-<p>实例：</p>
-<pre class=" language-language-python"><code class="language-language-python">dict = {'Name': 'Runoob', 'Age': 27}
-print ("Age 值为 : %s" %  dict.get('Age'))
-print ("Sex 值为 : %s" %  dict.get('Sex', "NA"))
-</code></pre>
-<p>以上实例输出结果为：</p>
-<blockquote>
-<p>Age 值为 : 27<br>
-Sex 值为 : NA</p>
-</blockquote>
-<p>（2）正则匹配</p>
-<p>代码实现：</p>
-<pre class=" language-language-python"><code class="language-language-python">import re #匹配 用正则方便
+<li>
+<p>暴力遍历</p>
+<pre class=" language-language-python"><code class="language-language-python"># Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.next = None
+
 class Solution:
-    def numJewelsInStones(self, j,s):
-        numb = 0
-        for i in j: # 分别取 第一个 匹配 
-            re_list = re.findall(i,s) #取所有匹配项
-            numb += len(re_list)
-        return numb
+    def kthToLast(self, head: ListNode, k: int) -> int:
+        cur = head
+        n = 0
+        while cur.next:
+            n += 1
+            cur = cur.next
+        c,cur2 = 0,head
+        while c <= n-k: c +="1" cur2="cur2.next" return cur2.val < code></=></code></pre>
+</li>
+<li>
+<p>快慢指针</p>
+<pre class=" language-language-python"><code class="language-language-python"># Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.next = None
+
+class Solution:
+    def kthToLast(self, head: ListNode, k: int) -> int:
+        fast = head
+        slow = head
+        while k>0:
+            fast = fast.next
+            k-=1
+        while fast != None:
+            fast = fast.next
+            slow = slow.next
+        return slow.val
 </code></pre>
-<p>补充 —— re.findall()函数：</p>
-<p>语法：</p>
-<pre class=" language-language-python"><code class="language-language-python">re.findall(string[, pos[, endpos]])
+<pre class=" language-language-python"><code class="language-language-python">class ListNode:
+    def __init__(self, x):
+        self.val = x
+        self.next = None
+
+class Solution:
+    def kthToLast(self, head: ListNode, k: int) -> int:
+        target_node = head                      # 慢指针
+        fast_node = head                        # 快指针
+        steps = 0                               # 记录快指针的步数
+        while fast_node:                        # 到尾结点时退出循环
+            fast_node = fast_node.next          # 快指针移动一步
+            if steps>=k:                        # 慢指针开始移动条件判断
+                target_node = target_node.next  # 慢指针移动一步
+            steps += 1                          # 累加步数
+        return target_node.val                  # 返回目标节点的值
 </code></pre>
-<p>参数：</p>
-<ul>
-<li><strong>string</strong> : 待匹配的字符串。</li>
-<li><strong>pos</strong> : 可选参数，指定字符串的起始位置，默认为 0。</li>
-<li><strong>endpos</strong> : 可选参数，指定字符串的结束位置，默认为字符串的长度。</li>
+</li>
 </ul>
-<p>实例：</p>
-<p>1.findall查找全部r标识代表后面是正则的语句</p>
-<pre class=" language-language-python"><code class="language-language-python">regular_v1 = re.findall(r"docs","https://docs.python.org/3/whatsnew/3.6.html")
-print (regular_v1)
-# ['docs']
-</code></pre>
-<p>2.符号^表示匹配以https开头的的字符串返回</p>
-<pre class=" language-language-python"><code class="language-language-python">regular_v2 = re.findall(r"^https","https://docs.python.org/3/whatsnew/3.6.html")
-print (regular_v2)
-# ['https']
-</code></pre>
-<p>3.用$符号表示以html结尾的字符串返回,判断是否字符串结束的字符串</p>
-<pre class=" language-language-python"><code class="language-language-python">regular_v3 = re.findall(r"html$","https://docs.python.org/3/whatsnew/3.6.html")
-print (regular_v3)
-# ['html']
-</code></pre>
-<p>4.# […]匹配括号中的其中一个字符</p>
-<pre class=" language-language-python"><code class="language-language-python">regular_v4 = re.findall(r"[t,w]h","https://docs.python.org/3/whatsnew/3.6.html")
-print (regular_v4)
-# ['th', 'wh']
-</code></pre>
-<p>5.“d”是正则语法规则用来匹配0到9之间的数返回列表</p>
-<pre class=" language-language-python"><code class="language-language-python">regular_v5 = re.findall(r"\d","https://docs.python.org/3/whatsnew/3.6.html")
-regular_v6 = re.findall(r"\d\d\d","https://docs.python.org/3/whatsnew/3.6.html/1234")
-print (regular_v5)
-# ['3', '3', '6']
-print (regular_v6)
-# ['123']
-</code></pre>
-<p>6.小d表示取数字0-9，大D表示不要数字，也就是出了数字以外的内容返回</p>
-<pre class=" language-language-python"><code class="language-language-python">regular_v7 = re.findall(r"\D","https://docs.python.org/3/whatsnew/3.6.html")
-print (regular_v7)
-# ['h', 't', 't', 'p', 's', ':', '/', '/', 'd', 'o', 'c', 's', '.', 'p', 'y', 't', 'h', 'o', 'n', '.', 'o', 'r', 'g', '/', '/', 'w', 'h', 'a', 't', 's', 'n', 'e', 'w', '/', '.', '.', 'h', 't', 'm', 'l']
-</code></pre>
-<p>7.“w”在正则里面代表匹配从小写a到z,大写A到Z，数字0到9</p>
-<pre class=" language-language-python"><code class="language-language-python">regular_v8 = re.findall(r"\w","https://docs.python.org/3/whatsnew/3.6.html")
-print (regular_v8)
-#['h', 't', 't', 'p', 's', 'd', 'o', 'c', 's', 'p', 'y', 't', 'h', 'o', 'n', 'o', 'r', 'g', '3', 'w', 'h', 'a', 't', 's', 'n', 'e', 'w', '3', '6', 'h', 't', 'm', 'l']
-</code></pre>
-<p>8.“W”在正则里面代表匹配除了字母与数字以外的特殊符号</p>
-<pre class=" language-language-python"><code class="language-language-python">regular_v9 = re.findall(r"\W","https://docs.python.org/3/whatsnew/3.6.html")
-print (regular_v9)
-# [':', '/', '/', '.', '.', '/', '/', '/', '.', '.']
-</code></pre>
 
             </div>
 
@@ -366,8 +323,8 @@ $('.btn_click_load').click(function() {
 -->
 <script type="text/javascript">
     var disqus_config = function () {
-        this.page.url = 'http://yoursite.com/2020/07/28/Leetcode14--宝石与石头/';  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = 'http://yoursite.com/2020/07/28/Leetcode14--宝石与石头/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        this.page.url = 'http://yoursite.com/2020/09/02/Leetcode33--返回链表元素/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://yoursite.com/2020/09/02/Leetcode33--返回链表元素/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
 </script>
 
